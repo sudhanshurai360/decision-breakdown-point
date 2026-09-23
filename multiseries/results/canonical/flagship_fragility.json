@@ -1,0 +1,197 @@
+{
+  "_generated": "2026-09-20T06:19:38+00:00",
+  "_n": 18,
+  "_stage": "flagship_fragility",
+  "flagship.ar1_rank_long_window": {
+    "cites": [
+      "S3.6 body: window-vs-basis attribution -- long-window leg"
+    ],
+    "cross_check": "extension_scoreboard_1988-2025.csv: rank of ar1 in full-sample mean",
+    "of": 7,
+    "producer": "flagship_fragility",
+    "spec": "AR1's rank by pooled MASE over the FULL 1988-2025 window, all models",
+    "value": 5
+  },
+  "flagship.concentration": {
+    "cites": [
+      "S3.6 body: flagship exhibit"
+    ],
+    "cross_check": "flagship_fragility.csv: concentration",
+    "n_binding_tied": 1,
+    "producer": "flagship_fragility",
+    "spec": "share of the flagship's k*-margin against its binding rival contributed by the single most influential year -- the same statistic Table 1 reports per curated series (S4)",
+    "value": 0.388
+  },
+  "flagship.condorcet_status": {
+    "cites": [
+      "S3.6 body: flagship exhibit"
+    ],
+    "cross_check": "flagship_fragility.csv: condorcet_status",
+    "producer": "flagship_fragility",
+    "spec": "classification of the flagship's pairwise-majority tournament: 'winner' (a Condorcet winner exists), 'cycle' (a genuine intransitive majority cycle, no Condorcet winner), or 'tie' (no Condorcet winner and no cycle -- driven by pairwise ties)",
+    "value": "winner"
+  },
+  "flagship.condorcet_winner": {
+    "cites": [
+      "S3.6 body: flagship exhibit"
+    ],
+    "cross_check": "flagship_fragility.csv: condorcet_winner",
+    "producer": "flagship_fragility",
+    "spec": "the CONDORCET winner over the flagship's full 1988-2025 window (the model that beats every other model in pairwise per-period majority) -- null if no Condorcet winner exists (a majority cycle or pairwise tie; see flagship.condorcet_status). Completes the same {score, plurality, Condorcet} triple as flagship.pooled_winner/flagship.per_period_winner",
+    "value": "nbeats"
+  },
+  "flagship.fragile": {
+    "cites": [
+      "S3.6 body: flagship exhibit"
+    ],
+    "cross_check": "flagship_fragility.csv: fragile",
+    "producer": "flagship_fragility",
+    "spec": "whether the flagship's pooled winner meets the paper's fixed fragile rule (winner_stability<0.60, or reversal with k*/T<0.25) -- the same rule Table 1 applies per curated series. Computed from the 20-seed-averaged winner_stability (reversal/k_over_T are exact and seed-independent, so only the stability<0.60 half of this rule depends on the bootstrap)",
+    "value": false
+  },
+  "flagship.k_star": {
+    "cites": [
+      "S3.6 body: flagship exhibit"
+    ],
+    "cross_check": "flagship_fragility.csv: k_star",
+    "n_binding_tied": 1,
+    "of": 38,
+    "producer": "flagship_fragility",
+    "rival": "tft",
+    "spec": "decision-level breakdown point -- fewest years whose deletion flips the flagship's pooled winner against its BINDING rival (the opponent that overtakes the champion fastest, named here as `rival`; see flagship.t_binding, which reports the realised statistic for the same pair). k_star is a property of a specific champion-rival pair, not of the champion alone; n_binding_tied flags cells where more than one rival ties for binding",
+    "value": 3
+  },
+  "flagship.mcs_10": {
+    "cites": [
+      "S3.6 body: flagship exhibit"
+    ],
+    "cross_check": "flagship_fragility.csv: MCS_10",
+    "of": 7,
+    "producer": "flagship_fragility",
+    "spec": "Hansen (2011) Model Confidence Set at alpha=0.10 on the flagship's 7-model year x model MASE matrix",
+    "value": "nbeats|nhits|tft"
+  },
+  "flagship.mcs_25": {
+    "cites": [
+      "S3.6 body: flagship exhibit"
+    ],
+    "cross_check": "flagship_fragility.csv: MCS_25",
+    "of": 7,
+    "producer": "flagship_fragility",
+    "spec": "Hansen (2011) Model Confidence Set at alpha=0.25 on the flagship's 7-model year x model MASE matrix",
+    "value": "nbeats|tft"
+  },
+  "flagship.per_period_winner": {
+    "cites": [
+      "S3.6 body: flagship exhibit"
+    ],
+    "cross_check": "flagship_fragility.csv: per_period_winner",
+    "producer": "flagship_fragility",
+    "spec": "the per-period (plurality) winner over the flagship's full 1988-2025 window -- compare against flagship.pooled_winner; flagship.reversal reports whether they differ",
+    "value": "nbeats"
+  },
+  "flagship.pooled_winner": {
+    "cites": [
+      "S3.6 body: flagship exhibit"
+    ],
+    "cross_check": "flagship_fragility.csv: pooled_winner",
+    "producer": "flagship_fragility",
+    "spec": "the pooled (score-rule) winner over the flagship's full 1988-2025 window",
+    "value": "nbeats"
+  },
+  "flagship.responsible_years": {
+    "cites": [
+      "S3.6 body: flagship exhibit"
+    ],
+    "cross_check": "flagship_fragility.csv: responsible",
+    "of": 38,
+    "producer": "flagship_fragility",
+    "spec": "the year(s) whose deletion flips the flagship's pooled winner",
+    "value": "1988;2009;2010"
+  },
+  "flagship.reversal": {
+    "cites": [
+      "S3.6 body: flagship exhibit"
+    ],
+    "cross_check": "flagship_fragility.csv: reversal",
+    "producer": "flagship_fragility",
+    "spec": "whether the flagship's pooled (score-rule) winner over 1988-2025 differs from its per-period (plurality) winner -- the same statistic Table 1 reports per curated series as its `Reversal` column",
+    "value": false
+  },
+  "flagship.reversal_ambiguous": {
+    "cites": [
+      "S3.6 body: flagship exhibit"
+    ],
+    "cross_check": "flagship_fragility.csv: reversal_ambiguous",
+    "producer": "flagship_fragility",
+    "spec": "whether flagship.reversal's verdict rests on an arbitrary per-period plurality tie-break (the per-period winner is one of >=2 models tied for that period) rather than a clean, unambiguous per-period winner -- the flagship-exhibit analogue of election.reversals_lo/election.reversals_hi's tie-break-robustness disclosure for the curated panel",
+    "value": false
+  },
+  "flagship.reversal_condorcet": {
+    "cites": [
+      "S3.6 body: flagship exhibit"
+    ],
+    "cross_check": "flagship_fragility.csv: reversal_condorcet",
+    "producer": "flagship_fragility",
+    "spec": "whether the flagship's pooled (score-rule) winner over 1988-2025 differs from its Condorcet winner (undefined/False when no Condorcet winner exists -- see flagship.condorcet_status) -- the same statistic election.rev_condorcet reports per curated series",
+    "value": false
+  },
+  "flagship.stability_null_median": {
+    "cites": [
+      "S3.6 body: flagship exhibit"
+    ],
+    "cross_check": null,
+    "n_eff": 20000,
+    "n_models": 7,
+    "n_periods": 38,
+    "producer": "flagship_fragility",
+    "spec": "median winner_stability under EXCHANGEABLE models (K=7, T=38, 20000 panels across 20 independent seeds): what the statistic returns when the winner is arbitrary by construction",
+    "value": 0.472
+  },
+  "flagship.stability_null_p05": {
+    "band": [
+      0.268,
+      0.29
+    ],
+    "cites": [
+      "S3.6 body: flagship exhibit"
+    ],
+    "cross_check": null,
+    "n_eff": 20000,
+    "n_models": 7,
+    "n_periods": 38,
+    "producer": "flagship_fragility",
+    "sd": 0.0059,
+    "spec": "5th percentile of winner_stability under exchangeable models (K=7, T=38) at the flagship's own dimensions; a value below this is unusually fragile RELATIVE TO CHANCE",
+    "value": 0.277
+  },
+  "flagship.stability_null_p95": {
+    "band": [
+      0.786,
+      0.824
+    ],
+    "cites": [
+      "S3.6 body: flagship exhibit"
+    ],
+    "cross_check": null,
+    "n_eff": 20000,
+    "n_models": 7,
+    "n_periods": 38,
+    "producer": "flagship_fragility",
+    "sd": 0.0096,
+    "spec": "95th percentile of winner_stability under exchangeable models (K=7, T=38) at the flagship's own dimensions -- the upper edge of the same band as flagship.stability_null_p05, reported so both tails of the null are on record. The sd here is the p95 edge's OWN seed-to-seed spread, not to be conflated with flagship.stability_null_p05's sd",
+    "value": 0.804
+  },
+  "flagship.winner_stability": {
+    "cites": [
+      "S3.6 body: flagship exhibit"
+    ],
+    "cross_check": "flagship_fragility.csv: winner_stability",
+    "n_seeds": 20,
+    "producer": "flagship_fragility",
+    "sd": 0.0105,
+    "seed0": 0.662,
+    "spec": "block-bootstrap winner-stability for the flagship's pooled winner, averaged over 20 independent bootstrap seeds via NB.stable_stability (seed0= carries the single seed=0 draw for reference)",
+    "value": 0.67
+  }
+}

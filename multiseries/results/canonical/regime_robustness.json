@@ -1,0 +1,67 @@
+{
+  "_generated": "2026-09-20T05:57:02+00:00",
+  "_n": 6,
+  "_stage": "regime_robustness",
+  "regime.nonidentified_excovid": {
+    "cites": [
+      "S4.1 body: COVID-regime robustness check"
+    ],
+    "cross_check": "regime_robustness.csv: (MCS_ex_covid > 1).sum()",
+    "of": 12,
+    "producer": "regime_robustness",
+    "spec": "series with |MCS|>1 after deleting each series' own COVID years (2020-2021); alpha=0.1",
+    "value": 10
+  },
+  "regime.nonidentified_full": {
+    "cites": [
+      "S4.1 body: COVID-regime robustness check"
+    ],
+    "cross_check": "regime_robustness.csv: (MCS_full > 1).sum()",
+    "of": 12,
+    "producer": "regime_robustness",
+    "spec": "series with |MCS|>1 on the full sample; absolute loss, alpha=0.1",
+    "value": 11
+  },
+  "regime.placebo_below_excovid_median": {
+    "cites": [
+      "S13.3: COVID-regime robustness check"
+    ],
+    "cross_check": "regime_robustness.csv: placebo_pctile_of_excovid.median()",
+    "n_series": 12,
+    "producer": "regime_robustness",
+    "spec": "median across series of the tie-corrected (mid-rank) percentile of the ex-COVID |MCS| within its own 200-draw placebo distribution; 50 means the ex-COVID result is typical of dropping an equal-sized set of non-COVID years -- drawn at random, NOT a contiguous block. |MCS| is a small integer and placebo distributions are often heavily tied, so a strict less-than count would misread a degenerate, perfectly-typical case (100% of draws equal to the ex-COVID value) as maximally extreme rather than as 50",
+    "value": 43.0
+  },
+  "regime.placebo_extreme_series": {
+    "cites": [
+      "S4.1 body: COVID-regime robustness check"
+    ],
+    "cross_check": "regime_robustness.csv: (placebo_pctile_of_excovid <= 2).sum()",
+    "of": 12,
+    "producer": "regime_robustness",
+    "spec": "curated series whose ex-COVID |MCS| sits at or below the 2nd percentile of their own 200-draw placebo distribution -- for these the COVID removal is more extreme than essentially any equal-sized random year-drop, the pattern the aggregate median hides",
+    "states": "PAYEMS;PCE;RSAFS",
+    "value": 3
+  },
+  "regime.placebo_nonidentified_pct": {
+    "cites": [
+      "S13.3: COVID-regime robustness check"
+    ],
+    "cross_check": "regime_robustness.csv: (MCS_placebo_mean > 1).mean() * 100",
+    "n_series": 12,
+    "producer": "regime_robustness",
+    "spec": "share of series whose MEAN placebo |MCS| exceeds 1; placebo drops the same NUMBER of non-COVID years as each series' own COVID years, 200 draws per series, isolating the sample-size effect from the COVID effect",
+    "value": 91.66666666666666
+  },
+  "regime.series_mcs_fell_excovid": {
+    "cites": [
+      "S4.1 body: COVID-regime robustness check"
+    ],
+    "cross_check": "regime_robustness.csv: (MCS_ex_covid < MCS_full).sum()",
+    "of": 12,
+    "producer": "regime_robustness",
+    "spec": "curated series whose |MCS| strictly DECREASED when their own COVID years were removed. Read beside regime.placebo_extreme_series: the two sets overlap on 3 of 4 (not the full set -- ['BUSINV'] fall without sitting at an extreme placebo percentile).",
+    "states": "BUSINV;PAYEMS;PCE;RSAFS",
+    "value": 4
+  }
+}

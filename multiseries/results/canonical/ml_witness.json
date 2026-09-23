@@ -1,0 +1,307 @@
+{
+  "_generated": "2026-09-20T07:16:25+00:00",
+  "_n": 29,
+  "_stage": "ml_witness",
+  "llm.concentration": {
+    "cites": [],
+    "cross_check": null,
+    "n_binding_tied": 2,
+    "producer": "ml_witness",
+    "spec": "share of the top model's k*-margin against its binding rival (llm.kstar's `rival`) contributed by the single most influential task, over the top-30 candidate pool -- the same statistic Table 1 reports per curated series (S4) and flagship.concentration reports for the legacy-neural exhibit",
+    "value": 1.089
+  },
+  "llm.concentration_hi": {
+    "cites": [],
+    "cross_check": null,
+    "n_binding_tied": 2,
+    "producer": "ml_witness",
+    "spec": "upper edge of llm.concentration's ambiguity range across all binding-tied rivals -- see llm.concentration_lo",
+    "value": 1.098
+  },
+  "llm.concentration_lo": {
+    "cites": [],
+    "cross_check": null,
+    "n_binding_tied": 2,
+    "producer": "ml_witness",
+    "spec": "lower edge of llm.concentration's ambiguity range across all binding-tied rivals (n_binding_tied>1 here, unlike flagship_fragility.py's degenerate n_binding_tied==1 case) -- the range a reader should read llm.concentration against, not a single point estimate against only one arbitrarily-chosen rival",
+    "value": 1.089
+  },
+  "llm.condorcet_status": {
+    "cites": [],
+    "cross_check": null,
+    "producer": "ml_witness",
+    "spec": "whether a Condorcet winner exists among the top-30 pool, and if not, why (cycle or tie) -- the same {score, plurality, Condorcet} triple that election.condorcet_winner_cells / _cycle_cells / _tie_cells count across the curated-panel cells, and that flagship.condorcet_status reports for the legacy-neural exhibit",
+    "value": "cycle"
+  },
+  "llm.condorcet_winner": {
+    "cites": [],
+    "cross_check": null,
+    "producer": "ml_witness",
+    "spec": "the Condorcet winner among the top-30 candidate pool (the model beating every other model on a majority of the 6 tasks), if one exists -- None if the pairwise-comparison graph has a majority cycle or a tie (see llm.condorcet_status)",
+    "value": null
+  },
+  "llm.crowd_null_k16": {
+    "cites": [
+      "N2 body: the finding"
+    ],
+    "cross_check": null,
+    "first_permutation": 0.468,
+    "n_perm": 50,
+    "null_sd": 0.0272,
+    "producer": "ml_witness",
+    "spec": "same statistic as llm.crowd_real_k16 but on a column-shuffled (independence-null) version of the score matrix -- isolates the mechanical crowding effect from real structure. MEAN over 50 column permutations (companions null_sd, first_permutation = the single seed-0 draw)",
+    "value": 0.44472
+  },
+  "llm.crowd_null_k2": {
+    "cites": [
+      "N2 body: the finding"
+    ],
+    "cross_check": null,
+    "first_permutation": 0.278,
+    "n_perm": 50,
+    "null_sd": 0.023,
+    "producer": "ml_witness",
+    "spec": "same statistic as llm.crowd_real_k2 but on a column-shuffled (independence-null) version of the score matrix -- isolates the mechanical crowding effect from real structure. MEAN over 50 column permutations (companions null_sd, first_permutation = the single seed-0 draw)",
+    "value": 0.25256
+  },
+  "llm.crowd_null_k32": {
+    "cites": [
+      "N2 body: the finding"
+    ],
+    "cross_check": null,
+    "first_permutation": 0.49,
+    "n_perm": 50,
+    "null_sd": 0.0278,
+    "producer": "ml_witness",
+    "spec": "same statistic as llm.crowd_real_k32 but on a column-shuffled (independence-null) version of the score matrix -- isolates the mechanical crowding effect from real structure. MEAN over 50 column permutations (companions null_sd, first_permutation = the single seed-0 draw)",
+    "value": 0.48916
+  },
+  "llm.crowd_null_k4": {
+    "cites": [
+      "N2 body: the finding"
+    ],
+    "cross_check": null,
+    "first_permutation": 0.344,
+    "n_perm": 50,
+    "null_sd": 0.0193,
+    "producer": "ml_witness",
+    "spec": "same statistic as llm.crowd_real_k4 but on a column-shuffled (independence-null) version of the score matrix -- isolates the mechanical crowding effect from real structure. MEAN over 50 column permutations (companions null_sd, first_permutation = the single seed-0 draw)",
+    "value": 0.3494
+  },
+  "llm.crowd_null_k64": {
+    "cites": [
+      "N2 body: the finding"
+    ],
+    "cross_check": null,
+    "first_permutation": 0.562,
+    "n_perm": 50,
+    "null_sd": 0.0322,
+    "producer": "ml_witness",
+    "spec": "same statistic as llm.crowd_real_k64 but on a column-shuffled (independence-null) version of the score matrix -- isolates the mechanical crowding effect from real structure. MEAN over 50 column permutations (companions null_sd, first_permutation = the single seed-0 draw)",
+    "value": 0.52996
+  },
+  "llm.crowd_null_k8": {
+    "cites": [
+      "N2 body: the finding"
+    ],
+    "cross_check": null,
+    "first_permutation": 0.45,
+    "n_perm": 50,
+    "null_sd": 0.0249,
+    "producer": "ml_witness",
+    "spec": "same statistic as llm.crowd_real_k8 but on a column-shuffled (independence-null) version of the score matrix -- isolates the mechanical crowding effect from real structure. MEAN over 50 column permutations (companions null_sd, first_permutation = the single seed-0 draw)",
+    "value": 0.40804
+  },
+  "llm.crowd_real_k16": {
+    "cites": [
+      "N2 body: the finding"
+    ],
+    "cross_check": null,
+    "producer": "ml_witness",
+    "spec": "share of 16-model random draws from the real Open LLM Leaderboard where the mean-loss winner differs from the rank-aggregation (Borda-style) winner",
+    "value": 0.226
+  },
+  "llm.crowd_real_k2": {
+    "cites": [
+      "N2 body: the finding"
+    ],
+    "cross_check": null,
+    "producer": "ml_witness",
+    "spec": "share of 2-model random draws from the real Open LLM Leaderboard where the mean-loss winner differs from the rank-aggregation (Borda-style) winner",
+    "value": 0.064
+  },
+  "llm.crowd_real_k32": {
+    "cites": [
+      "N2 body: the finding"
+    ],
+    "cross_check": null,
+    "producer": "ml_witness",
+    "spec": "share of 32-model random draws from the real Open LLM Leaderboard where the mean-loss winner differs from the rank-aggregation (Borda-style) winner",
+    "value": 0.308
+  },
+  "llm.crowd_real_k4": {
+    "cites": [
+      "N2 body: the finding"
+    ],
+    "cross_check": null,
+    "producer": "ml_witness",
+    "spec": "share of 4-model random draws from the real Open LLM Leaderboard where the mean-loss winner differs from the rank-aggregation (Borda-style) winner",
+    "value": 0.128
+  },
+  "llm.crowd_real_k64": {
+    "cites": [
+      "N2 body: the finding"
+    ],
+    "cross_check": null,
+    "producer": "ml_witness",
+    "spec": "share of 64-model random draws from the real Open LLM Leaderboard where the mean-loss winner differs from the rank-aggregation (Borda-style) winner",
+    "value": 0.362
+  },
+  "llm.crowd_real_k8": {
+    "cites": [
+      "N2 body: the finding"
+    ],
+    "cross_check": null,
+    "producer": "ml_witness",
+    "spec": "share of 8-model random draws from the real Open LLM Leaderboard where the mean-loss winner differs from the rank-aggregation (Borda-style) winner",
+    "value": 0.19
+  },
+  "llm.fragile": {
+    "cites": [],
+    "cross_check": null,
+    "producer": "ml_witness",
+    "spec": "whether the Open LLM Leaderboard's top model meets the paper's fixed fragile rule (winner_stability<0.60, or reversal with k*/T<0.25) -- the same rule Table 1 applies per curated series and flagship.fragile reports for the legacy-neural exhibit",
+    "value": true
+  },
+  "llm.kstar": {
+    "cites": [
+      "N2 body: the finding"
+    ],
+    "cross_check": null,
+    "of": 6,
+    "producer": "ml_witness",
+    "rival": "Qwen/Qwen2.5-72B-Instruct",
+    "spec": "fewest of the 6 Open LLM Leaderboard tasks whose deletion flips the top (mean-score) model against its BINDING rival (the opponent that overtakes the top model fastest, named here as `rival`)",
+    "value": 1
+  },
+  "llm.mean_cross_task_corr": {
+    "cites": [
+      "N2 body: the crowding finding"
+    ],
+    "cross_check": null,
+    "n_models": 4497,
+    "producer": "ml_witness",
+    "spec": "mean pairwise correlation across the 6 Open LLM Leaderboard tasks' loss columns, computed on the FULL 4497-model board (not the top-30 pool) -- positive means good models tend to win on every task (mean and Borda aggregation agree). This is the FULL-BOARD figure; llm.mean_cross_task_corr_top30 is the value that belongs to any claim about the top-30 pool",
+    "value": 0.6724482800664001
+  },
+  "llm.mean_cross_task_corr_top30": {
+    "band": [
+      -0.87,
+      0.79
+    ],
+    "cites": [
+      "N2 body: the finding"
+    ],
+    "cross_check": null,
+    "n_models": 30,
+    "producer": "ml_witness",
+    "spec": "mean pairwise correlation across the 6 Open LLM Leaderboard tasks' loss columns, computed on the ACTUAL top-30 candidate pool (K=30, the same Ld k*/winner_stability are computed on) -- the value the companion note's top-30 claim cites, distinct from llm.mean_cross_task_corr's full-board figure",
+    "value": -0.0369
+  },
+  "llm.random30_cross_task_corr_mean": {
+    "band": [
+      0.551,
+      0.773
+    ],
+    "cites": [
+      "N2 body: the range-restriction check"
+    ],
+    "cross_check": null,
+    "n_draws": 2000,
+    "producer": "ml_witness",
+    "spec": "mean pairwise cross-task correlation on RANDOM (not top-ranked) K=30 draws from the full leaderboard, 2000 draws -- the range-restriction null the top-30 pool's own correlation (llm.mean_cross_task_corr_top30) must be read against before treating it as an independent finding rather than a consequence of selecting on mean score",
+    "value": 0.67
+  },
+  "llm.reversal": {
+    "cites": [],
+    "cross_check": null,
+    "producer": "ml_witness",
+    "spec": "whether the top-30 pool's pooled (mean-loss) winner differs from its per-task (plurality) winner -- the same statistic Table 1 reports per curated series as its `Reversal` column and flagship.reversal reports for the legacy-neural exhibit",
+    "value": true
+  },
+  "llm.reversal_condorcet": {
+    "cites": [],
+    "cross_check": null,
+    "producer": "ml_witness",
+    "spec": "whether the top-30 pool's pooled (mean-loss) winner differs from its Condorcet winner (when one exists) -- the Condorcet-comparison analogue of llm.reversal's plurality comparison",
+    "value": false
+  },
+  "llm.top_model": {
+    "cites": [],
+    "cross_check": null,
+    "producer": "ml_witness",
+    "spec": "the #1 Open LLM Leaderboard model by mean loss over the 6 tasks, among the top-30 candidate pool k*/winner_stability are computed on -- the model llm.kstar's margin and llm.kstar's `rival` qualifier are both measured against",
+    "value": "MaziyarPanahi/calme-3.2-instruct-78b"
+  },
+  "llm.winner_stability": {
+    "band": [
+      0.653,
+      0.694
+    ],
+    "cites": [
+      "N4 body: calibrating winner_stability"
+    ],
+    "cross_check": null,
+    "n_seeds": 20,
+    "producer": "ml_witness",
+    "sd": 0.0113,
+    "spec": "iid-bootstrap (stability_block=1 -- the 6 tasks are an exchangeable battery with no adjacency, see this call site's own comment) winner_stability of the Open LLM Leaderboard's top model over its 6 tasks, computed on the top-30 candidate pool (K=30), AVERAGED OVER 20 independent bootstrap seeds via NB.stable_stability (seed=0 alone gives 0.68, within this value's own seed-to-seed sd=0.0113). Read against llm.winner_stability_null_median/p05/p95 -- its own calibrated exchangeable null at this exact (K, T), not the K=6/T=32 null quoted elsewhere in the project (a different panel's dimensions) and not a bare fragile/robust threshold",
+    "value": 0.672
+  },
+  "llm.winner_stability_null_median": {
+    "cites": [
+      "N4 body: calibrating winner_stability"
+    ],
+    "cross_check": null,
+    "n_eff": 20000,
+    "n_models": 30,
+    "n_periods": 6,
+    "producer": "ml_witness",
+    "spec": "median winner_stability under EXCHANGEABLE models (K=30, T=6, 20000 panels across 20 independent seeds): what the statistic returns when the winner is arbitrary by construction, at the Open LLM Leaderboard's own dimensions",
+    "value": 0.363
+  },
+  "llm.winner_stability_null_p05": {
+    "band": [
+      0.129,
+      0.16
+    ],
+    "cites": [
+      "N4 body: calibrating winner_stability"
+    ],
+    "cross_check": null,
+    "n_eff": 20000,
+    "n_models": 30,
+    "n_periods": 6,
+    "producer": "ml_witness",
+    "sd": 0.0083,
+    "spec": "5th percentile of winner_stability under exchangeable models (K=30, T=6) at the leaderboard's own dimensions; a value below this is unusually fragile RELATIVE TO CHANCE",
+    "value": 0.146
+  },
+  "llm.winner_stability_null_p95": {
+    "band": [
+      0.623,
+      0.695
+    ],
+    "cites": [
+      "N4 body: calibrating winner_stability"
+    ],
+    "cross_check": null,
+    "n_eff": 20000,
+    "n_models": 30,
+    "n_periods": 6,
+    "producer": "ml_witness",
+    "sd": 0.0176,
+    "spec": "95th percentile of winner_stability under exchangeable models (K=30, T=6) at the leaderboard's own dimensions -- the upper edge of the same band as llm.winner_stability_null_p05, reported so both tails of the null are on record. The sd here is the p95 edge's OWN seed-to-seed spread, not to be conflated with llm.winner_stability_null_p05's sd -- the companion note's observed-vs-p95 comparison needs this one specifically",
+    "value": 0.671
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "pulled_at": "2026-06-30T23:34:03",
+  "criteria": {
+    "vintages_cover": "2007-06-01",
+    "rebase_tol": 0.15,
+    "probe_month": "2005-01-01"
+  },
+  "series": {
+    "PAYEMS": {
+      "label": "Total nonfarm payrolls",
+      "status": "PASS",
+      "reason": "already present"
+    },
+    "MANEMP": {
+      "label": "Manufacturing emp",
+      "status": "PASS",
+      "reason": "ok",
+      "n_rows": 8889,
+      "vintage_min": "1961-11-03",
+      "ratio_2005": 1.003,
+      "sha16": "f58b0e93097e4df6"
+    },
+    "DMANEMP": {
+      "label": "Durable-mfg emp",
+      "status": "PASS",
+      "reason": "ok",
+      "n_rows": 9090,
+      "vintage_min": "1961-11-03",
+      "ratio_2005": 1.0,
+      "sha16": "bd9a53abfe6c51d2"
+    },
+    "NDMANEMP": {
+      "label": "Nondurable-mfg emp",
+      "status": "PASS",
+      "reason": "ok",
+      "n_rows": 8415,
+      "vintage_min": "1961-11-03",
+      "ratio_2005": 1.01,
+      "sha16": "e0239476e3090c06"
+    },
+    "USCONS": {
+      "label": "Construction emp",
+      "status": "PASS",
+      "reason": "ok",
+      "n_rows": 7858,
+      "vintage_min": "1961-11-03",
+      "ratio_2005": 0.996,
+      "sha16": "0b8b169576c91353"
+    },
+    "USGOOD": {
+      "label": "Goods-producing emp",
+      "status": "PASS",
+      "reason": "ok",
+      "n_rows": 8184,
+      "vintage_min": "1971-09-03",
+      "ratio_2005": 1.001,
+      "sha16": "ec0dd1a394be65f0"
+    },
+    "SRVPRD": {
+      "label": "Service-providing emp",
+      "status": "PASS",
+      "reason": "ok",
+      "n_rows": 11158,
+      "vintage_min": "1971-09-03",
+      "ratio_2005": 0.998,
+      "sha16": "7d00dae2c87e145e"
+    },
+    "USTRADE": {
+      "label": "Retail-trade emp",
+      "status": "PASS",
+      "reason": "ok",
+      "n_rows": 10757,
+      "vintage_min": "1961-11-03",
+      "ratio_2005": 0.998,
+      "sha16": "622c865ddd6b2c79"
+    },
+    "USWTRADE": {
+      "label": "Wholesale-trade emp",
+      "status": "PASS",
+      "reason": "ok",
+      "n_rows": 9170,
+      "vintage_min": "1961-11-03",
+      "ratio_2005": 1.008,
+      "sha16": "f2123a547e2f5f8f"
+    },
+    "USTPU": {
+      "label": "Trade/transport/util emp",
+      "status": "PASS",
+      "reason": "ok",
+      "n_rows": 9667,
+      "vintage_min": "1961-11-03",
+      "ratio_2005": 1.002,
+      "sha16": "9327138be794a4e4"
+    },
+    "USFIRE": {
+      "label": "Financial emp",
+      "status": "PASS",
+      "reason": "ok",
+      "n_rows": 8169,
+      "vintage_min": "1961-11-03",
+      "ratio_2005": 1.001,
+      "sha16": "9bbb909c51c219a6"
+    },
+    "USINFO": {
+      "label": "Information emp",
+      "status": "PASS",
+      "reason": "ok",
+      "n_rows": 3092,
+      "vintage_min": "2003-06-06",
+      "ratio_2005": 1.022,
+      "sha16": "f5b9cee51ae9f512"
+    },
+    "USPBS": {
+      "label": "Prof/business emp",
+      "status": "PASS",
+      "reason": "ok",
+      "n_rows": 4692,
+      "vintage_min": "2003-06-06",
+      "ratio_2005": 0.998,
+      "sha16": "9b41811c1aaba567"
+    },
+    "USEHS": {
+      "label": "Education/health emp",
+      "status": "PASS",
+      "reason": "ok",
+      "n_rows": 4171,
+      "vintage_min": "2003-06-06",
+      "ratio_2005": 0.984,
+      "sha16": "d5aee320187237d4"
+    },
+    "USLAH": {
+      "label": "Leisure/hospitality emp",
+      "status": "PASS",
+      "reason": "ok",
+      "n_rows": 2857,
+      "vintage_min": "2003-06-06",
+      "ratio_2005": 0.995,
+      "sha16": "52045bdd2cf5a2a9"
+    },
+    "USGOVT": {
+      "label": "Government emp",
+      "status": "PASS",
+      "reason": "ok",
+      "n_rows": 8367,
+      "vintage_min": "1961-11-03",
+      "ratio_2005": 0.999,
+      "sha16": "81e65e5c1ce6deaf"
+    },
+    "USMINE": {
+      "label": "Mining/logging emp",
+      "status": "PASS",
+      "reason": "ok",
+      "n_rows": 7052,
+      "vintage_min": "1961-11-03",
+      "ratio_2005": 0.997,
+      "sha16": "9543b04c08d6b2a5"
+    },
+    "UNEMPLOY": {
+      "label": "Unemployment level",
+      "status": "PASS",
+      "reason": "ok",
+      "n_rows": 5748,
+      "vintage_min": "1961-02-09",
+      "ratio_2005": 0.994,
+      "sha16": "b5358fe127fde7c6"
+    },
+    "CE16OV": {
+      "label": "Civilian employment level",
+      "status": "PASS",
+      "reason": "ok",
+      "n_rows": 5806,
+      "vintage_min": "1961-02-09",
+      "ratio_2005": 1.0,
+      "sha16": "125c93652dce2ef6"
+    },
+    "HOUST": {
+      "label": "Housing starts",
+      "status": "PASS",
+      "reason": "already present"
+    },
+    "PERMIT": {
+      "label": "Building permits",
+      "status": "PASS",
+      "reason": "ok",
+      "n_rows": 2366,
+      "vintage_min": "1999-08-17",
+      "ratio_2005": 0.984,
+      "sha16": "a2ea3ffe36a53a36"
+    },
+    "DGORDER": {
+      "label": "Durable-goods orders",
+      "status": "PASS",
+      "reason": "already present"
+    },
+    "AMDMNO": {
+      "label": "Durable-goods new orders",
+      "status": "FETCH_ERR Bad Request.  The series does not exist in ALFRED but may exist in FRED.  Try setting realtime_start and realtime_end to today's date or removing the realtime_start and realtime_end variables."
+    },
+    "RSAFS": {
+      "label": "Retail & food sales",
+      "status": "PASS",
+      "reason": "already present"
+    }
+  },
+  "passed": [
+    "PAYEMS",
+    "MANEMP",
+    "DMANEMP",
+    "NDMANEMP",
+    "USCONS",
+    "USGOOD",
+    "SRVPRD",
+    "USTRADE",
+    "USWTRADE",
+    "USTPU",
+    "USFIRE",
+    "USINFO",
+    "USPBS",
+    "USEHS",
+    "USLAH",
+    "USGOVT",
+    "USMINE",
+    "UNEMPLOY",
+    "CE16OV",
+    "HOUST",
+    "PERMIT",
+    "DGORDER",
+    "RSAFS"
+  ],
+  "n_passed": 23
+}

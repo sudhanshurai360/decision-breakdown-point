@@ -1,0 +1,163 @@
+{
+  "_generated": "2026-09-20T07:26:41+00:00",
+  "_n": 16,
+  "_stage": "kstar_persistence",
+  "kstar_persistence.mean_loss_gap_when_not_persisting": {
+    "cites": [
+      "S13.5: k* predictive-persistence check"
+    ],
+    "cross_check": "kstar_persistence.csv: loss_gap.mean() restricted to (~excluded) & (~persists)",
+    "n": 43,
+    "producer": "kstar_persistence",
+    "spec": "mean second-half loss gap (second-half winner's mean loss subtracted from the first-half winner's mean second-half loss) among the n_included - n_persist series where the first-half winner does NOT persist -- how badly, on average, the stale winner loses when it loses",
+    "value": 0.08552816143246618
+  },
+  "kstar_persistence.n_curated_included": {
+    "cites": [
+      "S13.5: k* predictive-persistence check"
+    ],
+    "cross_check": "kstar_persistence.csv: ((~excluded) & (source=='curated')).sum()",
+    "of": 86,
+    "producer": "kstar_persistence",
+    "spec": "of n_included, how many are curated (vs FRED-MD population) series",
+    "value": 12
+  },
+  "kstar_persistence.n_excluded_min_T": {
+    "cites": [
+      "S13.5: k* predictive-persistence check"
+    ],
+    "cross_check": "kstar_persistence.csv: excluded.sum()",
+    "of": 86,
+    "producer": "kstar_persistence",
+    "spec": "series excluded because the first or second half of the chronological split has fewer than MIN_T_PER_HALF=8 years",
+    "value": 0
+  },
+  "kstar_persistence.n_fredmd_included": {
+    "cites": [
+      "S13.5: k* predictive-persistence check"
+    ],
+    "cross_check": "kstar_persistence.csv: ((~excluded) & (source=='fredmd')).sum()",
+    "of": 86,
+    "producer": "kstar_persistence",
+    "spec": "of n_included, how many are FRED-MD population-sweep series",
+    "value": 74
+  },
+  "kstar_persistence.n_included": {
+    "cites": [
+      "S13.5: k* predictive-persistence check"
+    ],
+    "cross_check": "kstar_persistence.csv: (~excluded).sum()",
+    "of": 86,
+    "producer": "kstar_persistence",
+    "spec": "series analyzed after the minimum-T-per-half gate; n_series_attempted - n_excluded_min_T",
+    "value": 86
+  },
+  "kstar_persistence.n_kstar1": {
+    "cites": [
+      "S13.5: k* predictive-persistence check"
+    ],
+    "cross_check": "kstar_persistence.csv: ((~excluded) & (k1 <= 1)).sum()",
+    "producer": "kstar_persistence",
+    "spec": "included series with first-half k*<=1 (k*=1, the task's 'most fragile' classification, plus the rarer degenerate k*=0 exact-tie case, at least as fragile as k*=1)",
+    "value": 37
+  },
+  "kstar_persistence.n_kstar_gt1": {
+    "cites": [
+      "S13.5: k* predictive-persistence check"
+    ],
+    "cross_check": "kstar_persistence.csv: ((~excluded) & (k1 > 1)).sum()",
+    "producer": "kstar_persistence",
+    "spec": "included series with first-half k*>1 ('larger k*', the comparison group)",
+    "value": 49
+  },
+  "kstar_persistence.n_persist": {
+    "cites": [
+      "S13.5: k* predictive-persistence check"
+    ],
+    "cross_check": "kstar_persistence.csv: ((~excluded) & persists).sum()",
+    "of": 86,
+    "producer": "kstar_persistence",
+    "spec": "included series where the first-half pooled winner is STILL the pooled winner on the second half (exact model-name match)",
+    "value": 43
+  },
+  "kstar_persistence.n_persist_kstar1": {
+    "cites": [
+      "S13.5: k* predictive-persistence check"
+    ],
+    "cross_check": "kstar_persistence.csv: ((~excluded) & (k1 <= 1) & persists).sum()",
+    "of": 37,
+    "producer": "kstar_persistence",
+    "spec": "included series with first-half k*<=1 whose first-half winner persists into the second half -- the raw numerator of persist_rate_kstar1",
+    "value": 10
+  },
+  "kstar_persistence.n_persist_kstar_gt1": {
+    "cites": [
+      "S13.5: k* predictive-persistence check"
+    ],
+    "cross_check": "kstar_persistence.csv: ((~excluded) & (k1 > 1) & persists).sum()",
+    "of": 49,
+    "producer": "kstar_persistence",
+    "spec": "included series with first-half k*>1 whose first-half winner persists into the second half -- the raw numerator of persist_rate_kstar_gt1",
+    "value": 33
+  },
+  "kstar_persistence.n_series_attempted": {
+    "cites": [
+      "S13.5: k* predictive-persistence check"
+    ],
+    "cross_check": "kstar_persistence.csv: len(R)",
+    "producer": "kstar_persistence",
+    "spec": "series considered before the >=8-years-per-half minimum-T gate: the 12 curated series (breadth_distinct_predictions.csv) plus the 74 series surviving fred_md_sweep.py's own length/finiteness filters",
+    "value": 86
+  },
+  "kstar_persistence.persist_rate_kstar1": {
+    "cites": [
+      "S13.5: k* predictive-persistence check"
+    ],
+    "cross_check": "kstar_persistence.csv: persists.mean() restricted to (~excluded) & (k1 <= 1)",
+    "n": 37,
+    "producer": "kstar_persistence",
+    "spec": "second-half persistence rate among the k*<=1 ('most fragile') group",
+    "value": 0.2702702702702703
+  },
+  "kstar_persistence.persist_rate_kstar_gt1": {
+    "cites": [
+      "S13.5: k* predictive-persistence check"
+    ],
+    "cross_check": "kstar_persistence.csv: persists.mean() restricted to (~excluded) & (k1 > 1)",
+    "n": 49,
+    "producer": "kstar_persistence",
+    "spec": "second-half persistence rate among the k*>1 ('larger k*') group",
+    "value": 0.673469387755102
+  },
+  "kstar_persistence.persist_rate_overall": {
+    "cites": [
+      "S13.5: k* predictive-persistence check"
+    ],
+    "cross_check": "kstar_persistence.csv: kstar_persistence.n_persist / kstar_persistence.n_included",
+    "producer": "kstar_persistence",
+    "spec": "n_persist / n_included",
+    "value": 0.5
+  },
+  "kstar_persistence.spearman_kstar_over_T_vs_persist": {
+    "cites": [
+      "S13.5: k* predictive-persistence check"
+    ],
+    "cross_check": "kstar_persistence.csv: spearman(k1_over_T1, persists.astype(int)) over ~excluded rows",
+    "n": 86,
+    "p_value": 0.00044585983181071764,
+    "producer": "kstar_persistence",
+    "spec": "Spearman rank correlation, across included series, between first-half k*/T1 and the binary second-half persistence indicator (1 = same model still wins, 0 = it does not)",
+    "value": 0.37048972123501017
+  },
+  "kstar_persistence.spearman_kstar_over_T_vs_rank_percentile": {
+    "cites": [
+      "S13.5: k* predictive-persistence check"
+    ],
+    "cross_check": "kstar_persistence.csv: spearman(k1_over_T1, rank_percentile) over ~excluded rows",
+    "n": 86,
+    "p_value": 0.001160742751168032,
+    "producer": "kstar_persistence",
+    "spec": "Spearman rank correlation, across included series, between first-half k*/T1 (normalized breakdown point, since T1 varies 13-18 across this population and a raw k* count is not comparable across series with different-length first halves) and the second-half rank-percentile of the first-half winner among all candidate models (1.0 = still the best model on the second half; lower = it fell further down the second-half ranking). This is the headline continuous predictive-validity check for k*",
+    "value": 0.34453068451120006
+  }
+}

@@ -1,0 +1,13 @@
+series,ours_size,arch_size,ours_members,arch_members,exact_set_match,size_match,arch_mbb_members,ours_eR_members,raw_eq_arch_mbb,eR_eq_arch_mbb
+BOPGEXP,3,4,0;3;5,0;2;3;5,False,False,0;2;3;5,0;2;3;5,False,True
+BOPGIMP,3,3,0;3;5,0;3;5,True,True,0;3;5,0;3;5,True,True
+BUSINV,5,2,0;1;2;3;5,1;2,False,False,0;1;2;3;5,0;1;2;3;5,True,True
+DGORDER,5,5,0;1;2;3;5,0;1;2;3;5,True,True,0;1;2;3;5,0;1;2;3;5,True,True
+HOUST,5,5,0;1;2;3;5,0;1;2;3;5,True,True,0;1;2;3;5,0;1;2;3;5,True,True
+M2SL,5,5,0;1;2;3;5,0;1;2;3;5,True,True,0;1;2;3;5,0;1;2;3;5,True,True
+PAYEMS,5,5,0;1;2;3;5,0;1;2;3;5,True,True,0;1;2;3;5,0;1;2;3;5,True,True
+PCE,4,4,0;2;3;5,0;2;3;5,True,True,0;2;3;5,0;2;3;5,True,True
+PI,1,1,0,0,True,True,0,0,True,True
+RSAFS,2,2,1;4,1;4,True,True,1;4,1;4,True,True
+TCU,5,5,0;1;2;3;5,0;1;2;3;5,True,True,0;1;2;3;5,0;1;2;3;5,True,True
+UNEMPLOY,4,4,0;1;3;5,0;1;3;5,True,True,0;1;3;5,0;1;3;5,True,True

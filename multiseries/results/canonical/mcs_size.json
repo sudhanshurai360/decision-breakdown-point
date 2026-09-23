@@ -1,0 +1,162 @@
+{
+  "_generated": "2026-09-23T10:14:33+00:00",
+  "_n": 10,
+  "_stage": "mcs_size",
+  "mcssize.alpha_sweep_invariant": {
+    "alpha_max": 0.1,
+    "alpha_min": 0.001,
+    "cites": [],
+    "cross_check": "mcs_size_alpha_sweep.csv: nunique(nonidentified)",
+    "distinct_counts": [
+      11
+    ],
+    "distinct_pi": [
+      1
+    ],
+    "producer": "mcs_size",
+    "provenance": "mcs_size.py::main, set equality over the sweep",
+    "spec": "True when the curated non-identification count takes a SINGLE value across the whole alpha sweep, with PI point-identified throughout. This is the claim \u00a74.1 rests on when it says the headline does not depend on the test's level",
+    "value": true
+  },
+  "mcssize.alpha_sweep_nonidentified": {
+    "alpha": 0.001,
+    "alphas": [
+      0.1,
+      0.05,
+      0.02,
+      0.01,
+      0.001
+    ],
+    "cites": [],
+    "counts": [
+      11,
+      11,
+      11,
+      11,
+      11
+    ],
+    "cross_check": "mcs_size_alpha_sweep.csv: nonidentified at min(alpha)",
+    "mcs_PI": 1,
+    "producer": "mcs_size",
+    "provenance": "mcs_size.py::main alpha sweep over the curated per-year absolute-loss panels",
+    "spec": "Curated-panel non-identification count at the STRICTEST alpha swept (0.001, vs the paper's nominal 0.10). Note: a stricter alpha eliminates LESS readily, so the surviving (non-identified) set can mechanically only STAY THE SAME OR GROW as alpha shrinks, never shrink. An unchanged count here is therefore expected regardless of whether mcssize.size_at_nominal_10's over-rejection is real, and does NOT by itself rule out that the nominal-alpha=0.10 count is size-inflated. What it DOES show, together with mcssize.alpha_sweep_invariant: relaxing elimination all the way to alpha=0.001 does not reverse or shrink the finding -- i.e. the headline is not an artifact of a specific, aggressive choice of alpha",
+    "total": 12,
+    "value": 11
+  },
+  "mcssize.oversize_ratio": {
+    "cites": [
+      "S4.2 body: empirical size at the nominal alpha"
+    ],
+    "cross_check": "round(mcssize.size_at_nominal_10 / 0.10, 1) -- the raw quotient is 2.65, and Python's round-half-to-even takes it to 2.6, not 2.7",
+    "producer": "mcs_size",
+    "spec": "mcssize.size_at_nominal_10 divided by the nominal alpha=0.10, i.e. how many times oversized the elimination rule's empirical size is at these panel dimensions",
+    "value": 2.6
+  },
+  "mcssize.size_ar1_at_nominal_10": {
+    "K": 6,
+    "T": 30,
+    "block": 3,
+    "cites": [
+      "S4.2 body: empirical size at the nominal alpha"
+    ],
+    "cross_check": "mcs_size_ar1.csv: size where K=6,T=30,null=='ar1'",
+    "iid": 0.265,
+    "n_rep": 2000,
+    "phi": 0.25,
+    "producer": "mcs_size",
+    "provenance": "mcs_size.py::size_row on null_panel_ar1 draws",
+    "se": 0.0108,
+    "spec": "Empirical rejection rate of the first-step equal-predictive-ability null on EXACTLY-NULL panels whose loss series each follow an AR(1) with the panel's own pooled lag-1 differential autocorrelation (phi=0.25, election.ar1null_coefficient), at the paper's K/T/block and nominal alpha=0.10. The i.i.d. figure (mcssize.size_at_nominal_10, in the `iid` field) understates the operating size under the serial dependence the losses actually carry; the direction is the same (sets too small, non-identification counts a lower bound, Section 7's model channel understated)",
+    "value": 0.367
+  },
+  "mcssize.size_arch": {
+    "agreement": 0.935,
+    "cites": [
+      "S4.2 body: arch size cross-check"
+    ],
+    "cross_check": null,
+    "n_rep": 600,
+    "ours": 0.28,
+    "producer": "mcs_size",
+    "provenance": "mcs_size.py::arch_cross_check",
+    "spec": "The SAME level measured through arch 8.0.0's independent implementation of the Hansen-Lunde-Nason range statistic on IDENTICAL null panels. Its agreement with mcssize.size_at_nominal_10 is what establishes the size distortion as a property of the statistic at these panel dimensions rather than a defect in this repository",
+    "value": 0.335
+  },
+  "mcssize.size_at_K10": {
+    "K": 10,
+    "T": 30,
+    "block": 3,
+    "cites": [
+      "S4.2 body: size-distortion finite-sample pattern"
+    ],
+    "cross_check": "mcs_size.csv: size where K=10,T=30,block=3",
+    "n_rep": 2000,
+    "producer": "mcs_size",
+    "provenance": "mcs_size.py::size_row on null_panel draws",
+    "se": 0.0109,
+    "spec": "Same empirical-size measurement as mcssize.size_at_nominal_10, at K=10 models instead of the paper's K=6, holding T/block fixed -- the K-grows leg of the finite-sample pattern",
+    "value": 0.399
+  },
+  "mcssize.size_at_T400": {
+    "K": 6,
+    "T": 400,
+    "block": 3,
+    "cites": [
+      "S4.2 body: size-distortion finite-sample pattern"
+    ],
+    "cross_check": "mcs_size.csv: size where K=6,T=400,block=3",
+    "n_rep": 2000,
+    "producer": "mcs_size",
+    "provenance": "mcs_size.py::size_row on null_panel draws",
+    "se": 0.007,
+    "spec": "Same empirical-size measurement as mcssize.size_at_nominal_10, at 4x the paper's panel length (T=400 vs T=30), holding K/block fixed -- the T-shrinks leg of the finite-sample pattern",
+    "value": 0.112
+  },
+  "mcssize.size_at_block6": {
+    "K": 6,
+    "T": 30,
+    "block": 6,
+    "cites": [
+      "S4.2 body: size-distortion finite-sample pattern"
+    ],
+    "cross_check": "mcs_size.csv: size where K=6,T=30,block=6",
+    "n_rep": 2000,
+    "producer": "mcs_size",
+    "provenance": "mcs_size.py::size_row on null_panel draws",
+    "se": 0.011,
+    "spec": "Same empirical-size measurement as mcssize.size_at_nominal_10, at double the paper's block length (block=6 vs block=3), holding K/T fixed -- the block-grows leg of the finite-sample pattern",
+    "value": 0.42
+  },
+  "mcssize.size_at_nominal_10": {
+    "K": 6,
+    "T": 30,
+    "block": 3,
+    "cites": [
+      "S4.2 body: empirical size at the nominal alpha"
+    ],
+    "cross_check": "mcs_size.csv: size where K=6,T=30,block=3",
+    "n_rep": 2000,
+    "producer": "mcs_size",
+    "provenance": "mcs_size.py::size_row on null_panel draws",
+    "se": 0.0099,
+    "spec": "Empirical rejection rate of the first-step equal-predictive-ability null (at least one model eliminated) on EXACTLY-NULL iid panels at the paper's own K/T/block, against a nominal level of 0.10. Greater than nominal means the test eliminates too readily, which makes every confidence set in this paper if anything too SMALL and the non-identification count a lower bound",
+    "value": 0.265
+  },
+  "mcssize.size_state_dims": {
+    "K": 4,
+    "T": 35,
+    "ar1": 0.307,
+    "block": 3,
+    "cites": [
+      "S7 body: multipliers caveat"
+    ],
+    "cross_check": "mcs_size_ar1.csv: size where K=4,T=35",
+    "n_rep": 2000,
+    "phi": 0.25,
+    "producer": "mcs_size",
+    "provenance": "mcs_size.py::size_row at K_STATE/T_STATE",
+    "se": 0.0086,
+    "spec": "The same first-step size at the dimensions of Section 7's state tie-set test (K=4 candidate models, T=35 annual cells): i.i.d. null in the value, AR(1) phi=0.25 null in the `ar1` field. Quoted where Section 7 says its tie sets come from an oversized test",
+    "value": 0.179
+  }
+}

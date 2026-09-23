@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper it supports."
+title: "decision-breakdown-point: analysis pipeline for \"When the Best Forecasting Model Is a Tie\""
+type: software
+authors:
+  - family-names: Rai
+    given-names: Sudhanshu
+    orcid: "https://orcid.org/0009-0001-2447-0336"
+    email: me@sudhanshurai.org
+license: MIT
+version: 1.0.0
+date-released: 2026-09-22
+repository-code: "https://github.com/sudhanshurai360/decision-breakdown-point"
+preferred-citation:
+  type: article
+  title: "When the Best Forecasting Model Is a Tie: Pricing Model Choice Against Data Revision in the Extended Benefits Trigger"
+  authors:
+    - family-names: Rai
+      given-names: Sudhanshu
+      orcid: "https://orcid.org/0009-0001-2447-0336"
+  year: 2026
+  url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7503218"
+references:
+  - type: article
+    title: "One Task Flips the Top of a 4,497-Model Leaderboard: A Companion Note on the Decision Breakdown Point"
+    authors:
+      - family-names: Rai
+        given-names: Sudhanshu
+    year: 2026
+    url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7503319"
+  - type: software
+    title: "selection-fragility"
+    authors:
+      - family-names: Rai
+        given-names: Sudhanshu
+    repository-code: "https://github.com/sudhanshurai360/selection-fragility"

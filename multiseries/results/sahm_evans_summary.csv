@@ -1,0 +1,9 @@
+rule,protocol,n_onsets,n_divergent,n_missed,median_spread_mo
+SAHM,published,12,1,0,1.0
+EVANS,published,5,0,0,0.0
+SAHM,published_first_release_each_leg,13,2,0,1.0
+EVANS,published_first_release_each_leg,5,0,0,0.0
+SAHM,all_forecast,12,1,0,4.1
+EVANS,all_forecast,5,1,0,1.0
+SAHM,all_forecast_first_release_each_leg,13,5,1,2.5
+EVANS,all_forecast_first_release_each_leg,5,1,0,1.0

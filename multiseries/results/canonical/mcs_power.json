@@ -1,0 +1,229 @@
+{
+  "_generated": "2026-09-21T01:27:40+00:00",
+  "_n": 23,
+  "_stage": "mcs_power",
+  "mcspower.conditional_power_0pct": {
+    "cites": [
+      "S4.2 body: conditional power"
+    ],
+    "cross_check": "mcs_power.csv: power_conditional where edge_pct==0",
+    "n_hits": 1,
+    "n_qualifying": 12,
+    "n_trials": 72,
+    "producer": "mcs_power",
+    "spec": "detection share at a 0% additive edge RESTRICTED to the 12 of 72 trials where the planted edge actually made the focal model the pooled best. The unconditional figure mixes two failures -- the test could not resolve the edge, and the edge was too small to put the focal model in front at all -- and only the first is a statement about resolution. The gap between the two is the arithmetic ceiling S4.2 previously asserted without measuring",
+    "value": 0.0833
+  },
+  "mcspower.conditional_power_10pct": {
+    "cites": [
+      "S4.2 body: conditional power"
+    ],
+    "cross_check": "mcs_power.csv: power_conditional where edge_pct==10",
+    "n_hits": 47,
+    "n_qualifying": 55,
+    "n_trials": 72,
+    "producer": "mcs_power",
+    "spec": "detection share at a 10% additive edge RESTRICTED to the 55 of 72 trials where the planted edge actually made the focal model the pooled best. The unconditional figure mixes two failures -- the test could not resolve the edge, and the edge was too small to put the focal model in front at all -- and only the first is a statement about resolution. The gap between the two is the arithmetic ceiling S4.2 previously asserted without measuring",
+    "value": 0.8545
+  },
+  "mcspower.conditional_power_2pct": {
+    "cites": [
+      "S4.2 body: conditional power"
+    ],
+    "cross_check": "mcs_power.csv: power_conditional where edge_pct==2",
+    "n_hits": 15,
+    "n_qualifying": 35,
+    "n_trials": 72,
+    "producer": "mcs_power",
+    "spec": "detection share at a 2% additive edge RESTRICTED to the 35 of 72 trials where the planted edge actually made the focal model the pooled best. The unconditional figure mixes two failures -- the test could not resolve the edge, and the edge was too small to put the focal model in front at all -- and only the first is a statement about resolution. The gap between the two is the arithmetic ceiling S4.2 previously asserted without measuring",
+    "value": 0.4286
+  },
+  "mcspower.conditional_power_30pct": {
+    "cites": [
+      "S4.2 body: conditional power"
+    ],
+    "cross_check": "mcs_power.csv: power_conditional where edge_pct==30",
+    "n_hits": 56,
+    "n_qualifying": 61,
+    "n_trials": 72,
+    "producer": "mcs_power",
+    "spec": "detection share at a 30% additive edge RESTRICTED to the 61 of 72 trials where the planted edge actually made the focal model the pooled best. The unconditional figure mixes two failures -- the test could not resolve the edge, and the edge was too small to put the focal model in front at all -- and only the first is a statement about resolution. The gap between the two is the arithmetic ceiling S4.2 previously asserted without measuring",
+    "value": 0.918
+  },
+  "mcspower.conditional_power_50pct": {
+    "cites": [
+      "S4.2 body: conditional power"
+    ],
+    "cross_check": "mcs_power.csv: power_conditional where edge_pct==50",
+    "n_hits": 57,
+    "n_qualifying": 61,
+    "n_trials": 72,
+    "producer": "mcs_power",
+    "spec": "detection share at a 50% additive edge RESTRICTED to the 61 of 72 trials where the planted edge actually made the focal model the pooled best. The unconditional figure mixes two failures -- the test could not resolve the edge, and the edge was too small to put the focal model in front at all -- and only the first is a statement about resolution. The gap between the two is the arithmetic ceiling S4.2 previously asserted without measuring",
+    "value": 0.9344
+  },
+  "mcspower.conditional_power_5pct": {
+    "cites": [
+      "S4.2 body: conditional power"
+    ],
+    "cross_check": "mcs_power.csv: power_conditional where edge_pct==5",
+    "n_hits": 31,
+    "n_qualifying": 49,
+    "n_trials": 72,
+    "producer": "mcs_power",
+    "spec": "detection share at a 5% additive edge RESTRICTED to the 49 of 72 trials where the planted edge actually made the focal model the pooled best. The unconditional figure mixes two failures -- the test could not resolve the edge, and the edge was too small to put the focal model in front at all -- and only the first is a statement about resolution. The gap between the two is the arithmetic ceiling S4.2 previously asserted without measuring",
+    "value": 0.6327
+  },
+  "mcspower.false_discovery_null": {
+    "aux_max": 0.0125,
+    "cites": [
+      "S4.2 body: specificity"
+    ],
+    "cross_check": null,
+    "n": 2000,
+    "producer": "mcs_power",
+    "sd": 0.0027,
+    "spec": "false-discovery rate on a genuine null: 2000 i.i.d. panels at K=6, T=30 with NO planted edge, counting trials where the studentized MCS collapses to any single model, AVERAGED over 5 independent seeds (reported as a mean with its own seed-to-seed sd, since a single-seed estimate at this budget could plausibly differ by roughly this range). This is the specificity figure the paper reports, and it is measured on synthetic i.i.d. panels because neither arm of the sweep can supply one: both run on the real curated panels, which have a real best model even at a zero injected edge",
+    "value": 0.0096
+  },
+  "mcspower.false_discovery_null_raw": {
+    "aux_max": 0.013,
+    "cites": [
+      "S4.2 body: specificity under the headline rule"
+    ],
+    "cross_check": null,
+    "n": 2000,
+    "producer": "mcs_power",
+    "sd": 0.003,
+    "spec": "SAME false-discovery-rate check as mcspower.false_discovery_null, but under the RAW elimination rule -- the one the paper's own headline non-identification count actually uses -- rather than the studentized rule reported elsewhere in this section. Same 5-seed averaging as mcspower.false_discovery_null.",
+    "value": 0.0102
+  },
+  "mcspower.n_trials": {
+    "cites": [
+      "S4.2 body: power of the studentized rule"
+    ],
+    "cross_check": null,
+    "n_panels": 12,
+    "producer": "mcs_power",
+    "spec": "focal-model trials per injected-edge level: one per model per panel, swept deterministically rather than sampled. Every mcspower.* share is out of this many",
+    "value": 72
+  },
+  "mcspower.positive_control": {
+    "cites": [
+      "S4.2 body: positive control"
+    ],
+    "cross_check": null,
+    "edge": 0.3,
+    "n": 2000,
+    "producer": "mcs_power",
+    "spec": "share of 2000 i.i.d. K=6 T=30 panels with a 30% additive edge on one model where the studentized MCS singles that model out. A VALIDITY GATE, not a result: the stage raises if this falls below 0.9, because a harness that cannot find an edge it planted says nothing about one it cannot find in the data",
+    "value": 0.934
+  },
+  "mcspower.recentred_power_0pct": {
+    "cites": [],
+    "cross_check": "mcs_power.csv: power_recentred where edge_pct==0",
+    "producer": "mcs_power",
+    "spec": "SUPERSEDED, never to be quoted as a power estimate: the same trial under the re-centred equal-mean construction with a multiplicative edge, which made one high-variance model structurally uneliminable. Emitted so the artifact is a published number rather than an assertion about an earlier draft",
+    "value": 0.0
+  },
+  "mcspower.recentred_power_10pct": {
+    "cites": [
+      "S4.2 body: the superseded power design"
+    ],
+    "cross_check": "mcs_power.csv: power_recentred where edge_pct==10",
+    "producer": "mcs_power",
+    "spec": "SUPERSEDED, never to be quoted as a power estimate: the same trial under the re-centred equal-mean construction with a multiplicative edge, which made one high-variance model structurally uneliminable. Emitted so the artifact is a published number rather than an assertion about an earlier draft",
+    "value": 0.0
+  },
+  "mcspower.recentred_power_2pct": {
+    "cites": [],
+    "cross_check": "mcs_power.csv: power_recentred where edge_pct==2",
+    "producer": "mcs_power",
+    "spec": "SUPERSEDED, never to be quoted as a power estimate: the same trial under the re-centred equal-mean construction with a multiplicative edge, which made one high-variance model structurally uneliminable. Emitted so the artifact is a published number rather than an assertion about an earlier draft",
+    "value": 0.0
+  },
+  "mcspower.recentred_power_30pct": {
+    "cites": [],
+    "cross_check": "mcs_power.csv: power_recentred where edge_pct==30",
+    "producer": "mcs_power",
+    "spec": "SUPERSEDED, never to be quoted as a power estimate: the same trial under the re-centred equal-mean construction with a multiplicative edge, which made one high-variance model structurally uneliminable. Emitted so the artifact is a published number rather than an assertion about an earlier draft",
+    "value": 0.08333333333333333
+  },
+  "mcspower.recentred_power_50pct": {
+    "cites": [],
+    "cross_check": "mcs_power.csv: power_recentred where edge_pct==50",
+    "producer": "mcs_power",
+    "spec": "SUPERSEDED, never to be quoted as a power estimate: the same trial under the re-centred equal-mean construction with a multiplicative edge, which made one high-variance model structurally uneliminable. Emitted so the artifact is a published number rather than an assertion about an earlier draft",
+    "value": 0.4305555555555556
+  },
+  "mcspower.recentred_power_5pct": {
+    "cites": [],
+    "cross_check": "mcs_power.csv: power_recentred where edge_pct==5",
+    "producer": "mcs_power",
+    "spec": "SUPERSEDED, never to be quoted as a power estimate: the same trial under the re-centred equal-mean construction with a multiplicative edge, which made one high-variance model structurally uneliminable. Emitted so the artifact is a published number rather than an assertion about an earlier draft",
+    "value": 0.0
+  },
+  "mcspower.studentized_power_0pct": {
+    "cites": [
+      "S4.2 body: power of the studentized rule"
+    ],
+    "cross_check": "mcs_power.csv: power_corrected where edge_pct==0",
+    "producer": "mcs_power",
+    "spec": "share of 72 focal-model trials at a 0% ADDITIVE true edge on the UNCENTERED panel where the studentized-rule MCS singles out the focal model alone. The edge is 0% of the panel's grand mean loss over all six candidates (np.mean(base)), a larger unit than the best model's own mean loss used in S3.1. This is the design the paper reports; see mcspower.recentred_power_0pct for the superseded re-centred figure (a multiplicative edge on an equal-mean panel structurally protected one high-variance model from elimination)",
+    "value": 0.013888888888888888
+  },
+  "mcspower.studentized_power_10pct": {
+    "cites": [
+      "S4.2 body: power of the studentized rule"
+    ],
+    "cross_check": "mcs_power.csv: power_corrected where edge_pct==10",
+    "producer": "mcs_power",
+    "spec": "share of 72 focal-model trials at a 10% ADDITIVE true edge on the UNCENTERED panel where the studentized-rule MCS singles out the focal model alone. The edge is 10% of the panel's grand mean loss over all six candidates (np.mean(base)), a larger unit than the best model's own mean loss used in S3.1. This is the design the paper reports; see mcspower.recentred_power_10pct for the superseded re-centred figure (a multiplicative edge on an equal-mean panel structurally protected one high-variance model from elimination)",
+    "value": 0.6527777777777778
+  },
+  "mcspower.studentized_power_2pct": {
+    "cites": [
+      "S4.2 body: power of the studentized rule"
+    ],
+    "cross_check": "mcs_power.csv: power_corrected where edge_pct==2",
+    "producer": "mcs_power",
+    "spec": "share of 72 focal-model trials at a 2% ADDITIVE true edge on the UNCENTERED panel where the studentized-rule MCS singles out the focal model alone. The edge is 2% of the panel's grand mean loss over all six candidates (np.mean(base)), a larger unit than the best model's own mean loss used in S3.1. This is the design the paper reports; see mcspower.recentred_power_2pct for the superseded re-centred figure (a multiplicative edge on an equal-mean panel structurally protected one high-variance model from elimination)",
+    "value": 0.20833333333333334
+  },
+  "mcspower.studentized_power_30pct": {
+    "cites": [
+      "S4.2 body: power of the studentized rule"
+    ],
+    "cross_check": "mcs_power.csv: power_corrected where edge_pct==30",
+    "producer": "mcs_power",
+    "spec": "share of 72 focal-model trials at a 30% ADDITIVE true edge on the UNCENTERED panel where the studentized-rule MCS singles out the focal model alone. The edge is 30% of the panel's grand mean loss over all six candidates (np.mean(base)), a larger unit than the best model's own mean loss used in S3.1. This is the design the paper reports; see mcspower.recentred_power_30pct for the superseded re-centred figure (a multiplicative edge on an equal-mean panel structurally protected one high-variance model from elimination)",
+    "value": 0.7777777777777778
+  },
+  "mcspower.studentized_power_50pct": {
+    "cites": [
+      "S4.2 body: power of the studentized rule"
+    ],
+    "cross_check": "mcs_power.csv: power_corrected where edge_pct==50",
+    "producer": "mcs_power",
+    "spec": "share of 72 focal-model trials at a 50% ADDITIVE true edge on the UNCENTERED panel where the studentized-rule MCS singles out the focal model alone. The edge is 50% of the panel's grand mean loss over all six candidates (np.mean(base)), a larger unit than the best model's own mean loss used in S3.1. This is the design the paper reports; see mcspower.recentred_power_50pct for the superseded re-centred figure (a multiplicative edge on an equal-mean panel structurally protected one high-variance model from elimination)",
+    "value": 0.7916666666666666
+  },
+  "mcspower.studentized_power_5pct": {
+    "cites": [
+      "S4.2 body: power of the studentized rule"
+    ],
+    "cross_check": "mcs_power.csv: power_corrected where edge_pct==5",
+    "producer": "mcs_power",
+    "spec": "share of 72 focal-model trials at a 5% ADDITIVE true edge on the UNCENTERED panel where the studentized-rule MCS singles out the focal model alone. The edge is 5% of the panel's grand mean loss over all six candidates (np.mean(base)), a larger unit than the best model's own mean loss used in S3.1. This is the design the paper reports; see mcspower.recentred_power_5pct for the superseded re-centred figure (a multiplicative edge on an equal-mean panel structurally protected one high-variance model from elimination)",
+    "value": 0.4305555555555556
+  },
+  "mcspower.zero_edge_detection": {
+    "cites": [
+      "S4.2 body: the zero-edge row"
+    ],
+    "cross_check": "mcs_power.csv: power_corrected where edge_pct==0",
+    "producer": "mcs_power",
+    "spec": "share of trials at a ZERO injected edge where the corrected sweep singles out the focal model. NOT a false-discovery rate: that arm runs on the UNCENTERED panel, which has a genuine best model, so these are trials where the focal model really is best -- the curated panel's own point-identification showing through. Emitted to be explicit about what the zero row of mcs_power.csv is",
+    "value": 0.013888888888888888
+  }
+}

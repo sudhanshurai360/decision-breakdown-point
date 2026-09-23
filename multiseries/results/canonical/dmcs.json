@@ -1,0 +1,160 @@
+{
+  "_generated": "2026-09-20T11:25:48+00:00",
+  "_n": 17,
+  "_stage": "dmcs",
+  "dmcs.dropped_lowest_ur_overlap": {
+    "cites": [
+      "S13.4: dropped states"
+    ],
+    "cross_check": "dmcs.py main(): set(dropped_states) & set(lowest_ur_states)",
+    "of": 5,
+    "producer": "dmcs",
+    "spec": "states in BOTH dmcs.dropped_near_trigger_states and dmcs.lowest_mean_ur_states -- the '3 of 5' overlap Appendix 13.4 reports",
+    "states": "ND;NE;SD",
+    "value": 3
+  },
+  "dmcs.dropped_near_trigger_states": {
+    "cites": [
+      "S13.4: dropped states"
+    ],
+    "cross_check": "dmcs.py main(): set(df.columns) - set(dmcs.csv's state column)",
+    "of": 51,
+    "producer": "dmcs",
+    "spec": "states with a long enough UR panel to attempt the near-trigger decision-loss comparison but dropped by year_mcs's len(M)<30 floor once restricted to near-trigger months -- the 'excluded 7' Appendix 13.4 names",
+    "states": "IA;ID;IN;ND;NE;SD;UT",
+    "value": 7
+  },
+  "dmcs.equal_symmetric": {
+    "cites": [
+      "S7 body: exactly equal in 18 states"
+    ],
+    "cross_check": "dmcs.csv: (dMCS_decision == MCS_stat_near).sum()",
+    "of": 44,
+    "producer": "dmcs",
+    "spec": "states where the decision-loss |MCS| is EXACTLY equal to the near-trigger statistical |MCS| (matched T) -- the 'as wide but not wider' half of dmcs.tied_both_symmetric's never-narrower finding",
+    "value": 18
+  },
+  "dmcs.lowest_mean_ur_states": {
+    "cites": [
+      "S13.4: dropped states"
+    ],
+    "cross_check": "dmcs.py main(): df.mean().sort_values().index[:5]",
+    "of": 5,
+    "producer": "dmcs",
+    "spec": "the 5 states with the lowest mean unemployment rate over the full UR panel (all 51 jurisdictions, unfiltered) -- compared against dmcs.dropped_near_trigger_states in Appendix 13.4 to show the excluded set is related to, but not identical to, the lowest-UR states",
+    "states": "ND;NE;NH;SD;VT",
+    "value": 5
+  },
+  "dmcs.mean_set_decision": {
+    "cites": [],
+    "cross_check": "dmcs.csv: dMCS_decision.mean()",
+    "n_states": 44,
+    "producer": "dmcs",
+    "spec": "mean |MCS| across states under the DECISION loss (misclassification of the realized EB trigger status), alpha=0.10, measured ONLY on near-trigger months (near-trigger months only, not the full sample, which is dominated by the trivial always-off region). T-ASYMMETRY NOTE, RESOLVED: this leg runs on a median 9 near-trigger YEARS per state (distinct calendar years among the near-trigger months, range 5-21; read from dmcs.csv's near_trigger_years column) vs. dmcs.mean_set_statistical's median 36 years -- a real T-asymmetry between the two MCS legs dmcs.separates/dmcs.tied_both compare directly, raising the concern that a high mean |MCS| here could be an artifact of the shorter-T leg eliminating fewer candidates almost mechanically. Resolved by dmcs.mean_set_statistical_near (the statistical MCS recomputed at matched T): see dmcs.tied_both_symmetric, which is identical to dmcs.tied_both under matched T -- the T-asymmetry was not the explanation.",
+    "value": 3.1136363636363638
+  },
+  "dmcs.mean_set_statistical": {
+    "cites": [],
+    "cross_check": "dmcs.csv: MCS_stat.mean()",
+    "n_states": 44,
+    "producer": "dmcs",
+    "spec": "mean |MCS| across states under the STATISTICAL loss (absolute nowcast error), alpha=0.10, over the FULL scored sample (only the decision loss below is restricted to near-trigger months)",
+    "value": 2.340909090909091
+  },
+  "dmcs.mean_set_statistical_near": {
+    "cites": [],
+    "cross_check": "dmcs.csv: MCS_stat_near.mean()",
+    "n_states": 44,
+    "producer": "dmcs",
+    "spec": "mean |MCS| across states under the STATISTICAL loss, alpha=0.10, restricted to the SAME near-trigger months as dmcs.mean_set_decision (matched T) -- the symmetric counterpart to dmcs.mean_set_statistical's full-sample figure, added to isolate whether dmcs.tied_both reflects genuine ambiguity or the T-asymmetry between the two full-sample-vs-near-trigger legs",
+    "value": 2.272727272727273
+  },
+  "dmcs.n_eligible": {
+    "cites": [],
+    "cross_check": "dmcs.py main(): count of states with len(u) >= 300",
+    "producer": "dmcs",
+    "spec": "states with a long enough UR panel (>=300 months) to even ATTEMPT the comparison, before the near-trigger floor -- disclosed so dmcs.n_states' drop from this is not silent",
+    "value": 51
+  },
+  "dmcs.n_states": {
+    "cites": [],
+    "cross_check": "dmcs.csv: len(R)",
+    "producer": "dmcs",
+    "spec": "number of states retained after BOTH floors: a long enough UR panel (>=300 months) AND enough near-trigger months for year_mcs's existing len(M)<30 floor to run the decision-loss MCS meaningfully",
+    "value": 44
+  },
+  "dmcs.separates": {
+    "cites": [],
+    "cross_check": "dmcs.csv: separates.sum()",
+    "of": 44,
+    "producer": "dmcs",
+    "spec": "states where the near-trigger-only decision loss produces a STRICTLY smaller tied set than the (full-sample) statistical loss (the tie dissolves when selecting on the decision that actually matters, measured where it can actually discriminate)",
+    "value": 0
+  },
+  "dmcs.separates_symmetric": {
+    "cites": [
+      "S7 body: no cell shows a narrower decision-loss |MCS| than accuracy-loss |MCS|"
+    ],
+    "cross_check": "dmcs.csv: separates_symmetric.sum()",
+    "of": 44,
+    "producer": "dmcs",
+    "spec": "states where the near-trigger decision loss produces a strictly smaller tied set than the near-trigger STATISTICAL loss (matched T on both legs) -- the symmetric counterpart to dmcs.separates, which compares against the full-sample statistical loss instead",
+    "value": 0
+  },
+  "dmcs.single_decision": {
+    "cites": [],
+    "cross_check": "dmcs.csv: (dMCS_decision == 1).sum()",
+    "of": 44,
+    "producer": "dmcs",
+    "spec": "states where the near-trigger-only decision-loss tied set is a singleton (the decision loss fully identifies a winner even restricted to the months where it can discriminate)",
+    "value": 0
+  },
+  "dmcs.tied_both": {
+    "cites": [],
+    "cross_check": "dmcs.csv: ((dMCS_decision >= MCS_stat) & (dMCS_decision > 1)).sum()",
+    "of": 44,
+    "producer": "dmcs",
+    "spec": "states where the tied set under the near-trigger-only decision loss is NOT smaller than under the (full-sample) statistical loss AND still has more than one admissible model -- candidate reading: genuine ambiguity even where the decision loss has the best chance to discriminate, reported as a confidence set of admissible statutory actions rather than a point call. T-ASYMMETRY CHECK (see dmcs.mean_set_decision): dMCS_decision >= MCS_stat in EVERY retained state raised the concern that this could be an artifact of the T-asymmetry between the two MCS legs (near-trigger-restricted vs. full-sample) rather than genuine information. Resolved: dmcs.tied_both_symmetric (the same comparison at matched T) is IDENTICAL, 44/44 vs 44/44 -- even though the underlying per-state statistical-MCS sizes genuinely differ between the full-sample and near-trigger-restricted legs in 27 of 44 states (confirming the T-restriction is not a no-op), the decision loss is at least as broad as the statistical loss either way, in every state.",
+    "value": 44
+  },
+  "dmcs.tied_both_symmetric": {
+    "cites": [],
+    "cross_check": "dmcs.csv: ((dMCS_decision >= MCS_stat_near) & (dMCS_decision > 1)).sum()",
+    "of": 44,
+    "producer": "dmcs",
+    "spec": "states where the tied set under the near-trigger decision loss is not smaller than under the near-trigger STATISTICAL loss (matched T on both legs) AND still has more than one admissible model -- the symmetric counterpart to dmcs.tied_both, which compares against the full-sample statistical loss instead. Compare directly against dmcs.tied_both: if the two counts agree, the T-asymmetry was not the explanation for dmcs.tied_both and it can be cited as genuine ambiguity; if they diverge, the T-asymmetry was inflating dmcs.tied_both and this matched-T figure is the one to cite instead",
+    "value": 44
+  },
+  "dmcs.wider_from_singleton": {
+    "cites": [
+      "S7 body: decision loss manufactures ambiguity from a clean statistical winner"
+    ],
+    "cross_check": "dmcs.csv: ((dMCS_decision > MCS_stat_near) & (MCS_stat_near == 1)).sum()",
+    "of": 26,
+    "producer": "dmcs",
+    "spec": "of dmcs.wider_symmetric's states (decision-loss |MCS| strictly wider than near-trigger statistical |MCS|), how many started from MCS_stat_near==1 -- a CLEAN, unambiguous statistical winner with zero pre-existing tie. For these states the decision rule does not widen an existing ambiguity, it manufactures a new one from a previously clean identification. tied_both/wider_symmetric do not distinguish this case from a genuinely-tied statistical set growing wider still -- both fall under the same 'genuine ambiguity' framing; this key separates them.",
+    "states": "CA;LA;MA;MD;MI;MN;OH;OR;TN;TX;WY",
+    "value": 11
+  },
+  "dmcs.wider_from_singleton_also_full_sample": {
+    "cites": [
+      "S7 body: singleton under the full-sample statistical comparison too"
+    ],
+    "cross_check": "dmcs.csv: ((dMCS_decision > MCS_stat_near) & (MCS_stat_near == 1) & (MCS_stat == 1)).sum()",
+    "of": 11,
+    "producer": "dmcs",
+    "spec": "of dmcs.wider_from_singleton's states (decision-loss |MCS| strictly wider than the near-trigger-restricted statistical |MCS|, MCS_stat_near==1), how many are ALSO a singleton under the FULL-SAMPLE statistical comparison (MCS_stat==1) -- i.e. not just a clean winner once restricted to near-trigger months, but a clean winner under the unrestricted full-sample MCS too",
+    "states": "WY",
+    "value": 1
+  },
+  "dmcs.wider_symmetric": {
+    "cites": [
+      "S7 body: strictly wider in the remaining states"
+    ],
+    "cross_check": "dmcs.csv: (dMCS_decision > MCS_stat_near).sum()",
+    "of": 44,
+    "producer": "dmcs",
+    "spec": "states where the decision-loss |MCS| is STRICTLY wider than the near-trigger statistical |MCS| (matched T) -- the complementary half of dmcs.equal_symmetric; equal_symmetric + wider_symmetric + narrower_symmetric (always 0, see dmcs.tied_both_symmetric) must sum to n",
+    "value": 26
+  }
+}

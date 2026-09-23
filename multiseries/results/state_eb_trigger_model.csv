@@ -1,0 +1,5 @@
+model,trigger_states,share_of_divergent
+snaive,0,0.0
+ar1,20,0.8333
+ets,2,0.0833
+theta,2,0.0833

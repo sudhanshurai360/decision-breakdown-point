@@ -1,0 +1,3 @@
+series,metric,n_years,year_min,year_max,pooled_winner,per_period_winner,runner_up,k_star,k_over_T,reversal,responsible,shock_coincidence,concentration,winner_stability,fragile
+RSAFS,mase,25,2001,2025,seasonal_naive,seasonal_naive,dhr,2,0.08,False,2004;2003,False,0.719,0.667,False
+RSAFS,rmsse,25,2001,2025,seasonal_naive,seasonal_naive,dhr,1,0.04,False,2004,False,2.311,0.568,True

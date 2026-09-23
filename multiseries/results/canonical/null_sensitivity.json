@@ -1,0 +1,82 @@
+{
+  "_generated": "2026-09-20T09:42:05+00:00",
+  "_n": 6,
+  "_stage": "null_sensitivity",
+  "nullsens.ar_delta_p05": {
+    "cites": [
+      "S5.4 body: null sensitivity"
+    ],
+    "cross_check": null,
+    "producer": "null_sensitivity",
+    "spec": "rise in the null's fifth percentile from i.i.d. to AR(1)=0.6, both averaged over 20 independent seeds -- the departure that does move the benchmark, in the direction that makes the i.i.d. comparison ANTI-conservative for a lower-tail claim rather than conservative",
+    "value": 0.0531
+  },
+  "nullsens.p05_ar06": {
+    "band": [
+      0.3274,
+      0.3762
+    ],
+    "cites": [
+      "S5.4 body: null sensitivity"
+    ],
+    "cross_check": "null_sensitivity.csv: p05 where config=='ar06'",
+    "median": 0.614,
+    "producer": "null_sensitivity",
+    "sd": 0.014,
+    "spec": "fifth percentile under AR(1)=0.6 serial dependence in every model's loss, averaged over 20 independent seeds. Serial dependence DOES raise the null, which matters for \u00a75.4's lower-tail claims: a higher null puts an observed low value further into the tail, so the i.i.d. benchmark flags FEWER cells as unusual than a realistic one would",
+    "value": 0.3506
+  },
+  "nullsens.p05_iid": {
+    "band": [
+      0.276,
+      0.3212
+    ],
+    "cites": [
+      "S5.4 body: null sensitivity"
+    ],
+    "cross_check": "null_sensitivity.csv: p05 where config=='iid'",
+    "median": 0.5028,
+    "n_eff": 8000,
+    "producer": "null_sensitivity",
+    "sd": 0.0125,
+    "spec": "fifth percentile of winner_stability under the i.i.d. exchangeable null at K=6, T=30, averaged over 20 independent seeds (8000 effective replications). This is the same construction as the benchmark the paper ships for \u00a75.4, run at this sweep's own T=30 rather than \u00a75.4's T=32; the two p05 figures agree to 3 dp",
+    "value": 0.2975
+  },
+  "nullsens.p05_rho05": {
+    "band": [
+      0.276,
+      0.3212
+    ],
+    "cites": [
+      "S5.4 body: null sensitivity"
+    ],
+    "cross_check": "null_sensitivity.csv: p05 where config=='rho05'",
+    "producer": "null_sensitivity",
+    "sd": 0.0125,
+    "spec": "the same fifth percentile when half the loss variance is a shock COMMON to every model, averaged over 20 independent seeds",
+    "value": 0.2975
+  },
+  "nullsens.p05_rho08": {
+    "band": [
+      0.276,
+      0.3212
+    ],
+    "cites": [
+      "S5.4 body: null sensitivity"
+    ],
+    "cross_check": "null_sensitivity.csv: p05 where config=='rho08'",
+    "producer": "null_sensitivity",
+    "sd": 0.0125,
+    "spec": "the same fifth percentile at eighty percent common variance, averaged over 20 independent seeds. Equal (within seed noise) to the rho=0.5 value because winner_stability counts argmin preservation and argmin is invariant to a shift applied to every model in a period -- the statistic cannot see the common component",
+    "value": 0.2975
+  },
+  "nullsens.rho_delta_p05": {
+    "cites": [
+      "S5.4 body: null sensitivity"
+    ],
+    "cross_check": null,
+    "producer": "null_sensitivity",
+    "spec": "absolute change in the null's fifth percentile between eighty and fifty percent common variance, both averaged over 20 independent seeds. Emitted because the INVARIANCE is the finding: a common shock across models might be expected to raise the null, but doubling the correlation moves it by only this much",
+    "value": 0.0
+  }
+}

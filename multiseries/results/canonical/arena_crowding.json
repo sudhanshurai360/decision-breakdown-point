@@ -1,0 +1,137 @@
+{
+  "_generated": "2026-09-20T06:48:20+00:00",
+  "_n": 15,
+  "_stage": "arena_crowding",
+  "arena.llm_flip_null_max_pool": {
+    "cites": [],
+    "cross_check": "data/open_llm.parquet: arena_crowding.crowd() on a column-shuffled null at k=max(ks)",
+    "first_permutation": 0.562,
+    "n_models": 64,
+    "n_perm": 50,
+    "null_sd": 0.0322,
+    "producer": "arena_crowding",
+    "spec": "Open-LLM Leaderboard: INDEPENDENCE-NULL mean-vs-Borda winner flip rate at the largest pool size tested (n_models=64). The null is the MEAN over 50 column permutations (companion fields null_sd, n_perm, first_permutation = the single seed-0 draw); same convention as the M4 arm's arena.m4_flip_null_* keys.",
+    "value": 0.52996
+  },
+  "arena.llm_flip_null_min_pool": {
+    "cites": [],
+    "cross_check": "data/open_llm.parquet: arena_crowding.crowd() on a column-shuffled null at k=min(ks)",
+    "first_permutation": 0.278,
+    "n_models": 2,
+    "n_perm": 50,
+    "null_sd": 0.023,
+    "producer": "arena_crowding",
+    "spec": "Open-LLM Leaderboard: INDEPENDENCE-NULL mean-vs-Borda winner flip rate at the smallest pool size tested (n_models=2). The null is the MEAN over 50 column permutations (companion fields null_sd, n_perm, first_permutation = the single seed-0 draw); same convention as the M4 arm's arena.m4_flip_null_* keys.",
+    "value": 0.25256
+  },
+  "arena.llm_flip_real_max_pool": {
+    "cites": [],
+    "cross_check": "data/open_llm.parquet: arena_crowding.crowd() at k=max(ks)",
+    "n_models": 64,
+    "producer": "arena_crowding",
+    "spec": "Open-LLM Leaderboard: real mean-vs-Borda winner flip rate at the largest pool size tested (n_models=64), against an independence-null resample of the same panel",
+    "value": 0.362
+  },
+  "arena.llm_flip_real_min_pool": {
+    "cites": [],
+    "cross_check": "data/open_llm.parquet: arena_crowding.crowd() at k=min(ks)",
+    "n_models": 2,
+    "producer": "arena_crowding",
+    "spec": "Open-LLM Leaderboard: real mean-vs-Borda winner flip rate at the smallest pool size tested (n_models=2), against an independence-null resample of the same panel",
+    "value": 0.064
+  },
+  "arena.m4_champion": {
+    "cites": [],
+    "cross_check": "m4_submissions_leaderboard.csv: the index label at LM4.mean(1).argmin() -- which is 'submission-118.rar'; the emitted value strips the 'submission-' prefix and the '.rar' suffix",
+    "producer": "arena_crowding",
+    "spec": "M4 competition: the mean-loss champion across the 4 M4_METRICS -- the model this file's identification margin (arena.m4_margin_pct) is measured against #2",
+    "value": "118"
+  },
+  "arena.m4_flip_null_max_pool": {
+    "cites": [],
+    "cross_check": "m4_submissions_leaderboard.csv: arena_crowding.crowd() on a column-shuffled null at k=max(ks)",
+    "first_permutation": 0.014,
+    "n_models": 60,
+    "n_perm": 50,
+    "null_sd": 0.4614,
+    "producer": "arena_crowding",
+    "spec": "M4 competition: INDEPENDENCE-NULL mean-vs-Borda winner flip rate at the largest pool size tested (n_models=60) -- the counterfactual arena.m4_flip_real_max_pool is read against. NOT comparable to density.flip_rate_max_pool: that key is a MAE-vs-RMSE winner flip rate on ~1500 M4-Monthly SERIES scored under 9 models at a largest pool of 9, whereas this is a mean-loss-vs-Borda flip rate on the 61 M4 SUBMISSIONS scored under 4 metrics at a largest pool of 60. Neither key is cited in either manuscript. The null is the MEAN over 50 column permutations (companion fields null_sd, n_perm, first_permutation = the single seed-0 draw); a single permutation is far too noisy on a 61-row panel to read a real-vs-null sign from.",
+    "value": 0.6685199999999999
+  },
+  "arena.m4_flip_null_mid_pool": {
+    "cites": [],
+    "cross_check": "m4_submissions_leaderboard.csv: arena_crowding.crowd() on a column-shuffled null at k=32",
+    "first_permutation": 0.218,
+    "n_models": 32,
+    "n_perm": 50,
+    "null_sd": 0.2385,
+    "producer": "arena_crowding",
+    "spec": "M4 competition: INDEPENDENCE-NULL mean-vs-Borda winner flip rate at the middle pool size tested (n_models=32) -- see arena.m4_flip_real_mid_pool. The null is the MEAN over 50 column permutations (companion fields null_sd, n_perm, first_permutation = the single seed-0 draw); a single permutation is far too noisy on a 61-row panel to read a real-vs-null sign from.",
+    "value": 0.647
+  },
+  "arena.m4_flip_null_min_pool": {
+    "cites": [],
+    "cross_check": "m4_submissions_leaderboard.csv: arena_crowding.crowd() on a column-shuffled null at k=min(ks)",
+    "first_permutation": 0.272,
+    "n_models": 2,
+    "n_perm": 50,
+    "null_sd": 0.0282,
+    "producer": "arena_crowding",
+    "spec": "M4 competition: INDEPENDENCE-NULL mean-vs-Borda winner flip rate at the smallest pool size tested (n_models=2) -- the counterfactual arena.m4_flip_real_min_pool is read against. NOT comparable to density.flip_rate_min_pool: that key is a MAE-vs-RMSE winner flip rate on ~1500 M4-Monthly SERIES scored under 9 models, whereas this is a mean-loss-vs-Borda flip rate on the 61 M4 SUBMISSIONS scored under 4 metrics. Neither key is cited in either manuscript. The null is the MEAN over 50 column permutations (companion fields null_sd, n_perm, first_permutation = the single seed-0 draw); a single permutation is far too noisy on a 61-row panel to read a real-vs-null sign from.",
+    "value": 0.3002
+  },
+  "arena.m4_flip_real_max_pool": {
+    "cites": [],
+    "cross_check": "m4_submissions_leaderboard.csv: arena_crowding.crowd() at k=max(ks)",
+    "n_models": 60,
+    "producer": "arena_crowding",
+    "spec": "M4 competition: real mean-vs-Borda winner flip rate at the largest pool size tested (n_models=60), against an independence-null resample of the same panel",
+    "value": 0.02
+  },
+  "arena.m4_flip_real_mid_pool": {
+    "cites": [],
+    "cross_check": "m4_submissions_leaderboard.csv: arena_crowding.crowd() at k=32",
+    "n_models": 32,
+    "producer": "arena_crowding",
+    "spec": "M4 competition: real mean-vs-Borda winner flip rate at the middle pool size tested (n_models=32), against an independence-null resample of the same panel. The CROSS-ARENA print below reports real < null at EVERY pool size tested, this one included; the uncertainty that bears on that comparison is the null's own spread across permutations, not a binomial standard error on a single draw -- see the null_sd, n_perm and first_permutation companions on arena.m4_flip_null_mid_pool",
+    "value": 0.244
+  },
+  "arena.m4_flip_real_min_pool": {
+    "cites": [],
+    "cross_check": "m4_submissions_leaderboard.csv: arena_crowding.crowd() at k=min(ks)",
+    "n_models": 2,
+    "producer": "arena_crowding",
+    "spec": "M4 competition: real mean-vs-Borda winner flip rate at the smallest pool size tested (n_models=2), against an independence-null resample of the same panel",
+    "value": 0.046
+  },
+  "arena.m4_margin_pct": {
+    "cites": [],
+    "cross_check": "m4_submissions_leaderboard.csv: 100*(LM4.mean(1)[order[1]]/LM4.mean(1)[order[0]]-1)",
+    "producer": "arena_crowding",
+    "spec": "M4 competition: the mean-loss champion's percentage margin over #2 (100*(mean_loss[#2]/mean_loss[#1]-1)) -- the M4 IDENTIFICATION evidence this file's own docstring names as one of its two stated purposes",
+    "value": 1.1
+  },
+  "arena.m4_mean_cross_metric_corr": {
+    "cites": [],
+    "cross_check": "m4_submissions_leaderboard.csv: arena_crowding.arena()'s own tcorr",
+    "producer": "arena_crowding",
+    "spec": "mean pairwise Pearson correlation across all C(4,2)=6 sMAPE/MAPE/MASE/RMSSE metric pairs on the 61 real M4 submissions' own accuracy panel -- how much the M4 crowding arena's 4 metrics move together, wider than m4sub.rank_corr_smape_rmsse's single pair",
+    "value": 0.624
+  },
+  "arena.m4_wins_all_metrics": {
+    "cites": [],
+    "cross_check": "m4_submissions_leaderboard.csv: all(b[m].idxmin()==champion for m in M4_METRICS)",
+    "producer": "arena_crowding",
+    "spec": "M4 competition: whether the mean-loss champion also wins (is idxmin() on) every one of the 4 M4_METRICS individually -- Pareto-dominance, asserted just above this emit",
+    "value": true
+  },
+  "llm.n_models": {
+    "cites": [
+      "N2 body: the finding"
+    ],
+    "cross_check": "data/open_llm.parquet: row count",
+    "producer": "arena_crowding",
+    "spec": "complete Open-LLM Leaderboard entries scored on all six benchmark tasks",
+    "value": 4497
+  }
+}

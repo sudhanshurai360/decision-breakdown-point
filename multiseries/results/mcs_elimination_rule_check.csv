@@ -1,0 +1,13 @@
+series,raw,e_R,e_max,raw_eq_eR,raw_eq_emax
+BOPGEXP,ar1;sarima;theta,ar1;ets;sarima;theta,ar1;sarima;theta,False,True
+BOPGIMP,ar1;sarima;theta,ar1;sarima;theta,ar1;sarima;theta,True,True
+BUSINV,ar1;dhr;ets;sarima;theta,ar1;dhr;ets;sarima;theta,ar1;dhr;ets;sarima;theta,True,True
+DGORDER,ar1;dhr;ets;sarima;theta,ar1;dhr;ets;sarima;theta,ar1;dhr;ets;sarima;theta,True,True
+HOUST,ar1;dhr;ets;sarima;theta,ar1;dhr;ets;sarima;theta,ar1;dhr;ets;sarima;theta,True,True
+M2SL,ar1;dhr;ets;sarima;theta,ar1;dhr;ets;sarima;theta,ar1;dhr;ets;sarima;theta,True,True
+PAYEMS,ar1;dhr;ets;sarima;theta,ar1;dhr;ets;sarima;theta,ar1;dhr;ets;sarima;theta,True,True
+PCE,ar1;ets;sarima;theta,ar1;ets;sarima;theta,ar1;ets;sarima;theta,True,True
+PI,ar1,ar1,ar1,True,True
+RSAFS,dhr;seasonal_naive,dhr;seasonal_naive,dhr;seasonal_naive,True,True
+TCU,ar1;dhr;ets;sarima;theta,ar1;dhr;ets;sarima;theta,ar1;dhr;ets;sarima;theta,True,True
+UNEMPLOY,ar1;dhr;sarima;theta,ar1;dhr;sarima;theta,ar1;dhr;sarima;theta,True,True

@@ -1,0 +1,39 @@
+MIT License
+
+Copyright (c) 2026 Sudhanshu Rai
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+This license covers the code, tests and documentation in this repository, and
+also this repository's own provenance and selection logs that happen to live
+under multiseries/data/ -- namely multiseries/data/raw/breadth_manifest.json,
+multiseries/data/raw/breadth_manifest_distinct.json,
+multiseries/data/raw/lineage.json and multiseries/data/fredmd/fredmd_api_codes.txt.
+Those four files are produced by the code in this repository and record which
+series were selected and where they came from; they contain no third-party data
+values.
+
+This license does NOT cover the third-party data caches under multiseries/data/
+-- every *.parquet file there (multiseries/data/raw/*.parquet including
+_state_ur_parts/, multiseries/data/fredmd/fredmd_api.parquet,
+multiseries/data/state_ur.parquet, multiseries/data/unrate_vintages.parquet and
+multiseries/data/open_llm.parquet). Those carry the licensing terms described in
+the "Data sources and licensing" section of README.md.

@@ -1,0 +1,148 @@
+{
+  "_generated": "2026-09-20T08:04:29+00:00",
+  "_n": 14,
+  "_stage": "model_set_audit",
+  "modelset.benchmark_in_mcs": {
+    "cites": [
+      "S3.1 body: how similar are the candidate models"
+    ],
+    "cross_check": "model_set_audit.csv: benchmark_in_mcs.sum()",
+    "of": 12,
+    "producer": "model_set_audit",
+    "spec": "series whose Model Confidence Set CONTAINS seasonal_naive (alpha=0.1, absolute loss, block=3, B=2000). The complement is the count in which the one structurally different candidate is correctly eliminated -- so the tied sets are almost entirely composed of the five near-collinear models.",
+    "value": 1
+  },
+  "modelset.benchmark_last": {
+    "cites": [
+      "S3.1 body: how similar are the candidate models"
+    ],
+    "cross_check": "model_set_audit.csv: (benchmark_rank == n_models).sum()",
+    "of": 12,
+    "producer": "model_set_audit",
+    "spec": "series in which seasonal_naive has the WORST pooled mean loss of the models that actually competed on that series (six today, but compared against each series' own model count, not a fixed number). The curated series are pre-seasonally-adjusted by their source agency, so a 12-month seasonal-naive forecast is a deliberately weak reference, not a rival.",
+    "value": 11
+  },
+  "modelset.benchmark_ratio_max": {
+    "cites": [
+      "S3.1 body: how similar are the candidate models"
+    ],
+    "cross_check": "model_set_audit.csv: benchmark_ratio.max()",
+    "n_series": 12,
+    "producer": "model_set_audit",
+    "spec": "largest ratio of seasonal_naive's pooled mean loss to the best model's, across series",
+    "value": 7.44
+  },
+  "modelset.elimination_identical_sets": {
+    "cites": [
+      "S4.1 body: independent-implementation cross-check"
+    ],
+    "cross_check": "mcs_elimination_rule_check.csv: raw_eq_eR.sum()",
+    "differ": [
+      "BOPGEXP"
+    ],
+    "of": 12,
+    "producer": "model_set_audit",
+    "spec": "curated series on which the raw-mean elimination rule (this paper's default) and HLN's e_R rule -- the rule HLN pair with the T_R range statistic, and the rule arch's MCS(method='R') implements -- return the IDENTICAL surviving set (same models, not merely the same cardinality), at alpha=0.1, block=3, B=2000. Bears directly on S4.1: on the series where they differ, e_R reproduces arch's set, so the elimination rule IS part of the residual arch-vs-ours disagreement (the rest is arch's stationary-bootstrap default plus, on the population sweep, a residual that survives matching both -- see mcsarch.*_bootstrap_matched / *_fully_matched).",
+    "value": 11
+  },
+  "modelset.gap_under_1pct": {
+    "cites": [
+      "S3.1 body: how similar are the candidate models"
+    ],
+    "cross_check": "model_set_audit.csv: (gap_pct < 1).sum()",
+    "of": 12,
+    "producer": "model_set_audit",
+    "spec": "series whose best-vs-runner-up pooled gap is below 1 percent",
+    "value": 6
+  },
+  "modelset.loss_corr_median": {
+    "cites": [
+      "S3.1 body: how similar are the candidate models"
+    ],
+    "cross_check": "model_set_audit.csv: np.median(all pooled pairwise loss correlations)",
+    "n_pairs": 120,
+    "producer": "model_set_audit",
+    "spec": "median pairwise Pearson correlation of the ANNUAL LOSS series among the five non-benchmark models, pooled over all series and pairs. Loss rather than forecast level on purpose: two forecasts of the same trending series correlate near 1 mechanically, so a forecast-level correlation would overstate the similarity.",
+    "value": 0.987
+  },
+  "modelset.loss_corr_min": {
+    "cites": [
+      "S3.1 body: how similar are the candidate models"
+    ],
+    "cross_check": "model_set_audit.csv: loss_corr_min.min()",
+    "n_pairs": 120,
+    "producer": "model_set_audit",
+    "spec": "smallest pairwise annual-loss correlation among the five non-benchmark models, over every (series, pair) -- the least similar any two substantive candidates ever are. Attained on BOPGEXP (see model_set_audit.csv's per-series loss_corr_min column: min(that column) reproduces this value, since both are min(pooled pair_r) -- the median column alone could not re-derive it).",
+    "value": 0.885
+  },
+  "modelset.max_gap_pct": {
+    "cites": [
+      "S3.1 body: how similar are the candidate models"
+    ],
+    "cross_check": "model_set_audit.csv: gap_pct.max()",
+    "n_series": 12,
+    "producer": "model_set_audit",
+    "spec": "largest best-vs-runner-up pooled gap across the curated series (percent)",
+    "value": 10.46
+  },
+  "modelset.mean_mcs_annual": {
+    "cites": [
+      "S13.2: set size versus sample size"
+    ],
+    "cross_check": "mcs_monthly_resolution.csv: MCS_annual.mean()",
+    "of": 12,
+    "producer": "model_set_audit",
+    "spec": "mean |MCS| across the curated series at ANNUAL resolution (T ~ 25-36), the paper's headline resolution. Reported alongside the monthly means below because the binary non-identified COUNT is a lossy summary: it can hold at 11 of 12 while the average set size moves materially.",
+    "value": 3.92
+  },
+  "modelset.mean_mcs_monthly_b1": {
+    "cites": [
+      "S13.2: set size versus sample size"
+    ],
+    "cross_check": "mcs_monthly_resolution.csv: MCS_mon_b1.mean()",
+    "of": 12,
+    "producer": "model_set_audit",
+    "spec": "mean |MCS| on the NATIVE MONTHLY panels (T ~ 292-431, about 11.4x the annual observations) at bootstrap block=1 -- the short-block end, where the monthly data's effective sample is largest",
+    "value": 3.17
+  },
+  "modelset.mean_mcs_monthly_b24": {
+    "cites": [
+      "S13.2: set size versus sample size"
+    ],
+    "cross_check": "mcs_monthly_resolution.csv: MCS_mon_b24.mean()",
+    "of": 12,
+    "producer": "model_set_audit",
+    "spec": "mean |MCS| on the native monthly panels at bootstrap block=24. Emitted BESIDE the block=1 value on purpose: mean |MCS| falls from 3.92 (annual) to 3.17 at short blocks but RISES to this value at long ones, because a long block cuts the number of independent blocks back down. Quoting only the falling end would overstate the sample-size reading.",
+    "value": 4.08
+  },
+  "modelset.median_gap_pct": {
+    "cites": [
+      "S3.1 body: how similar are the candidate models"
+    ],
+    "cross_check": "model_set_audit.csv: gap_pct.median()",
+    "n_series": 12,
+    "producer": "model_set_audit",
+    "spec": "median across the 12 curated series of the pooled (equal-year-weighted) mean-loss gap between the BEST and RUNNER-UP model, in percent of the best model's own mean loss. The scale of the difference the MCS is being asked to detect.",
+    "value": 0.93
+  },
+  "modelset.min_gap_pct": {
+    "cites": [
+      "S3.1 body: how similar are the candidate models"
+    ],
+    "cross_check": "model_set_audit.csv: gap_pct.min()",
+    "n_series": 12,
+    "producer": "model_set_audit",
+    "spec": "smallest best-vs-runner-up pooled gap across the curated series (percent)",
+    "value": 0.05
+  },
+  "modelset.monthly_obs_ratio": {
+    "cites": [
+      "S4.1 body: set size versus sample size"
+    ],
+    "cross_check": "mcs_monthly_resolution.csv: round((T_monthly / T_annual).mean(), 1) -- the unrounded mean is 11.42",
+    "of": 12,
+    "producer": "model_set_audit",
+    "spec": "mean across series of (monthly evaluation observations / annual evaluation observations) -- how much more data the native-monthly re-run has to work with",
+    "value": 11.4
+  }
+}

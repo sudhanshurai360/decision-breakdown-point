@@ -1,0 +1,42 @@
+{
+  "_generated": "2026-09-20T06:48:16+00:00",
+  "_n": 5,
+  "_stage": "density_audit",
+  "density.flip_rate_max_pool": {
+    "cites": [],
+    "cross_check": "m4_density_curve.csv: flip_rate at n_models==n_models.max()",
+    "n_models": 9,
+    "producer": "density_audit",
+    "spec": "MAE-vs-RMSE winner flip rate at the largest pool size swept",
+    "value": 0.17466666666666666
+  },
+  "density.flip_rate_min_pool": {
+    "cites": [],
+    "cross_check": "m4_density_curve.csv: flip_rate at n_models==2",
+    "n_models": 2,
+    "producer": "density_audit",
+    "spec": "MAE-vs-RMSE winner flip rate at the smallest pool size (n_models=2)",
+    "value": 0.048666666666666664
+  },
+  "density.flip_rate_monotonic_increasing": {
+    "cites": [],
+    "cross_check": "m4_density_curve.csv: all(diff(flip_rate) > 0)",
+    "producer": "density_audit",
+    "spec": "whether the raw flip-rate curve rises STRICTLY with pool size over the swept range (n_models=2..9, every step a real increase, not just non-decreasing) -- if true, the curve itself does not visibly plateau within this range. Section 9 does not read an identification verdict off this curve: it says the M4 crowding arm 'is not a reliable identification signal on its own: on a 61-row panel the independence null is too unstable to read'. This producer computes NO independence null for this curve at all, and none is available elsewhere: the arena.m4_flip_null_* keys are a different measurement on a different panel (a mean-loss-vs-Borda flip rate over the 61 M4 SUBMISSIONS x 4 metrics, pools up to 60), not a null for this MAE-vs-RMSE curve over ~1500 M4-Monthly SERIES x 9 models",
+    "value": true
+  },
+  "density.n_models_max": {
+    "cites": [],
+    "cross_check": "m4_density_curve.csv: n_models.max()",
+    "producer": "density_audit",
+    "spec": "largest leaderboard pool size swept (k=2..n_models)",
+    "value": 9
+  },
+  "density.n_series": {
+    "cites": [],
+    "cross_check": null,
+    "producer": "density_audit",
+    "spec": "number of M4-Monthly series sampled for the leaderboard-density curve",
+    "value": 1500
+  }
+}

@@ -1,0 +1,389 @@
+{
+  "_generated": "2026-09-20T14:56:58+00:00",
+  "_n": 36,
+  "_stage": "state_eb_decision",
+  "eb.alt_protocol_episodes": {
+    "cites": [
+      "S7 body: leg-exposure sensitivity"
+    ],
+    "cross_check": "state_eb_alt_protocol.csv: episodes",
+    "producer": "state_eb_decision",
+    "spec": "SAME as eb.episodes but under the 'all_forecast' protocol (all three months of the CURRENT 3-month average model-produced, vs. 'published''s one month; the two prior-year comparator averages are never model-produced in either protocol). A leg-exposure sensitivity arm, not a competing estimate of the flip count -- 'all_forecast' is further from what the statute actually does, not closer",
+    "value": 101
+  },
+  "eb.alt_protocol_near_trigger_pct": {
+    "cites": [
+      "S7 body: leg-exposure sensitivity"
+    ],
+    "cross_check": "state_eb_alt_protocol.csv: near_trigger_pct",
+    "producer": "state_eb_decision",
+    "spec": "SAME as eb.near_trigger_pct but under the 'all_forecast' protocol",
+    "value": 3.2
+  },
+  "eb.alt_protocol_states_divergent": {
+    "cites": [
+      "S7 body: leg-exposure sensitivity"
+    ],
+    "cross_check": "state_eb_alt_protocol.csv: states_divergent",
+    "of": 50,
+    "producer": "state_eb_decision",
+    "spec": "SAME as eb.states_divergent but under the 'all_forecast' protocol",
+    "value": 49
+  },
+  "eb.episodes": {
+    "cites": [
+      "S7 body: episode count"
+    ],
+    "cross_check": "state_eb_decision.csv: flip_episodes.sum()",
+    "producer": "state_eb_decision",
+    "spec": "distinct contiguous flip-episodes summed across states. EB TUR trigger: 3mo-avg state UR (statutory rounding, 20 CFR 615.12(e)(3)) >= 6.5% AND >= 110% of the same period in either prior year (615.12(e)(1)(ii) rounding); tied models from per-year MCS at alpha=0.10; models=['snaive', 'ar1', 'ets', 'theta']. SCORED FROM 1993-03-01, the effective date of the optional TUR indicator (EUCA 70 s203(f), P.L. 102-318 s201; external_facts uipl_45_92) -- lookback legs still read earlier data, as the statute contemplates, but no month is SCORED before the provision existed. The unrestricted reading is published alongside as eb.fullwindow_*",
+    "value": 29
+  },
+  "eb.flip_months": {
+    "cites": [
+      "S7 body: episode count"
+    ],
+    "cross_check": "state_eb_decision.csv: flip_months.sum()",
+    "producer": "state_eb_decision",
+    "spec": "flip MONTHS summed across states -- equal to eb.episodes because every flip episode in this exercise is one month long. That is episode LENGTH and says nothing about eb.isolated_flip_months, which asks a different question (does a flip month have an adjacent commonly-ON month?) and answers it for only a small minority of these months. EB TUR trigger: 3mo-avg state UR (statutory rounding, 20 CFR 615.12(e)(3)) >= 6.5% AND >= 110% of the same period in either prior year (615.12(e)(1)(ii) rounding); tied models from per-year MCS at alpha=0.10; models=['snaive', 'ar1', 'ets', 'theta']. SCORED FROM 1993-03-01, the effective date of the optional TUR indicator (EUCA 70 s203(f), P.L. 102-318 s201; external_facts uipl_45_92) -- lookback legs still read earlier data, as the statute contemplates, but no month is SCORED before the provision existed. The unrestricted reading is published alongside as eb.fullwindow_*",
+    "value": 29
+  },
+  "eb.fullwindow_episodes": {
+    "cites": [
+      "S7 body: unrestricted-window contrast"
+    ],
+    "cross_check": "state_eb_window_comparison.csv: episodes where window=='unrestricted_1991_01'",
+    "producer": "state_eb_decision",
+    "spec": "distinct contiguous flip-episodes, unrestricted window. SAME computation as the headline key of this name, but with NO statutory-date restriction on the scored window (from 1991-01, the panel's own start). Reported only as the robustness contrast for the re-scoping; the optional TUR indicator did not exist before 1993-03-01, so this reading counts months in which no state could have triggered on it. Never to be quoted as a result",
+    "value": 37
+  },
+  "eb.fullwindow_flip_months": {
+    "cites": [
+      "S7 body: unrestricted-window contrast"
+    ],
+    "cross_check": "state_eb_window_comparison.csv: flip_months where window=='unrestricted_1991_01'",
+    "producer": "state_eb_decision",
+    "spec": "flip months, unrestricted window. SAME computation as the headline key of this name, but with NO statutory-date restriction on the scored window (from 1991-01, the panel's own start). Reported only as the robustness contrast for the re-scoping; the optional TUR indicator did not exist before 1993-03-01, so this reading counts months in which no state could have triggered on it. Never to be quoted as a result",
+    "value": 37
+  },
+  "eb.fullwindow_states_divergent": {
+    "cites": [
+      "S7 body: unrestricted-window contrast"
+    ],
+    "cross_check": "state_eb_window_comparison.csv: states_divergent where window=='unrestricted_1991_01'",
+    "of": 50,
+    "producer": "state_eb_decision",
+    "spec": "states with at least one flip month, unrestricted window. SAME computation as the headline key of this name, but with NO statutory-date restriction on the scored window (from 1991-01, the panel's own start). Reported only as the robustness contrast for the re-scoping; the optional TUR indicator did not exist before 1993-03-01, so this reading counts months in which no state could have triggered on it. Never to be quoted as a result",
+    "value": 26
+  },
+  "eb.genuine_divergent_states": {
+    "cites": [
+      "S7 body: genuine (non-knife-edge) divergence"
+    ],
+    "cross_check": "state_eb_decision.csv: states where flip_episodes>0 and flip_months>knife_edge",
+    "of": 24,
+    "producer": "state_eb_decision",
+    "spec": "divergent states with at least one flip MONTH that is not knife-edge (tied-model spread >= 0.3pp) -- the complement of a state being knife-edge in its entirety",
+    "states": [
+      "MA",
+      "NV"
+    ],
+    "value": 2
+  },
+  "eb.genuine_divergent_states_detail": {
+    "cites": [
+      "S7 body: genuine (non-knife-edge) divergence"
+    ],
+    "cross_check": "state_eb_decision.csv + per-flip-month spread: the one flip month per genuine state with spread>=0.3pp",
+    "dates": {
+      "MA": "2021-04-01",
+      "NV": "2020-04-01"
+    },
+    "of": 2,
+    "producer": "state_eb_decision",
+    "spec": "for each state in eb.genuine_divergent_states, the exact calendar month and tied-model spread (pp) of that state's one non-knife-edge flip month/episode",
+    "spreads_pp": {
+      "MA": 0.5,
+      "NV": 0.8
+    },
+    "value": 2
+  },
+  "eb.isolated_flip_months": {
+    "adjacent": 28,
+    "cites": [
+      "S7 body: episode count"
+    ],
+    "cross_check": "state_eb_decision.csv: isolated_flip_months.sum()",
+    "of": 29,
+    "producer": "state_eb_decision",
+    "spec": "of the flip months, how many have NO adjacent month (t-1 or t+1, on the full record) on which every tied model agrees the trigger is ON. Such a flip is not a timing shift at the edge of an agreed-on spell: under the tied model that says ON it starts an EB period the other tied models never start, and 20 CFR 615.11(c) makes that period at least 13 weeks long -- i.e. an entire benefit spell that turns on which tied model is used. The complement (flip months adjacent to a commonly-on month) are the timing shifts S7's prose describes. Computed PER MONTH: the neighbour test is 'commonly ON', so the leading month of a multi-month early start (flip, flip, commonly-on) counts as isolated -- a conservative (over-)count; an undetermined neighbour (NA) also reads as not commonly-on. Exact today because every flip episode is one month long (see eb.max_episode_months). EB TUR trigger: 3mo-avg state UR (statutory rounding, 20 CFR 615.12(e)(3)) >= 6.5% AND >= 110% of the same period in either prior year (615.12(e)(1)(ii) rounding); tied models from per-year MCS at alpha=0.10; models=['snaive', 'ar1', 'ets', 'theta']. SCORED FROM 1993-03-01, the effective date of the optional TUR indicator (EUCA 70 s203(f), P.L. 102-318 s201; external_facts uipl_45_92) -- lookback legs still read earlier data, as the statute contemplates, but no month is SCORED before the provision existed. The unrestricted reading is published alongside as eb.fullwindow_*",
+    "value": 1
+  },
+  "eb.knife_edge_only_states": {
+    "cites": [
+      "S7 body: knife-edge share"
+    ],
+    "cross_check": "state_eb_decision.csv: states_divergent - genuine_divergent_states",
+    "of": 24,
+    "producer": "state_eb_decision",
+    "spec": "divergent states whose entire flip-month record is knife-edge; states_divergent - eb.genuine_divergent_states",
+    "value": 22
+  },
+  "eb.knife_edge_pct": {
+    "cites": [
+      "S7 body: knife-edge share"
+    ],
+    "cross_check": "state_eb_summary.csv: knife_edge_pct",
+    "denominator": 29,
+    "numerator": 27,
+    "producer": "state_eb_decision",
+    "spec": "flip months where the tied models' (e)(3)-rounded 3-month trigger values are within 0.3pp of each other (only the forecast month differs, so the forecasts themselves are within roughly 0.9pp) and the trigger conditions still resolve differently, as a share of flip months",
+    "value": 93.0
+  },
+  "eb.knife_edge_sweep_genuine_states": {
+    "cites": [
+      "S7 body: knife-edge threshold sweep"
+    ],
+    "counts": [
+      24,
+      5,
+      2,
+      2,
+      2
+    ],
+    "cross_check": "state_eb_knife_edge_sweep.csv: genuine_states where threshold_pp==0.3",
+    "of": 24,
+    "producer": "state_eb_decision",
+    "spec": "genuine-divergence state count (>=1 flip month with tied-model spread at or above the threshold) swept across knife-edge thresholds 0.1/0.2/0.3/0.4/0.5 percentage points; the 0.3pp entry matches eb.genuine_divergent_states by construction (same definition, computed from the same underlying per-flip-month spreads) -- reported to show how much the headline 2-state figure moves under a different, equally defensible cutoff, not to propose a different headline",
+    "thresholds_pp": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5
+    ],
+    "value": 2
+  },
+  "eb.max_episode_months": {
+    "cites": [
+      "S7 body: episode count"
+    ],
+    "cross_check": "state_eb_decision.csv: max_episode_months.max()",
+    "producer": "state_eb_decision",
+    "spec": "longest single flip episode, in months, across all states -- the true per-episode max, not an average. A value of 1 means no episode spans more than a single month, so none can correspond to a statutory EB period (minimum 13 consecutive weeks, 20 CFR 615.11).",
+    "value": 1
+  },
+  "eb.near_trigger_pct": {
+    "cites": [
+      "S7 body: near-trigger share"
+    ],
+    "cross_check": "state_eb_summary.csv: near_trigger_pct",
+    "denominator": 2553,
+    "numerator": 24,
+    "producer": "state_eb_decision",
+    "spec": "flip months as a share of near-trigger months (any tied model 3mo-avg in [6,7])",
+    "value": 0.9
+  },
+  "eb.prestatute_flip_months": {
+    "cites": [
+      "S7 body: unrestricted-window contrast"
+    ],
+    "cross_check": "state_eb_window_comparison.csv: flip_months(unrestricted) - flip_months(statutory)",
+    "episodes": 8,
+    "of": 37,
+    "producer": "state_eb_decision",
+    "spec": "flip months falling BEFORE the optional TUR indicator's effective date, i.e. those dropped by scoring from 1993-03-01 -- months in which no state could have triggered on the modelled indicator at all",
+    "value": 8
+  },
+  "eb.states_divergent": {
+    "cites": [
+      "S7 body: state count"
+    ],
+    "cross_check": "state_eb_decision.csv: (flip_episodes > 0).sum()",
+    "of": 50,
+    "producer": "state_eb_decision",
+    "spec": "states with at least one flip month. EB TUR trigger: 3mo-avg state UR (statutory rounding, 20 CFR 615.12(e)(3)) >= 6.5% AND >= 110% of the same period in either prior year (615.12(e)(1)(ii) rounding); tied models from per-year MCS at alpha=0.10; models=['snaive', 'ar1', 'ets', 'theta']. SCORED FROM 1993-03-01, the effective date of the optional TUR indicator (EUCA 70 s203(f), P.L. 102-318 s201; external_facts uipl_45_92) -- lookback legs still read earlier data, as the statute contemplates, but no month is SCORED before the provision existed. The unrestricted reading is published alongside as eb.fullwindow_*",
+    "value": 24
+  },
+  "eb.states_total": {
+    "cites": [
+      "S7 body: state count"
+    ],
+    "cross_check": "state_eb_decision.csv: row count",
+    "producer": "state_eb_decision",
+    "spec": "MCS-eligible states (>=2 tied models and enough history) with any scored data under the statutory window. Window-invariant: the tie set is determined on the full error record, so restricting the SCORED window changes which states diverge and can drop a state entirely if its post-effective-date history is empty, never which models a state's record can separate",
+    "value": 50
+  },
+  "eb.trigger_ar1": {
+    "cites": [
+      "S7 body: robustness across tied models"
+    ],
+    "cross_check": "state_eb_trigger_model.csv: trigger_states where model=='ar1'",
+    "of": 24,
+    "producer": "state_eb_decision",
+    "spec": "divergent states where ar1 is the 'net-on' tied model (the model whose forecast alone would trigger the decision at that state's flip months)",
+    "value": 20
+  },
+  "eb.trigger_ar1_clean": {
+    "cites": [
+      "S7 body: robustness across tied models"
+    ],
+    "cross_check": "state_eb_trigger_ties.csv / state_eb_trigger_model.csv: recomputed excluding exact-tie states",
+    "of": 18,
+    "producer": "state_eb_decision",
+    "spec": "SAME as eb.trigger_ar1 but excluding the 6 states in eb.trigger_tied_states -- a model only counts here if it is the UNIQUE net-on maximizer at that state, not merely the insertion-order tie-break winner",
+    "value": 14
+  },
+  "eb.trigger_ar1_ets_pct": {
+    "cites": [
+      "S7 body: robustness across tied models"
+    ],
+    "cross_check": "round(100 * (eb.trigger_ar1 + eb.trigger_ets) / eb.states_divergent)",
+    "producer": "state_eb_decision",
+    "spec": "eb.trigger_ar1 + eb.trigger_ets as a share of states_divergent, rounded to the nearest percent",
+    "value": 92.0
+  },
+  "eb.trigger_ar1_ets_pct_clean": {
+    "cites": [
+      "S7 body: robustness across tied models"
+    ],
+    "cross_check": "round(100 * (eb.trigger_ar1_clean + eb.trigger_ets_clean) / (eb.states_divergent - eb.trigger_tied_states))",
+    "producer": "state_eb_decision",
+    "spec": "eb.trigger_ar1_clean + eb.trigger_ets_clean as a share of (states_divergent - eb.trigger_tied_states), rounded to the nearest percent",
+    "value": 89.0
+  },
+  "eb.trigger_ar1_pct": {
+    "cites": [
+      "S7 body: robustness across tied models"
+    ],
+    "cross_check": "round(100 * eb.trigger_ar1 / eb.states_divergent)",
+    "producer": "state_eb_decision",
+    "spec": "eb.trigger_ar1 as a share of states_divergent, rounded to the nearest percent",
+    "value": 83.0
+  },
+  "eb.trigger_ar1_pct_clean": {
+    "cites": [
+      "S7 body: robustness across tied models"
+    ],
+    "cross_check": "round(100 * eb.trigger_ar1_clean / (eb.states_divergent - eb.trigger_tied_states))",
+    "producer": "state_eb_decision",
+    "spec": "eb.trigger_ar1_clean as a share of (states_divergent - eb.trigger_tied_states), rounded to the nearest percent -- the tie-excluded analogue of eb.trigger_ar1_pct",
+    "value": 78.0
+  },
+  "eb.trigger_ets": {
+    "cites": [
+      "S7 body: robustness across tied models"
+    ],
+    "cross_check": "state_eb_trigger_model.csv: trigger_states where model=='ets'",
+    "of": 24,
+    "producer": "state_eb_decision",
+    "spec": "divergent states where ets is the 'net-on' tied model (the model whose forecast alone would trigger the decision at that state's flip months)",
+    "value": 2
+  },
+  "eb.trigger_ets_clean": {
+    "cites": [
+      "S7 body: robustness across tied models"
+    ],
+    "cross_check": "state_eb_trigger_ties.csv / state_eb_trigger_model.csv: recomputed excluding exact-tie states",
+    "of": 18,
+    "producer": "state_eb_decision",
+    "spec": "SAME as eb.trigger_ets but excluding the 6 states in eb.trigger_tied_states -- a model only counts here if it is the UNIQUE net-on maximizer at that state, not merely the insertion-order tie-break winner",
+    "value": 2
+  },
+  "eb.trigger_model_bias_ar1_pp": {
+    "cites": [
+      "S7 body: robustness across tied models"
+    ],
+    "cross_check": "state_eb_decision.py main(): bias['ar1']",
+    "producer": "state_eb_decision",
+    "spec": "mean state-UR forecast bias of ar1, in percentage points -- the average, across every state where ar1 was among the accuracy-tied models, of that state's own mean forecast bias over its full post-warmup evaluation window -- backs S7's claim that the trigger ordering 'is not unrelated to' the models' own small forecast biases",
+    "value": 0.02
+  },
+  "eb.trigger_model_bias_ets_pp": {
+    "cites": [
+      "S7 body: robustness across tied models"
+    ],
+    "cross_check": "state_eb_decision.py main(): bias['ets']",
+    "producer": "state_eb_decision",
+    "spec": "mean state-UR forecast bias of ets, in percentage points -- the average, across every state where ets was among the accuracy-tied models, of that state's own mean forecast bias over its full post-warmup evaluation window -- backs S7's claim that the trigger ordering 'is not unrelated to' the models' own small forecast biases",
+    "value": 0.02
+  },
+  "eb.trigger_model_bias_theta_pp": {
+    "cites": [
+      "S7 body: robustness across tied models"
+    ],
+    "cross_check": "state_eb_decision.py main(): bias['theta']",
+    "producer": "state_eb_decision",
+    "spec": "mean state-UR forecast bias of theta, in percentage points -- the average, across every state where theta was among the accuracy-tied models, of that state's own mean forecast bias over its full post-warmup evaluation window -- backs S7's claim that the trigger ordering 'is not unrelated to' the models' own small forecast biases",
+    "value": 0.004
+  },
+  "eb.trigger_snaive": {
+    "cites": [
+      "S7 body: robustness across tied models"
+    ],
+    "cross_check": "state_eb_trigger_model.csv: trigger_states where model=='snaive'",
+    "of": 24,
+    "producer": "state_eb_decision",
+    "spec": "divergent states where snaive is the 'net-on' tied model (the model whose forecast alone would trigger the decision at that state's flip months)",
+    "value": 0
+  },
+  "eb.trigger_snaive_clean": {
+    "cites": [
+      "S7 body: robustness across tied models"
+    ],
+    "cross_check": "state_eb_trigger_ties.csv / state_eb_trigger_model.csv: recomputed excluding exact-tie states",
+    "of": 18,
+    "producer": "state_eb_decision",
+    "spec": "SAME as eb.trigger_snaive but excluding the 6 states in eb.trigger_tied_states -- a model only counts here if it is the UNIQUE net-on maximizer at that state, not merely the insertion-order tie-break winner",
+    "value": 0
+  },
+  "eb.trigger_theta": {
+    "cites": [
+      "S7 body: robustness across tied models"
+    ],
+    "cross_check": "state_eb_trigger_model.csv: trigger_states where model=='theta'",
+    "of": 24,
+    "producer": "state_eb_decision",
+    "spec": "divergent states where theta is the 'net-on' tied model (the model whose forecast alone would trigger the decision at that state's flip months)",
+    "value": 2
+  },
+  "eb.trigger_theta_clean": {
+    "cites": [
+      "S7 body: robustness across tied models"
+    ],
+    "cross_check": "state_eb_trigger_ties.csv / state_eb_trigger_model.csv: recomputed excluding exact-tie states",
+    "of": 18,
+    "producer": "state_eb_decision",
+    "spec": "SAME as eb.trigger_theta but excluding the 6 states in eb.trigger_tied_states -- a model only counts here if it is the UNIQUE net-on maximizer at that state, not merely the insertion-order tie-break winner",
+    "value": 2
+  },
+  "eb.trigger_tied_states": {
+    "cites": [
+      "S7 body: robustness across tied models"
+    ],
+    "cross_check": "state_eb_trigger_ties.csv: row count",
+    "of": 24,
+    "producer": "state_eb_decision",
+    "spec": "divergent states where the 'net-on' trigger-model attribution above is an EXACT tie among 2+ models, broken only by MODELS' declaration order (ar1 before ets/theta) with no other basis for the attribution -- the complement of a state's trigger-model credit being a genuine, unique net-dominance win",
+    "states": [
+      "GA",
+      "NM",
+      "NV",
+      "RI",
+      "VA",
+      "VT"
+    ],
+    "value": 6
+  },
+  "eb.unconditional_pct": {
+    "cites": [
+      "S7 body: unconditional flip share"
+    ],
+    "cross_check": "state_eb_summary.csv: unconditional_pct",
+    "denominator": 19800,
+    "numerator": 29,
+    "producer": "state_eb_decision",
+    "spec": "flip months as a share of all evaluated months (unconditional)",
+    "value": 0.1
+  }
+}

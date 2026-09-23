@@ -1,0 +1,36 @@
+{
+  "_generated": "2026-09-20T05:55:46+00:00",
+  "_n": 3,
+  "_stage": "mcs_test",
+  "mcs.curated_nonidentified": {
+    "cites": [
+      "Abstract: headline curated non-identification count",
+      "Introduction: headline curated non-identification count",
+      "S4.1 body: headline curated count"
+    ],
+    "cross_check": "mcs_test.csv: (MCS_abs_10 > 1).sum()",
+    "of": 12,
+    "producer": "mcs_test",
+    "spec": "series with |MCS|>1 under absolute loss at alpha=0.10; circular=False, elimination=raw",
+    "value": 11
+  },
+  "mcs.curated_nonidentified_rmsse": {
+    "cites": [
+      "S4.1 body: RMSSE sensitivity check"
+    ],
+    "cross_check": "mcs_test.csv: (MCS_rmsse_10 > 1).sum()",
+    "of": 12,
+    "producer": "mcs_test",
+    "spec": "series with |MCS|>1 under RMSSE loss (sqrt(mean(msse)) per year) at alpha=0.10; circular=False, elimination=raw -- the same sensitivity check as mcs.curated_nonidentified but under the paper's OTHER stated loss function (Section 5 scores both MASE and RMSSE; Table 1 reports MASE/absolute-loss only)",
+    "value": 11
+  },
+  "mcs.curated_total": {
+    "cites": [
+      "S4.1 body: curated panel size"
+    ],
+    "cross_check": "mcs_test.csv: len(r)",
+    "producer": "mcs_test",
+    "spec": "series in the curated panel",
+    "value": 12
+  }
+}

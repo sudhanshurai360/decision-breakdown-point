@@ -1,0 +1,71 @@
+{
+  "_generated": "2026-09-20T06:08:00+00:00",
+  "_n": 7,
+  "_stage": "shape_not_magnitude",
+  "shape.annual_median_x": {
+    "cites": [
+      "S6 body: annual median"
+    ],
+    "cross_check": "derived from breadth_distinct_predictions.csv per shape_not_magnitude.main()",
+    "n_series": 12,
+    "producer": "shape_not_magnitude",
+    "spec": "same errors aggregated to annual frequency, all 12 series -- NOT the same sample as shape.monthly_median_x's n=10 (BOPGEXP/BOPGIMP excluded there); see shape.annual_median_x_matched for the matched-sample comparison",
+    "value": 2.193663975455687
+  },
+  "shape.annual_median_x_matched": {
+    "cites": [],
+    "cross_check": "derived from breadth_distinct_predictions.csv per shape_not_magnitude.main()",
+    "n_series": 10,
+    "producer": "shape_not_magnitude",
+    "spec": "same errors aggregated to annual frequency, restricted to the same 10 series shape.monthly_median_x uses (excludes BOPGEXP/BOPGIMP, which have no 2020-04 evaluation month) -- the like-for-like counterpart to the MONTHLY->ANNUAL dilution claim; shape.annual_median_x itself is the unmatched, all-12-series figure",
+    "value": 2.516069996543638
+  },
+  "shape.hardest_2020": {
+    "cites": [],
+    "cross_check": "shape_not_magnitude.csv: ym.str.startswith('2020').sum()",
+    "of": 12,
+    "producer": "shape_not_magnitude",
+    "spec": "series whose hardest month falls anywhere in calendar 2020 (not just April) -- currently identical to shape.hardest_april2020 by coincidence, not by construction",
+    "value": 8
+  },
+  "shape.hardest_april2020": {
+    "cites": [
+      "S6 body: hardest-month count"
+    ],
+    "cross_check": "shape_not_magnitude.csv: (ym == '2020-04').sum()",
+    "of": 12,
+    "producer": "shape_not_magnitude",
+    "spec": "series whose single hardest month is April 2020; difficulty = min scaled abs error over models",
+    "value": 8
+  },
+  "shape.hardest_gfc": {
+    "cites": [
+      "S6 body: hardest-month count in 2008-09"
+    ],
+    "cross_check": "shape_not_magnitude.csv: ym.str.startswith(('2008','2009')).sum()",
+    "of": 12,
+    "producer": "shape_not_magnitude",
+    "spec": "series whose hardest month falls in calendar 2008-09",
+    "value": 0
+  },
+  "shape.monthly_max_x": {
+    "cites": [
+      "S6 body: maximum multiple"
+    ],
+    "cross_check": "derived from breadth_distinct_predictions.csv per shape_not_magnitude.main()",
+    "producer": "shape_not_magnitude",
+    "series": "UNEMPLOY",
+    "spec": "largest April-2020 multiple across series; full precision, round once at render",
+    "value": 134.7531769569699
+  },
+  "shape.monthly_median_x": {
+    "cites": [
+      "S6 body: monthly median"
+    ],
+    "cross_check": "derived from breadth_distinct_predictions.csv per shape_not_magnitude.main()",
+    "n_series": 10,
+    "producer": "shape_not_magnitude",
+    "spec": "median April-2020 difficulty divided by that series' median month; n=10 (BOPGEXP/BOPGIMP have no 2020-04 evaluation month, so this is a 10-of-12-series sample -- see shape.annual_median_x_matched for the like-for-like annual comparison on this same 10-series sample)",
+    "value": 12.319338589551183
+  }
+}

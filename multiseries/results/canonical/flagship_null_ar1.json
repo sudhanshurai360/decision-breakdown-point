@@ -1,0 +1,67 @@
+{
+  "_generated": "2026-09-20T10:42:04+00:00",
+  "_n": 5,
+  "_stage": "flagship_null_ar1",
+  "flagship.above_ar1_adjusted_p05": {
+    "cites": [
+      "S3.6 body: flagship exhibit AR(1)-adjusted null"
+    ],
+    "cross_check": "flagship_null_ar1.csv: above_ar1_p05",
+    "observed": 0.67,
+    "producer": "flagship_null_ar1",
+    "spec": "whether the flagship's observed winner_stability (0.670) still clears the AR(1)-adjusted noise floor, not just the i.i.d. one it was originally read against",
+    "threshold": 0.307,
+    "value": true
+  },
+  "flagship.ar1_coefficient_empirical": {
+    "cites": [
+      "S3.6 body: flagship exhibit AR(1)-adjusted null"
+    ],
+    "cross_check": "flagship_null_ar1_coefficients.csv: median(ar1_estimate) where basis=='differential'",
+    "levels_median": 0.2069,
+    "n": 21,
+    "n_levels": 7,
+    "producer": "flagship_null_ar1",
+    "spec": "pooled median lag-1 OLS autocorrelation, demeaned, across every pairwise annual-loss DIFFERENTIAL of the flagship exhibit's own 7 models (21 pairs) -- the empirical AR(1) coefficient used to recalibrate the flagship's own exchangeable null, mirroring election.ar1_coefficient_empirical (same differential basis, same reasoning) but estimated from the flagship's own loss data. levels_median is the same estimator on the 7 loss LEVEL series, a superseded basis, disclosed but not used",
+    "value": 0.4401
+  },
+  "flagship.ar1_delta_p05": {
+    "cites": [
+      "S3.6 body: flagship exhibit AR(1)-adjusted null"
+    ],
+    "cross_check": "flagship_null_ar1.csv: delta_p05",
+    "p05_iid": 0.277,
+    "producer": "flagship_null_ar1",
+    "spec": "rise in the flagship's own null fifth percentile from the i.i.d. exchangeable null (flagship.stability_null_p05) to this stage's AR(1)-adjusted null",
+    "value": 0.0299
+  },
+  "flagship.stability_null_median_ar1": {
+    "cites": [
+      "S3.6 body: flagship exhibit AR(1)-adjusted null"
+    ],
+    "cross_check": "flagship_null_ar1.csv: null_median",
+    "n_eff": 20000,
+    "n_models": 7,
+    "n_periods": 38,
+    "producer": "flagship_null_ar1",
+    "spec": "median winner_stability under the exchangeable null at the flagship's own K=7, T=38, with the empirically-estimated AR(1) dependence above applied to every model's series, instead of i.i.d. draws -- the flagship-exhibit analogue of election.stability_null_median_ar1",
+    "value": 0.538
+  },
+  "flagship.stability_null_p05_ar1": {
+    "band": [
+      0.296,
+      0.317
+    ],
+    "cites": [
+      "S3.6 body: flagship exhibit AR(1)-adjusted null"
+    ],
+    "cross_check": "flagship_null_ar1.csv: null_p05",
+    "n_eff": 20000,
+    "n_models": 7,
+    "n_periods": 38,
+    "producer": "flagship_null_ar1",
+    "sd": 0.0051,
+    "spec": "fifth percentile of winner_stability under the exchangeable null at the flagship's own K=7, T=38, with the empirically-estimated AR(1) dependence above applied to every model's series",
+    "value": 0.307
+  }
+}

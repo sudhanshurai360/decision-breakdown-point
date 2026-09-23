@@ -1,0 +1,137 @@
+{
+  "_generated": "2026-09-20T10:30:41+00:00",
+  "_n": 11,
+  "_stage": "election_null_ar1",
+  "election.ar1_coefficient_empirical": {
+    "cites": [
+      "S5.4 body: AR(1)-adjusted null"
+    ],
+    "cross_check": "election_null_ar1_coefficients.csv: median(ar1_estimate) where basis=='differential'",
+    "iqr_hi": 0.4631,
+    "iqr_lo": 0.0357,
+    "levels_median": 0.4629,
+    "n": 360,
+    "n_levels": 144,
+    "producer": "election_null_ar1",
+    "spec": "pooled median lag-1 OLS autocorrelation, demeaned, across every pairwise loss DIFFERENTIAL (model a minus model b, all pairs) in every (series, metric) cell of the curated panel -- the empirical AR(1) coefficient used to recalibrate the exchangeable null below. Differentials, not levels, because every statistic the null calibrates is invariant to a common per-period component of the levels, and the synthetic null imposes its single coefficient on the differentials. The companion field levels_median is the same estimator on loss LEVELS, a superseded basis disclosed for comparison, not used",
+    "value": 0.25
+  },
+  "election.ar1_delta_p05": {
+    "cites": [
+      "S5.4 body: AR(1)-adjusted null"
+    ],
+    "cross_check": "election_null_ar1.csv: delta_p05",
+    "p05_iid": 0.298,
+    "producer": "election_null_ar1",
+    "spec": "rise in the null's fifth percentile from the i.i.d. exchangeable null (election.stability_null_p05, computed by social_choice.py) to this stage's AR(1)-adjusted null, at the same real panel dimensions",
+    "value": 0.0122
+  },
+  "election.ar1_flagged_cells_at_or_below_pooled": {
+    "cites": [
+      "S5.4 body: AR(1)-adjusted null"
+    ],
+    "cross_check": "election_null_ar1_flagged_cells.csv: own_ar1_below_pooled.all()",
+    "n_cells": 3,
+    "producer": "election_null_ar1",
+    "spec": "whether every one of the cells flagged below the AR(1)-adjusted null's own threshold has an OWN median AR(1) at or below the pooled figure used to build that threshold, i.e. whether the pooled correction was, if anything, conservative (not understated) for the specific cells it is being used to classify. 'Own median AR(1)' is the median of that series' pairwise loss-DIFFERENTIAL lag-1 estimates (all model pairs, both metrics pooled), the same basis as election.ar1_coefficient_empirical",
+    "value": true
+  },
+  "election.houst_ar1_excess_over_pooled": {
+    "cites": [
+      "S5.4 body: AR(1)-adjusted null"
+    ],
+    "cross_check": null,
+    "producer": "election_null_ar1",
+    "spec": "HOUST's own median AR(1) minus the pooled figure used to correct it (positive: the pooled correction under-estimates HOUST's own serial dependence; negative: it over-estimates it), checked against how much moving the AR(1) coefficient actually shifts the threshold (nullsens.ar_delta_p05)",
+    "value": -0.259
+  },
+  "election.houst_mase_winner_stability": {
+    "cites": [
+      "S5.4 body: AR(1)-adjusted null"
+    ],
+    "cross_check": "election_null_ar1_flagged_cells.csv: winner_stability where series=='HOUST'",
+    "producer": "election_null_ar1",
+    "spec": "HOUST/mase's own observed winner_stability, the AR(1)-flagged cell whose own series-level dependence is at or below the pooled correction -- reported so the safety margin against the recalibrated threshold (election.stability_null_p05_ar1) is checkable",
+    "value": 0.221
+  },
+  "election.houst_own_ar1_median": {
+    "cites": [
+      "S5.4 body: AR(1)-adjusted null"
+    ],
+    "cross_check": "election_null_ar1_flagged_cells.csv: own_ar1_median where series=='HOUST'",
+    "producer": "election_null_ar1",
+    "spec": "HOUST's own median lag-1 autocorrelation, compared against the pooled figure (election.ar1_coefficient_empirical) used to build the AR(1)-adjusted null that flags HOUST's one cell; HOUST's own dependence is at or below the pooled figure on the current (differential) basis. 'Own median AR(1)' is the median of that series' pairwise loss-DIFFERENTIAL lag-1 estimates (all model pairs, both metrics pooled), the same basis as election.ar1_coefficient_empirical",
+    "value": -0.009
+  },
+  "election.stability_below_null_p05_ar1": {
+    "band_count": [
+      3
+    ],
+    "cites": [
+      "S5.4 body: AR(1)-adjusted null"
+    ],
+    "cross_check": "election_null_ar1.csv: below_p05",
+    "expected": 1.2,
+    "of": 24,
+    "producer": "election_null_ar1",
+    "spec": "cells whose observed winner_stability falls below the AR(1)-adjusted null's own fifth percentile, replacing the i.i.d. exchangeable null used for election.stability_below_null_p05 with one that reflects the panel's own estimated serial dependence",
+    "threshold": 0.31,
+    "value": 3
+  },
+  "election.stability_below_null_p05_ar1_percell": {
+    "cites": [
+      "S5.4 body: per-cell AR(1)-adjusted null"
+    ],
+    "cross_check": "election_null_ar1_percell.csv + social_choice.csv: per-cell threshold comparison",
+    "flagged_cells": [
+      "HOUST/mase",
+      "TCU/mase",
+      "TCU/rmsse"
+    ],
+    "of": 24,
+    "p05_max": 0.312,
+    "p05_min": 0.311,
+    "p05_sd_max": 0.0079,
+    "producer": "election_null_ar1",
+    "spec": "cells whose observed winner_stability falls below a PER-CELL (really per-T, since T is constant within a series across its two metrics) AR(1)-adjusted null threshold, computed at that cell's own real T rather than the single pooled T=32 used for election.stability_below_null_p05_ar1 above. Real per-series T ranges 25-36 (4 distinct values), so this is a genuinely different threshold per cell, not the same number applied uniformly",
+    "value": 3
+  },
+  "election.stability_null_median_ar1": {
+    "cites": [
+      "S5.4 body: AR(1)-adjusted null"
+    ],
+    "cross_check": "election_null_ar1.csv: null_median",
+    "n_eff": 20000,
+    "n_models": 6,
+    "n_periods": 32,
+    "producer": "election_null_ar1",
+    "spec": "median winner_stability under the exchangeable null at K=6, T=32, with each model's series carrying AR(1) dependence at the empirically-estimated coefficient above, instead of i.i.d. draws",
+    "value": 0.534
+  },
+  "election.stability_null_p05_ar1": {
+    "band": [
+      0.299,
+      0.323
+    ],
+    "cites": [
+      "S5.4 body: AR(1)-adjusted null"
+    ],
+    "cross_check": "election_null_ar1.csv: null_p05",
+    "n_eff": 20000,
+    "n_models": 6,
+    "n_periods": 32,
+    "producer": "election_null_ar1",
+    "sd": 0.0078,
+    "spec": "fifth percentile of winner_stability under the exchangeable null at K=6, T=32, with the empirically-estimated AR(1) dependence above applied to every model's series -- the recalibrated threshold this stage exists to compute",
+    "value": 0.31
+  },
+  "election.tcu_own_ar1_median": {
+    "cites": [
+      "S5.4 body: AR(1)-adjusted null"
+    ],
+    "cross_check": "election_null_ar1_flagged_cells.csv: own_ar1_median where series=='TCU'",
+    "producer": "election_null_ar1",
+    "spec": "TCU's own median lag-1 autocorrelation (both of TCU's cells share it), compared against the pooled figure (election.ar1_coefficient_empirical) used to build the AR(1)-adjusted null that flags TCU's two cells. 'Own median AR(1)' is the median of that series' pairwise loss-DIFFERENTIAL lag-1 estimates (all model pairs, both metrics pooled), the same basis as election.ar1_coefficient_empirical",
+    "value": 0.096
+  }
+}

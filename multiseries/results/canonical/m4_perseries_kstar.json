@@ -1,0 +1,28 @@
+{
+  "_generated": "2026-09-20T06:24:29+00:00",
+  "_n": 2,
+  "_stage": "m4_perseries_kstar",
+  "m4sub.k_star": {
+    "binding_opponent": "submission-237",
+    "cites": [
+      "S9 body: M4 instrument run"
+    ],
+    "cross_check": "m4_perseries_kstar.csv: k_star",
+    "frac": 0.00101,
+    "of": 100000,
+    "producer": "m4_perseries_kstar",
+    "spec": "decision_breakdown()'s k* for the pooled champion (submission-118) against all 60 rival submissions, on the real per-series MASE matrix -- the fewest series whose removal unseats the champion. `frac` is k*/T with T = series here, not years as on the time-series panels S2 reports k* on elsewhere",
+    "value": 101
+  },
+  "m4sub.winner_stability": {
+    "block": 1,
+    "cites": [
+      "S9 body: M4 instrument run"
+    ],
+    "cross_check": "m4_perseries_kstar.csv: winner_stability",
+    "n_boot": 2000,
+    "producer": "m4_perseries_kstar",
+    "spec": "winner_stability on the real M4 panel (61 submissions x 100000 series), block=1 (i.i.d. resampling over series: the M4 series are a cross-section with no temporal adjacency, so a block bootstrap has nothing to preserve), n_boot=2000. Descriptive only: no calibrated null is computed at this (K, T)",
+    "value": 1.0
+  }
+}

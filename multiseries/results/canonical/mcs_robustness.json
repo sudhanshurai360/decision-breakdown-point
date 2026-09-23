@@ -1,0 +1,253 @@
+{
+  "_generated": "2026-09-20T07:35:19+00:00",
+  "_n": 23,
+  "_stage": "mcs_robustness",
+  "data.curated_monthly_T_max": {
+    "cites": [
+      "S4.1 body: native monthly loss matrices"
+    ],
+    "cross_check": "mcs_monthly_resolution.csv: T_monthly.max()",
+    "producer": "mcs_robustness",
+    "spec": "largest native-monthly loss-matrix length across the 12 curated series, the upper end of S4.1's '292-431 monthly observations per series' range",
+    "value": 431
+  },
+  "data.curated_monthly_T_min": {
+    "cites": [
+      "S4.1 body: native monthly loss matrices"
+    ],
+    "cross_check": "mcs_monthly_resolution.csv: T_monthly.min()",
+    "producer": "mcs_robustness",
+    "spec": "smallest native-monthly loss-matrix length across the 12 curated series, the lower end of S4.1's '292-431 monthly observations per series' range",
+    "value": 292
+  },
+  "fredmd.band_alpha10": {
+    "cites": [
+      "S13.1: FRED-MD bootstrap-tuning band"
+    ],
+    "cross_check": "fredmd_robustness_band.csv: min/max over rows with alpha==0.10",
+    "of": 74,
+    "producer": "mcs_robustness",
+    "spec": "min/max non-identified count across the block/B configurations swept at alpha=0.10 (not a full block x B cross -- 4 of the 6 grid cells use alpha=0.10), 3 seeds each",
+    "value": [
+      54,
+      58
+    ]
+  },
+  "fredmd.count_alpha05": {
+    "cites": [
+      "S4.1: FRED-MD count at alpha=0.05"
+    ],
+    "cross_check": "fredmd_robustness_band.csv: mean where alpha==0.05 & block==3 & B==2000",
+    "of": 74,
+    "producer": "mcs_robustness",
+    "spec": "mean non-identified count at alpha=0.05, block=3, B=2000, over 3 seeds",
+    "value": 60.0
+  },
+  "fredmd.count_alpha25": {
+    "cites": [
+      "S4.1: FRED-MD count at alpha=0.25"
+    ],
+    "cross_check": "fredmd_robustness_band.csv: mean where alpha==0.25 & block==3 & B==2000",
+    "of": 74,
+    "p25_max": 40,
+    "p25_min": 38,
+    "producer": "mcs_robustness",
+    "spec": "mean non-identified count at alpha=0.25, block=3, B=2000, over 3 seeds",
+    "value": 39.0
+  },
+  "mcs.annual_nonidentified": {
+    "cites": [
+      "S4.1 body: annual vs monthly resolution"
+    ],
+    "cross_check": "mcs_monthly_resolution.csv: (MCS_annual > 1).sum()",
+    "of": 12,
+    "producer": "mcs_robustness",
+    "spec": "series with |MCS|>1 under the annual-aggregation MCS (block=3); same formula as mcs.curated_nonidentified",
+    "value": 11
+  },
+  "mcs.curated_default_band_max": {
+    "cites": [
+      "S13.1: curated-panel tuning-grid"
+    ],
+    "cross_check": "mcs_curated_default_band.csv: max where loss=='abs'",
+    "of": 12,
+    "producer": "mcs_robustness",
+    "spec": "maximum non-identified count over the same 50-seed default-configuration band as mcs.curated_default_band_min -- equal to it iff the count is invariant to seed choice at the paper's own tuning",
+    "value": 11
+  },
+  "mcs.curated_default_band_max_sq": {
+    "cites": [],
+    "cross_check": "mcs_curated_default_band.csv: max where loss=='sq'",
+    "of": 12,
+    "producer": "mcs_robustness",
+    "spec": "maximum non-identified count over the same 50-seed default-configuration band as mcs.curated_default_band_min_sq, SQUARED loss",
+    "value": 11
+  },
+  "mcs.curated_default_band_min": {
+    "cites": [
+      "S13.1: curated-panel tuning-grid"
+    ],
+    "cross_check": "mcs_curated_default_band.csv: min where loss=='abs'",
+    "of": 12,
+    "producer": "mcs_robustness",
+    "spec": "minimum non-identified count over 50 Monte-Carlo seeds at the paper's own default configuration (block=3, B=2000, alpha=0.10), absolute loss",
+    "value": 11
+  },
+  "mcs.curated_default_band_min_sq": {
+    "cites": [],
+    "cross_check": "mcs_curated_default_band.csv: min where loss=='sq'",
+    "of": 12,
+    "producer": "mcs_robustness",
+    "spec": "minimum non-identified count over 50 Monte-Carlo seeds at the paper's own default configuration (block=3, B=2000, alpha=0.10), SQUARED loss -- the loss-function robustness companion to mcs.curated_default_band_min",
+    "value": 11
+  },
+  "mcs.curated_grid_max": {
+    "cites": [
+      "S13.1: curated-panel tuning-grid"
+    ],
+    "cross_check": "mcs_curated_tuning_grid.csv: max()",
+    "of": 12,
+    "producer": "mcs_robustness",
+    "spec": "maximum non-identified count across the same full curated-panel tuning grid as mcs.curated_grid_min -- equal to it iff the count is exactly invariant across every swept configuration",
+    "value": 11
+  },
+  "mcs.curated_grid_min": {
+    "cites": [
+      "S13.1: curated-panel tuning-grid"
+    ],
+    "cross_check": "mcs_curated_tuning_grid.csv: min()",
+    "of": 12,
+    "producer": "mcs_robustness",
+    "spec": "minimum non-identified count (|MCS_abs|>1) across the FULL curated-panel tuning grid (block in {1,2,3,4,6}, B in {2000,5000}, alpha in {0.05,0.10,0.25}, 10 seeds each -- 5*2*3 = 30 cells, 30*10 = 300 nonid_count() evaluations, and since each one runs the MCS once per curated series, 30*10*12 = 3,600 MCS calls in total)",
+    "value": 11
+  },
+  "mcs.monthly_nonidentified_range": {
+    "cites": [
+      "S4.1 body: evaluation-frequency sweep"
+    ],
+    "cross_check": "mcs_monthly_resolution.csv: min/max over blocks of (MCS_mon_b* > 1).sum()",
+    "of": 12,
+    "producer": "mcs_robustness",
+    "spec": "min and max curated non-identified count over ALL block lengths swept (1, 2, 3, 6, 12, 24), alpha=0.1; computed over the sweep, not read off its endpoints",
+    "value": [
+      10,
+      11
+    ]
+  },
+  "mcsarch.curated_exact_match": {
+    "cites": [
+      "S4.1 body: independent-implementation cross-check"
+    ],
+    "cross_check": "mcs_arch_cross_check.csv: exact_set_match.sum()",
+    "of": 12,
+    "producer": "mcs_robustness",
+    "spec": "curated series (all 12, not a subset) on which the hand-rolled range-statistic MCS returns the IDENTICAL surviving model set (not merely the same |MCS|) as arch 8.0.0's independent ModelConfidenceSet implementation, alpha=0.10, block=3, B=2000, on the real per-year absolute-loss panels",
+    "value": 10
+  },
+  "mcsarch.curated_exact_match_bootstrap_matched": {
+    "cites": [
+      "S4.1 body: independent-implementation cross-check"
+    ],
+    "cross_check": "mcs_arch_cross_check.csv: raw_eq_arch_mbb.sum()",
+    "differ": [
+      "BOPGEXP"
+    ],
+    "of": 12,
+    "producer": "mcs_robustness",
+    "spec": "curated series on which this paper's MCS (raw-mean elimination, moving-block bootstrap) returns the identical surviving set as arch 8.0.0 run with the SAME moving-block bootstrap (arch's default is a stationary bootstrap). A series still differing here differs through the elimination rule (raw vs HLN's e_R) and/or residual implementation differences (independent bootstrap draws, p-value convention); the residual after matching BOTH is mcsarch.curated_exact_match_fully_matched. alpha=0.10, block=3, B=2000, seed=0 on both sides",
+    "value": 11
+  },
+  "mcsarch.curated_exact_match_fully_matched": {
+    "cites": [
+      "S4.1 body: independent-implementation cross-check"
+    ],
+    "cross_check": "mcs_arch_cross_check.csv: eR_eq_arch_mbb.sum()",
+    "of": 12,
+    "producer": "mcs_robustness",
+    "spec": "curated series on which this paper's MCS run with HLN's e_R elimination rule (mcs_test.mcs(elimination='e_R')) returns the identical surviving set as arch 8.0.0 with a moving-block bootstrap -- bootstrap scheme AND elimination rule both matched, so this is the pure independent-implementation check",
+    "value": 12
+  },
+  "mcsarch.curated_size_match": {
+    "cites": [
+      "S4.1 body: independent-implementation cross-check"
+    ],
+    "cross_check": "mcs_arch_cross_check.csv: size_match.sum()",
+    "of": 12,
+    "producer": "mcs_robustness",
+    "spec": "curated series (all 12) on which the hand-rolled and arch implementations return the same |MCS| cardinality, whether or not the member sets are identical",
+    "value": 10
+  },
+  "mcsarch.fredmd_classification_flip": {
+    "cites": [
+      "S4.1 body: independent-implementation cross-check"
+    ],
+    "cross_check": "fredmd_arch_cross_check.csv: rows where (ours_size==1)!=(arch_size==1)",
+    "of": 74,
+    "producer": "mcs_robustness",
+    "series": [
+      "CPIMEDSL",
+      "M1SL",
+      "TOTALSL",
+      "USCONS",
+      "WPSFD49207"
+    ],
+    "spec": "FRED-MD population-sweep series where the two implementations disagree not just on cardinality but on the BINARY identified (|MCS|=1) vs non-identified (|MCS|>1) classification itself -- the honest bound on how much the 56/74 headline could move under a different, equally valid implementation, disclosed alongside the tuning- and significance-level sensitivity already reported",
+    "value": 5
+  },
+  "mcsarch.fredmd_exact_match": {
+    "cites": [
+      "S4.1 body: independent-implementation cross-check"
+    ],
+    "cross_check": "fredmd_arch_cross_check.csv: exact_set_match.sum()",
+    "of": 74,
+    "producer": "mcs_robustness",
+    "spec": "FRED-MD population-sweep series on which the hand-rolled range-statistic MCS returns the IDENTICAL surviving model set as arch 8.0.0's independent implementation, alpha=0.10, block=3, B=2000",
+    "value": 65
+  },
+  "mcsarch.fredmd_exact_match_bootstrap_matched": {
+    "cites": [
+      "S4.1 body: independent-implementation cross-check"
+    ],
+    "cross_check": "fredmd_arch_cross_check.csv: raw_eq_arch_mbb.sum()",
+    "differ": [
+      "BOPGEXP",
+      "M1SL",
+      "WPSFD49207"
+    ],
+    "of": 74,
+    "producer": "mcs_robustness",
+    "spec": "FRED-MD population-sweep series on which this paper's MCS (raw-mean elimination, moving-block bootstrap) returns the identical surviving set as arch 8.0.0 run with the SAME moving-block bootstrap; a series still differing here differs through the elimination rule (raw vs HLN's e_R) and/or residual implementation differences (independent bootstrap draws, p-value convention) -- the residual after matching BOTH is mcsarch.fredmd_exact_match_fully_matched. alpha=0.10, block=3, B=2000, seed=0",
+    "value": 71
+  },
+  "mcsarch.fredmd_exact_match_fully_matched": {
+    "cites": [
+      "S4.1 body: independent-implementation cross-check"
+    ],
+    "cross_check": "fredmd_arch_cross_check.csv: eR_eq_arch_mbb.sum()",
+    "of": 74,
+    "producer": "mcs_robustness",
+    "spec": "FRED-MD population-sweep series on which this paper's MCS with HLN's e_R rule returns the identical surviving set as arch 8.0.0 with a moving-block bootstrap -- bootstrap scheme and elimination rule both matched: the pure implementation check",
+    "value": 74
+  },
+  "mcsarch.fredmd_nonidentified_eR": {
+    "cites": [
+      "S4.1 body: independent-implementation cross-check"
+    ],
+    "cross_check": "fredmd_arch_cross_check.csv: (ours_eR_size > 1).sum()",
+    "of": 74,
+    "producer": "mcs_robustness",
+    "raw_rule": 56,
+    "spec": "FRED-MD series non-identified (|MCS| > 1 at alpha=0.10) when the MCS is run with HLN's e_R elimination rule instead of this paper's raw-mean rule, everything else identical -- the elimination-rule sensitivity of the population headline, disclosed alongside the arch-implementation bound (mcsarch.fredmd_classification_flip). The companion field raw_rule is the same count under the paper's rule, recomputed here",
+    "value": 59
+  },
+  "mcsarch.fredmd_size_match": {
+    "cites": [
+      "S4.1 body: independent-implementation cross-check"
+    ],
+    "cross_check": "fredmd_arch_cross_check.csv: size_match.sum()",
+    "of": 74,
+    "producer": "mcs_robustness",
+    "spec": "FRED-MD population-sweep series on which the hand-rolled and arch implementations return the same |MCS| cardinality",
+    "value": 65
+  }
+}

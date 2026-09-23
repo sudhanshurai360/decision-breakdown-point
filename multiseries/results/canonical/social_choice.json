@@ -1,0 +1,739 @@
+{
+  "_generated": "2026-09-21T01:23:09+00:00",
+  "_n": 67,
+  "_stage": "social_choice",
+  "election.agree3": {
+    "cites": [],
+    "cross_check": "social_choice.csv: agree3.sum()",
+    "of": 24,
+    "producer": "social_choice",
+    "spec": "cells where a Condorcet winner exists AND the score, plurality, and Condorcet winners all coincide -- full agreement among the three canonical voting rules",
+    "value": 10
+  },
+  "election.ar1null_coefficient": {
+    "cites": [
+      "S5.0 body: AR(1)-calibrated exchangeable null"
+    ],
+    "cross_check": null,
+    "producer": "social_choice",
+    "spec": "pooled median lag-1 AR coefficient used to calibrate this null -- IDENTICAL computation and value to election.ar1_coefficient_empirical (election_null_ar1.py); re-derived here rather than imported as a value so this file's own emit is self-contained, but the two must and do agree",
+    "value": 0.25
+  },
+  "election.ar1null_conc_gt1_mean": {
+    "cites": [
+      "S5.0 body: AR(1)-calibrated exchangeable null"
+    ],
+    "cross_check": "social_choice.ar1_null(): null[:, 1].mean()",
+    "n_perm": 2000,
+    "observed": 14,
+    "of": 24,
+    "p05": 7,
+    "p95": 14,
+    "producer": "social_choice",
+    "sd": 2.472,
+    "spec": "MEAN count of cells (the single most pivotal period contributes more than the champion's whole net margin) under the AR(1)-calibrated exchangeable null -- fresh synthetic K-model panels at each cell's own (K,T), genuinely exchangeable (no model has a real population edge) but carrying the same serial dependence real models do (AR(1) at the empirically-estimated pooled coefficient), not a permutation of the fixed real data. Reported alongside, not instead of, the within-period figure.",
+    "value": 10.52
+  },
+  "election.ar1null_conc_gt1_p_ge": {
+    "cites": [
+      "S5.0 body: AR(1)-calibrated exchangeable null"
+    ],
+    "cross_check": "social_choice.ar1_null(): (null[:, 1] >= obs).mean()",
+    "n_perm": 2000,
+    "observed": 14,
+    "producer": "social_choice",
+    "spec": "P(AR(1)-null count >= observed) for the single most pivotal period contributes more than the champion's whole net margin, the serial-dependence-calibrated counterpart to election.permnull_conc_gt1_p_ge",
+    "value": 0.115
+  },
+  "election.ar1null_conc_gt1_p_le": {
+    "cites": [
+      "S5.0 body: AR(1)-calibrated exchangeable null"
+    ],
+    "cross_check": "social_choice.ar1_null(): (null[:, 1] <= obs).mean()",
+    "n_perm": 2000,
+    "observed": 14,
+    "producer": "social_choice",
+    "spec": "P(AR(1)-null count <= observed) for the single most pivotal period contributes more than the champion's whole net margin, the serial-dependence-calibrated counterpart to election.permnull_conc_gt1_p_le",
+    "value": 0.951
+  },
+  "election.ar1null_cycle_mean": {
+    "cites": [
+      "S5.0 body: AR(1)-calibrated exchangeable null"
+    ],
+    "cross_check": "social_choice.ar1_null(): null[:, 4].mean()",
+    "n_perm": 2000,
+    "observed": 2,
+    "of": 24,
+    "p05": 2,
+    "p95": 8,
+    "producer": "social_choice",
+    "sd": 1.915,
+    "spec": "MEAN count of cells (a TRUE intransitive majority cycle) under the AR(1)-calibrated exchangeable null -- fresh synthetic K-model panels at each cell's own (K,T), genuinely exchangeable (no model has a real population edge) but carrying the same serial dependence real models do (AR(1) at the empirically-estimated pooled coefficient), not a permutation of the fixed real data. Reported alongside, not instead of, the within-period figure.",
+    "value": 4.52
+  },
+  "election.ar1null_cycle_p_ge": {
+    "cites": [
+      "S5.0 body: AR(1)-calibrated exchangeable null"
+    ],
+    "cross_check": "social_choice.ar1_null(): (null[:, 4] >= obs).mean()",
+    "n_perm": 2000,
+    "observed": 2,
+    "producer": "social_choice",
+    "spec": "P(AR(1)-null count >= observed) for a TRUE intransitive majority cycle, the serial-dependence-calibrated counterpart to election.permnull_cycle_p_ge",
+    "value": 0.955
+  },
+  "election.ar1null_cycle_p_le": {
+    "cites": [
+      "S5.2 body: transitivity above chance, AR(1)-calibrated check"
+    ],
+    "cross_check": "social_choice.ar1_null(): (null[:, 4] <= obs).mean()",
+    "n_perm": 2000,
+    "observed": 2,
+    "producer": "social_choice",
+    "spec": "P(AR(1)-null count <= observed) for a TRUE intransitive majority cycle, the serial-dependence-calibrated counterpart to election.permnull_cycle_p_le",
+    "value": 0.141
+  },
+  "election.ar1null_kstar1_mean": {
+    "cites": [
+      "S5.0 body: AR(1)-calibrated exchangeable null"
+    ],
+    "cross_check": "social_choice.ar1_null(): null[:, 2].mean()",
+    "n_perm": 2000,
+    "observed": 14,
+    "of": 24,
+    "p05": 7,
+    "p95": 14,
+    "producer": "social_choice",
+    "sd": 2.472,
+    "spec": "MEAN count of cells (a single period's deletion flips the pooled winner) under the AR(1)-calibrated exchangeable null -- fresh synthetic K-model panels at each cell's own (K,T), genuinely exchangeable (no model has a real population edge) but carrying the same serial dependence real models do (AR(1) at the empirically-estimated pooled coefficient), not a permutation of the fixed real data. Reported alongside, not instead of, the within-period figure.",
+    "value": 10.52
+  },
+  "election.ar1null_kstar1_p_ge": {
+    "cites": [
+      "S5.0 body: AR(1)-calibrated exchangeable null"
+    ],
+    "cross_check": "social_choice.ar1_null(): (null[:, 2] >= obs).mean()",
+    "n_perm": 2000,
+    "observed": 14,
+    "producer": "social_choice",
+    "spec": "P(AR(1)-null count >= observed) for a single period's deletion flips the pooled winner, the serial-dependence-calibrated counterpart to election.permnull_kstar1_p_ge",
+    "value": 0.115
+  },
+  "election.ar1null_kstar1_p_le": {
+    "cites": [
+      "S5.0 body: AR(1)-calibrated exchangeable null"
+    ],
+    "cross_check": "social_choice.ar1_null(): (null[:, 2] <= obs).mean()",
+    "n_perm": 2000,
+    "observed": 14,
+    "producer": "social_choice",
+    "spec": "P(AR(1)-null count <= observed) for a single period's deletion flips the pooled winner, the serial-dependence-calibrated counterpart to election.permnull_kstar1_p_le",
+    "value": 0.951
+  },
+  "election.ar1null_no_condorcet_mean": {
+    "cites": [
+      "S5.0 body: AR(1)-calibrated exchangeable null"
+    ],
+    "cross_check": "social_choice.ar1_null(): null[:, 3].mean()",
+    "n_perm": 2000,
+    "observed": 8,
+    "of": 24,
+    "p05": 6,
+    "p95": 13,
+    "producer": "social_choice",
+    "sd": 2.391,
+    "spec": "MEAN count of cells (no Condorcet winner exists (cycle or tie)) under the AR(1)-calibrated exchangeable null -- fresh synthetic K-model panels at each cell's own (K,T), genuinely exchangeable (no model has a real population edge) but carrying the same serial dependence real models do (AR(1) at the empirically-estimated pooled coefficient), not a permutation of the fixed real data. Reported alongside, not instead of, the within-period figure.",
+    "value": 9.46
+  },
+  "election.ar1null_no_condorcet_p_ge": {
+    "cites": [
+      "S5.0 body: AR(1)-calibrated exchangeable null"
+    ],
+    "cross_check": "social_choice.ar1_null(): (null[:, 3] >= obs).mean()",
+    "n_perm": 2000,
+    "observed": 8,
+    "producer": "social_choice",
+    "spec": "P(AR(1)-null count >= observed) for no Condorcet winner exists (cycle or tie), the serial-dependence-calibrated counterpart to election.permnull_no_condorcet_p_ge",
+    "value": 0.794
+  },
+  "election.ar1null_no_condorcet_p_le": {
+    "cites": [
+      "S5.0 body: AR(1)-calibrated exchangeable null"
+    ],
+    "cross_check": "social_choice.ar1_null(): (null[:, 3] <= obs).mean()",
+    "n_perm": 2000,
+    "observed": 8,
+    "producer": "social_choice",
+    "spec": "P(AR(1)-null count <= observed) for no Condorcet winner exists (cycle or tie), the serial-dependence-calibrated counterpart to election.permnull_no_condorcet_p_le",
+    "value": 0.348
+  },
+  "election.ar1null_reversal_mean": {
+    "cites": [
+      "S5.0 body: AR(1)-calibrated exchangeable null"
+    ],
+    "cross_check": "social_choice.ar1_null(): null[:, 0].mean()",
+    "n_perm": 2000,
+    "observed": 10,
+    "of": 24,
+    "p05": 7,
+    "p95": 15,
+    "producer": "social_choice",
+    "sd": 2.468,
+    "spec": "MEAN count of cells (score winner != plurality winner) under the AR(1)-calibrated exchangeable null -- fresh synthetic K-model panels at each cell's own (K,T), genuinely exchangeable (no model has a real population edge) but carrying the same serial dependence real models do (AR(1) at the empirically-estimated pooled coefficient), not a permutation of the fixed real data. Reported alongside, not instead of, the within-period figure.",
+    "value": 11.02
+  },
+  "election.ar1null_reversal_p_ge": {
+    "cites": [
+      "S5.0 body: AR(1)-calibrated exchangeable null"
+    ],
+    "cross_check": "social_choice.ar1_null(): (null[:, 0] >= obs).mean()",
+    "n_perm": 2000,
+    "observed": 10,
+    "producer": "social_choice",
+    "spec": "P(AR(1)-null count >= observed) for score winner != plurality winner, the serial-dependence-calibrated counterpart to election.permnull_reversal_p_ge",
+    "value": 0.74
+  },
+  "election.ar1null_reversal_p_le": {
+    "cites": [
+      "S5.1 body: reversal below the null, AR(1)-calibrated check"
+    ],
+    "cross_check": "social_choice.ar1_null(): (null[:, 0] <= obs).mean()",
+    "n_perm": 2000,
+    "observed": 10,
+    "producer": "social_choice",
+    "spec": "P(AR(1)-null count <= observed) for score winner != plurality winner, the serial-dependence-calibrated counterpart to election.permnull_reversal_p_le",
+    "value": 0.414
+  },
+  "election.conc_reported_not_max": {
+    "cites": [
+      "S5.3 body: why a single concentration figure is not a bound"
+    ],
+    "cross_check": "social_choice.csv: among n_binding_tied>1, concentration != conc_hi",
+    "of": 10,
+    "producer": "social_choice",
+    "spec": "of the tied cells, those whose REPORTED concentration is not the largest in its range -- i.e. where quoting the single figure UNDERSTATES how concentrated the margin can be",
+    "value": 5
+  },
+  "election.conc_tied_cells": {
+    "cites": [
+      "S5.3 body: why a single concentration figure is not a bound"
+    ],
+    "cross_check": "social_choice.csv: (n_binding_tied > 1).sum()",
+    "of": 24,
+    "producer": "social_choice",
+    "spec": "cells where more than one opponent ties at the minimum k*, so `concentration` is one of several defensible values rather than a point",
+    "value": 10
+  },
+  "election.concentration_gt1": {
+    "cites": [
+      "S5.3 body: concentration > 1 cells"
+    ],
+    "cross_check": "social_choice.csv: (concentration > 1).sum()",
+    "of": 24,
+    "producer": "social_choice",
+    "spec": "cells where the single most-pivotal period contributes MORE than the champion's entire net margin over its binding opponent -- deleting it reverses the verdict",
+    "value": 14
+  },
+  "election.concentration_gt1_pct": {
+    "cites": [
+      "S5.3 body: concentration > 1 cells"
+    ],
+    "cross_check": "round(100 * election.concentration_gt1 / n)",
+    "producer": "social_choice",
+    "spec": "election.concentration_gt1 as a share of the panel, rounded to the nearest percent",
+    "value": 58
+  },
+  "election.concentration_max": {
+    "cites": [
+      "S5.3 body: maximum concentration"
+    ],
+    "cross_check": "social_choice.csv: concentration.max()",
+    "producer": "social_choice",
+    "spec": "largest single-period concentration value in the panel",
+    "value": 20.12
+  },
+  "election.concentration_max_cell_lo": {
+    "cites": [
+      "S5.3 body: why a single concentration figure is not a bound"
+    ],
+    "cross_check": "social_choice.csv: conc_lo where concentration is max",
+    "producer": "social_choice",
+    "spec": "the same cell as election.concentration_max (largest single-period concentration in the panel), but against its most DISTANT tied opponent rather than the alphabetically-first one -- the low end of the range election.concentration_max is drawn from",
+    "value": 20.12
+  },
+  "election.condorcet_cycle_cells": {
+    "cites": [
+      "S5.2 body: intransitive-cycle cells"
+    ],
+    "cross_check": "social_choice.csv: (condorcet_status == 'cycle').sum()",
+    "of": 24,
+    "producer": "social_choice",
+    "spec": "cells with a genuine intransitive Condorcet cycle",
+    "value": 2
+  },
+  "election.condorcet_tie_cells": {
+    "cites": [
+      "S5.2 body: pairwise-tie cells"
+    ],
+    "cross_check": "social_choice.csv: (condorcet_status == 'tie').sum()",
+    "of": 24,
+    "producer": "social_choice",
+    "spec": "cells with no Condorcet winner and no cycle -- a pairwise tie",
+    "value": 6
+  },
+  "election.condorcet_winner_cells": {
+    "cites": [
+      "S5.2 body: Condorcet winner existence"
+    ],
+    "cross_check": "social_choice.csv: (condorcet_status == 'winner').sum()",
+    "of": 24,
+    "producer": "social_choice",
+    "spec": "cells where a Condorcet (pairwise-majority) winner exists",
+    "value": 16
+  },
+  "election.permnull_conc_gt1_mean": {
+    "cites": [
+      "S5.0 body: permutation-null calibration"
+    ],
+    "cross_check": "social_choice.permutation_null(): null[:, 1].mean()",
+    "n_perm": 2000,
+    "observed": 14,
+    "of": 24,
+    "p05": 12,
+    "p95": 20,
+    "producer": "social_choice",
+    "spec": "MEAN count of cells (the single most pivotal period contributes more than the champion's whole net margin) under the within-period model-label permutation null, 2000 draws, seed 20260902. The null permutes model labels within each period independently, preserving each period's own multiset of losses (so its difficulty and dispersion, including the 2020 cliff at full size) and every marginal loss value -- destroying the association between model identity and performance, and with it each named model's serial persistence across periods and the correlation between named models' loss series (the real panel's median cross-model level correlation is recorded as modelset.loss_corr_median; the permuted counterpart is not measured by this producer). Compare against the observed count in the `observed` field: this is the arbitrary-winner benchmark Section 5's own language implicitly claims to beat.",
+    "value": 15.98
+  },
+  "election.permnull_conc_gt1_p_ge": {
+    "cites": [
+      "S5.0 body: permutation-null calibration"
+    ],
+    "cross_check": "social_choice.permutation_null(): (null[:, 1] >= obs).mean()",
+    "n_perm": 2000,
+    "observed": 14,
+    "producer": "social_choice",
+    "spec": "P(null count >= observed) for the single most pivotal period contributes more than the champion's whole net margin. A LARGE value means the observed count is at or BELOW what an arbitrary winner produces -- i.e. the raw count is not evidence of the aggregation fragility Section 5 describes.",
+    "value": 0.86
+  },
+  "election.permnull_conc_gt1_p_le": {
+    "cites": [
+      "S5.0 body: permutation-null calibration"
+    ],
+    "cross_check": "social_choice.permutation_null(): (null[:, 1] <= obs).mean()",
+    "n_perm": 2000,
+    "observed": 14,
+    "producer": "social_choice",
+    "spec": "P(null count <= observed) for the single most pivotal period contributes more than the champion's whole net margin. A SMALL value means the observed count is significantly BELOW the null -- a finding in the OPPOSITE direction from the one the raw count suggests.",
+    "value": 0.246
+  },
+  "election.permnull_cycle_mean": {
+    "cites": [
+      "S5.0 body: permutation-null calibration"
+    ],
+    "cross_check": "social_choice.permutation_null(): null[:, 4].mean()",
+    "n_perm": 2000,
+    "observed": 2,
+    "of": 24,
+    "p05": 3,
+    "p95": 10,
+    "producer": "social_choice",
+    "spec": "MEAN count of cells (a TRUE intransitive majority cycle) under the within-period model-label permutation null, 2000 draws, seed 20260902. The null permutes model labels within each period independently, preserving each period's own multiset of losses (so its difficulty and dispersion, including the 2020 cliff at full size) and every marginal loss value -- destroying the association between model identity and performance, and with it each named model's serial persistence across periods and the correlation between named models' loss series (the real panel's median cross-model level correlation is recorded as modelset.loss_corr_median; the permuted counterpart is not measured by this producer). Compare against the observed count in the `observed` field: this is the arbitrary-winner benchmark Section 5's own language implicitly claims to beat.",
+    "value": 6.68
+  },
+  "election.permnull_cycle_p_ge": {
+    "cites": [
+      "S5.0 body: permutation-null calibration"
+    ],
+    "cross_check": "social_choice.permutation_null(): (null[:, 4] >= obs).mean()",
+    "n_perm": 2000,
+    "observed": 2,
+    "producer": "social_choice",
+    "spec": "P(null count >= observed) for a TRUE intransitive majority cycle. A LARGE value means the observed count is at or BELOW what an arbitrary winner produces -- i.e. the raw count is not evidence of the aggregation fragility Section 5 describes.",
+    "value": 0.997
+  },
+  "election.permnull_cycle_p_le": {
+    "cites": [
+      "S5.2 body: transitivity above chance"
+    ],
+    "cross_check": "social_choice.permutation_null(): (null[:, 4] <= obs).mean()",
+    "n_perm": 2000,
+    "observed": 2,
+    "producer": "social_choice",
+    "spec": "P(null count <= observed) for a TRUE intransitive majority cycle. A SMALL value means the observed count is significantly BELOW the null -- a finding in the OPPOSITE direction from the one the raw count suggests.",
+    "value": 0.023
+  },
+  "election.permnull_kstar1_mean": {
+    "cites": [
+      "S5.0 body: permutation-null calibration"
+    ],
+    "cross_check": "social_choice.permutation_null(): null[:, 2].mean()",
+    "n_perm": 2000,
+    "observed": 14,
+    "of": 24,
+    "p05": 12,
+    "p95": 20,
+    "producer": "social_choice",
+    "spec": "MEAN count of cells (a single period's deletion flips the pooled winner) under the within-period model-label permutation null, 2000 draws, seed 20260902. The null permutes model labels within each period independently, preserving each period's own multiset of losses (so its difficulty and dispersion, including the 2020 cliff at full size) and every marginal loss value -- destroying the association between model identity and performance, and with it each named model's serial persistence across periods and the correlation between named models' loss series (the real panel's median cross-model level correlation is recorded as modelset.loss_corr_median; the permuted counterpart is not measured by this producer). Compare against the observed count in the `observed` field: this is the arbitrary-winner benchmark Section 5's own language implicitly claims to beat.",
+    "value": 15.98
+  },
+  "election.permnull_kstar1_p_ge": {
+    "cites": [
+      "S5.0 body: permutation-null calibration"
+    ],
+    "cross_check": "social_choice.permutation_null(): (null[:, 2] >= obs).mean()",
+    "n_perm": 2000,
+    "observed": 14,
+    "producer": "social_choice",
+    "spec": "P(null count >= observed) for a single period's deletion flips the pooled winner. A LARGE value means the observed count is at or BELOW what an arbitrary winner produces -- i.e. the raw count is not evidence of the aggregation fragility Section 5 describes.",
+    "value": 0.86
+  },
+  "election.permnull_kstar1_p_le": {
+    "cites": [
+      "S5.0 body: permutation-null calibration"
+    ],
+    "cross_check": "social_choice.permutation_null(): (null[:, 2] <= obs).mean()",
+    "n_perm": 2000,
+    "observed": 14,
+    "producer": "social_choice",
+    "spec": "P(null count <= observed) for a single period's deletion flips the pooled winner. A SMALL value means the observed count is significantly BELOW the null -- a finding in the OPPOSITE direction from the one the raw count suggests.",
+    "value": 0.246
+  },
+  "election.permnull_no_condorcet_mean": {
+    "cites": [
+      "S5.0 body: permutation-null calibration"
+    ],
+    "cross_check": "social_choice.permutation_null(): null[:, 3].mean()",
+    "n_perm": 2000,
+    "observed": 8,
+    "of": 24,
+    "p05": 8,
+    "p95": 16,
+    "producer": "social_choice",
+    "spec": "MEAN count of cells (no Condorcet winner exists (cycle or tie)) under the within-period model-label permutation null, 2000 draws, seed 20260902. The null permutes model labels within each period independently, preserving each period's own multiset of losses (so its difficulty and dispersion, including the 2020 cliff at full size) and every marginal loss value -- destroying the association between model identity and performance, and with it each named model's serial persistence across periods and the correlation between named models' loss series (the real panel's median cross-model level correlation is recorded as modelset.loss_corr_median; the permuted counterpart is not measured by this producer). Compare against the observed count in the `observed` field: this is the arbitrary-winner benchmark Section 5's own language implicitly claims to beat.",
+    "value": 11.92
+  },
+  "election.permnull_no_condorcet_p_ge": {
+    "cites": [
+      "S5.0 body: permutation-null calibration"
+    ],
+    "cross_check": "social_choice.permutation_null(): (null[:, 3] >= obs).mean()",
+    "n_perm": 2000,
+    "observed": 8,
+    "producer": "social_choice",
+    "spec": "P(null count >= observed) for no Condorcet winner exists (cycle or tie). A LARGE value means the observed count is at or BELOW what an arbitrary winner produces -- i.e. the raw count is not evidence of the aggregation fragility Section 5 describes.",
+    "value": 0.972
+  },
+  "election.permnull_no_condorcet_p_le": {
+    "cites": [
+      "S5.0 body: permutation-null calibration"
+    ],
+    "cross_check": "social_choice.permutation_null(): (null[:, 3] <= obs).mean()",
+    "n_perm": 2000,
+    "observed": 8,
+    "producer": "social_choice",
+    "spec": "P(null count <= observed) for no Condorcet winner exists (cycle or tie). A SMALL value means the observed count is significantly BELOW the null -- a finding in the OPPOSITE direction from the one the raw count suggests.",
+    "value": 0.065
+  },
+  "election.permnull_reversal_mean": {
+    "cites": [
+      "S5.0 body: permutation-null calibration"
+    ],
+    "cross_check": "social_choice.permutation_null(): null[:, 0].mean()",
+    "n_perm": 2000,
+    "observed": 10,
+    "of": 24,
+    "p05": 14,
+    "p95": 21,
+    "producer": "social_choice",
+    "spec": "MEAN count of cells (score winner != plurality winner) under the within-period model-label permutation null, 2000 draws, seed 20260902. The null permutes model labels within each period independently, preserving each period's own multiset of losses (so its difficulty and dispersion, including the 2020 cliff at full size) and every marginal loss value -- destroying the association between model identity and performance, and with it each named model's serial persistence across periods and the correlation between named models' loss series (the real panel's median cross-model level correlation is recorded as modelset.loss_corr_median; the permuted counterpart is not measured by this producer). Compare against the observed count in the `observed` field: this is the arbitrary-winner benchmark Section 5's own language implicitly claims to beat.",
+    "value": 17.48
+  },
+  "election.permnull_reversal_p_ge": {
+    "cites": [
+      "S5.0 body: permutation-null calibration"
+    ],
+    "cross_check": "social_choice.permutation_null(): (null[:, 0] >= obs).mean()",
+    "n_perm": 2000,
+    "observed": 10,
+    "producer": "social_choice",
+    "spec": "P(null count >= observed) for score winner != plurality winner. A LARGE value means the observed count is at or BELOW what an arbitrary winner produces -- i.e. the raw count is not evidence of the aggregation fragility Section 5 describes.",
+    "value": 1.0
+  },
+  "election.permnull_reversal_p_le": {
+    "cites": [
+      "S5.1 body: reversal below the null"
+    ],
+    "cross_check": "social_choice.permutation_null(): (null[:, 0] <= obs).mean()",
+    "n_perm": 2000,
+    "observed": 10,
+    "producer": "social_choice",
+    "spec": "P(null count <= observed) for score winner != plurality winner. A SMALL value means the observed count is significantly BELOW the null -- a finding in the OPPOSITE direction from the one the raw count suggests.",
+    "value": 0.001
+  },
+  "election.pi_concentration": {
+    "cites": [
+      "S4 body: Table 1 PI Concentration column"
+    ],
+    "cross_check": "social_choice.csv: concentration.min() where series=='PI'",
+    "producer": "social_choice",
+    "spec": "Personal Income's concentration -- the identified control, lowest in the panel",
+    "value": 0.07
+  },
+  "election.pivot_2020": {
+    "cites": [
+      "S6 body: 2020 is the most-pivotal period in 5-7 of 24 cells"
+    ],
+    "cross_check": "social_choice.csv: pivotal_year.notna() -> pivot_2020.sum()",
+    "of": 24,
+    "producer": "social_choice",
+    "spec": "cells (of those with a defined pivotal period) where the single most-pivotal period is 2020, as reported under the deterministic (sorted-opponent-name) tie-break -- see pivot_2020_lo/hi for the range under any tie-break among opponents tied at k*",
+    "value": 7
+  },
+  "election.pivot_2020_hi": {
+    "cites": [
+      "S6 body: 2020 is the most-pivotal period in 5-7 of 24 cells"
+    ],
+    "cross_check": "social_choice.csv: pivotal_year.notna() -> pivot_2020_possible.sum()",
+    "of": 24,
+    "producer": "social_choice",
+    "spec": "cells where the most-pivotal period is 2020 under AT LEAST ONE opponent tied at k* -- an upper bound on election.pivot_2020",
+    "value": 7
+  },
+  "election.pivot_2020_lo": {
+    "cites": [
+      "S6 body: 2020 is the most-pivotal period in 5-7 of 24 cells"
+    ],
+    "cross_check": "social_choice.csv: pivotal_year.notna() -> pivot_2020_certain.sum()",
+    "of": 24,
+    "producer": "social_choice",
+    "spec": "cells where the most-pivotal period is 2020 under EVERY opponent tied at k* -- a lower bound on election.pivot_2020",
+    "value": 5
+  },
+  "election.rev_condorcet": {
+    "cites": [
+      "S5.2 body: score-vs-Condorcet reversal"
+    ],
+    "cross_check": "social_choice.csv: (condorcet_status == 'winner') -> rev_condorcet.sum()",
+    "of": 16,
+    "producer": "social_choice",
+    "spec": "of the cells where a Condorcet winner exists, how many have the score-voting winner disagree with the Condorcet winner",
+    "value": 4
+  },
+  "election.reversals": {
+    "cites": [
+      "S5.1 body: score-vs-plurality reversal"
+    ],
+    "cross_check": "social_choice.csv: reversal.sum()",
+    "of": 24,
+    "producer": "social_choice",
+    "spec": "cells where the SCORE (pooled-mean) winner differs from the PLURALITY (per-period) winner; as reported, resolves any plurality tie by sorted model name (see reversals_lo/hi for the range under any tie-break)",
+    "value": 10
+  },
+  "election.reversals_hi": {
+    "cites": [
+      "S5.1 body: score-vs-plurality reversal"
+    ],
+    "cross_check": "social_choice.csv: (reversal & ~reversal_ambiguous).sum() + reversal_ambiguous.sum()",
+    "of": 24,
+    "producer": "social_choice",
+    "spec": "cells where the score-vs-plurality reversal holds under AT LEAST ONE possible plurality tie-break -- an upper bound on election.reversals",
+    "value": 10
+  },
+  "election.reversals_lo": {
+    "cites": [
+      "S5.1 body: score-vs-plurality reversal"
+    ],
+    "cross_check": "social_choice.csv: (reversal & ~reversal_ambiguous).sum()",
+    "of": 24,
+    "producer": "social_choice",
+    "spec": "cells where the score-vs-plurality reversal holds under EVERY possible plurality tie-break -- a lower bound on election.reversals",
+    "value": 9
+  },
+  "election.reversals_pct": {
+    "cites": [
+      "S5.1 body: score-vs-plurality reversal"
+    ],
+    "cross_check": "round(100 * election.reversals / n)",
+    "producer": "social_choice",
+    "spec": "election.reversals as a share of the panel, rounded to the nearest percent",
+    "value": 42
+  },
+  "election.spearman_kstar_stability": {
+    "cites": [
+      "S5.4 body: rank correlation between k* and winner_stability"
+    ],
+    "cross_check": "social_choice.csv: corr(k_star, winner_stability, method='spearman')",
+    "producer": "social_choice",
+    "spec": "Spearman rank correlation between k* (descriptive) and winner_stability (inferential), across the curated panel's cells",
+    "value": 0.805264060124198
+  },
+  "election.spearman_mcs_stability_mase": {
+    "cites": [
+      "S5.4 body: the two instruments"
+    ],
+    "cross_check": "social_choice.csv + mcs_test.csv: spearman(winner_stability, MCS_abs_10) on metric=='mase'",
+    "n_series": 12,
+    "producer": "social_choice",
+    "spec": "Spearman(|MCS|, winner_stability) across curated series on the mase metric, paired with the MATCHING loss family (MCS_abs_10). \u00a72.4 directs the reader to Section 5.4 for both instruments (winner_stability read against the exchangeable null's 5th percentile, and the Model Confidence Set's tied set); it does not itself promise a rank correlation between them -- this key is Section 5.4's own reporting of how the two instruments relate",
+    "value": -0.5508516373118015
+  },
+  "election.spearman_mcs_stability_mase_p": {
+    "cites": [
+      "S5.4 body: the two instruments"
+    ],
+    "cross_check": "social_choice.csv + mcs_test.csv: spearmanr p on metric=='mase'",
+    "producer": "social_choice",
+    "spec": "two-sided p-value for election.spearman_mcs_stability_mase at n=12",
+    "value": 0.0634314161018906
+  },
+  "election.spearman_mcs_stability_rmsse": {
+    "cites": [
+      "S5.4 body: the two instruments"
+    ],
+    "cross_check": "social_choice.csv + mcs_test.csv: spearman(winner_stability, MCS_rmsse_10) on metric=='rmsse'",
+    "n_series": 12,
+    "producer": "social_choice",
+    "spec": "Spearman(|MCS|, winner_stability) across curated series on the rmsse metric, paired with the MATCHING loss family (MCS_rmsse_10). \u00a72.4 directs the reader to Section 5.4 for both instruments (winner_stability read against the exchangeable null's 5th percentile, and the Model Confidence Set's tied set); it does not itself promise a rank correlation between them -- this key is Section 5.4's own reporting of how the two instruments relate",
+    "value": -0.23887978249446548
+  },
+  "election.spearman_mcs_stability_rmsse_p": {
+    "cites": [
+      "S5.4 body: the two instruments"
+    ],
+    "cross_check": "social_choice.csv + mcs_test.csv: spearmanr p on metric=='rmsse'",
+    "producer": "social_choice",
+    "spec": "two-sided p-value for election.spearman_mcs_stability_rmsse at n=12",
+    "value": 0.45462421443255663
+  },
+  "election.stability_below_060": {
+    "cites": [],
+    "cross_check": "social_choice.csv: (winner_stability < 0.60).sum()",
+    "of": 24,
+    "producer": "social_choice",
+    "spec": "cells with winner_stability below 0.60. NOT EVIDENCE OF FRAGILITY ON ITS OWN, and must not be reported as such: the exchangeable null's own median sits well BELOW 0.60 (it is 0.504 -- see election.stability_null_median), so a 0.60 cut sits ABOVE the arbitrary-winner benchmark and would flag most of a pure-null panel. Only cells below the null's 5th percentile (election.stability_null_p05) are unusually fragile relative to chance; that count is election.stability_below_null_p05, reported with its own expected value",
+    "value": 15
+  },
+  "election.stability_below_null_p05": {
+    "band_count": [
+      3
+    ],
+    "cites": [
+      "S5.4 body: cells below the null's fifth percentile"
+    ],
+    "cross_check": "social_choice.csv: (winner_stability < election.stability_null_p05).sum()",
+    "expected": 1.2,
+    "of": 24,
+    "producer": "social_choice",
+    "spec": "cells whose winner_stability falls below the exchangeable null's OWN fifth percentile -- the only fragility claim this panel supports, since a fixed cut like 0.60 sits above the arbitrary-winner benchmark. Read against `expected`: at a fifth percentile, about one such cell in twenty is expected by chance, so this count is a tail description and not evidence. `band_count` is the count at each end of the threshold's own seed band",
+    "threshold": 0.298,
+    "value": 3
+  },
+  "election.stability_median": {
+    "cites": [
+      "S5.4 body: observed median winner_stability"
+    ],
+    "cross_check": "social_choice.csv: winner_stability.median()",
+    "producer": "social_choice",
+    "sd_max": 0.0151,
+    "sd_median": 0.0114,
+    "spec": "median winner_stability across the curated panel's cells (fragility()'s own per-cell statistic, seed-averaged via null_budget.stable_stability)",
+    "value": 0.5737666666666668
+  },
+  "election.stability_min": {
+    "cites": [
+      "S5.4 body: the lowest cell"
+    ],
+    "cross_check": "social_choice.csv: winner_stability.min()",
+    "producer": "social_choice",
+    "spec": "lowest observed winner_stability in the curated panel's cells",
+    "value": 0.1587
+  },
+  "election.stability_null_median": {
+    "cites": [
+      "S5.4 body: the calibrated companion"
+    ],
+    "cross_check": null,
+    "n_eff": 20000,
+    "n_models": 6,
+    "n_periods": 32,
+    "producer": "social_choice",
+    "spec": "median winner_stability under EXCHANGEABLE models (K=6, T=32, 20000 panels across 20 independent seeds): what the statistic returns when the winner is arbitrary by construction. The benchmark the observed median must be read against",
+    "value": 0.504
+  },
+  "election.stability_null_p05": {
+    "band": [
+      0.282,
+      0.307
+    ],
+    "cites": [
+      "S5.4 body: the calibrated companion"
+    ],
+    "cross_check": null,
+    "n_eff": 20000,
+    "n_models": 6,
+    "n_periods": 32,
+    "producer": "social_choice",
+    "sd": 0.0076,
+    "spec": "5th percentile of winner_stability under exchangeable models (K=6, T=32); a cell below this is unusually fragile RELATIVE TO CHANCE, which is the claim the word 'calibrated' makes",
+    "value": 0.298
+  },
+  "election.weight_conc_gt1_equal": {
+    "cites": [
+      "S5 body: period-weighting robustness"
+    ],
+    "cross_check": "social_choice_weights.csv: (conc_equal_year > 1).sum()",
+    "of": 24,
+    "producer": "social_choice",
+    "spec": "cells with concentration > 1 under equal-year weighting -- matches election.concentration_gt1, since equal-year weighting is what the rest of this file already uses",
+    "value": 14
+  },
+  "election.weight_conc_gt1_monthwtd": {
+    "cites": [
+      "S5 body: period-weighting robustness"
+    ],
+    "cross_check": "social_choice_weights.csv: (conc_month_wtd > 1).sum()",
+    "of": 24,
+    "producer": "social_choice",
+    "spec": "cells with concentration > 1 under month-count weighting",
+    "value": 13
+  },
+  "election.weight_kstar_changes": {
+    "cites": [
+      "S5 body: period-weighting robustness"
+    ],
+    "cross_check": "social_choice_weights.csv: (k_equal_year != k_month_wtd).sum()",
+    "of": 24,
+    "producer": "social_choice",
+    "spec": "cells where k* differs between equal-year weighting and month-count weighting",
+    "value": 6
+  },
+  "election.weight_tcu_conc_equal": {
+    "cites": [
+      "S5 body: period-weighting robustness"
+    ],
+    "cross_check": "social_choice_weights.csv: conc_equal_year where series=='TCU' and metric=='mase'",
+    "producer": "social_choice",
+    "spec": "TCU/mase's own concentration under equal-year weighting, used as the worked example of weight-sensitivity -- NOT the panel's largest concentration cell (that is election.concentration_max)",
+    "value": 1.85
+  },
+  "election.weight_tcu_conc_monthwtd": {
+    "cites": [
+      "S5 body: period-weighting robustness"
+    ],
+    "cross_check": "social_choice_weights.csv: conc_month_wtd where series=='TCU' and metric=='mase'",
+    "producer": "social_choice",
+    "spec": "the same TCU/mase cell's concentration under month-count weighting",
+    "value": 1.55
+  },
+  "election.weight_winner_changes": {
+    "cites": [
+      "S5 body: period-weighting robustness"
+    ],
+    "cross_check": "social_choice_weights.csv: (winner_equal_year != winner_month_wtd).sum()",
+    "of": 24,
+    "producer": "social_choice",
+    "spec": "cells where the pooled (score) winner differs between equal-year weighting and month-count weighting of the evaluation periods",
+    "value": 3
+  }
+}

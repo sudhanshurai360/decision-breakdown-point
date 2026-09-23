@@ -1,0 +1,43 @@
+{
+  "_generated": "2026-09-20T06:21:57+00:00",
+  "_n": 4,
+  "_stage": "m4_submissions_audit",
+  "m4sub.distinct_winners": {
+    "cites": [
+      "S9: it wins on all four standard accuracy metrics simultaneously"
+    ],
+    "cross_check": "m4_submissions_leaderboard.csv: {B[mt].idxmin() for mt in METRICS}",
+    "of": 4,
+    "producer": "m4_submissions_audit",
+    "spec": "distinct top-1 submissions across the 4 re-scoring metrics (sMAPE, MAPE, MASE, RMSSE)",
+    "value": 1
+  },
+  "m4sub.n_submissions": {
+    "cites": [
+      "S9: Re-scoring all 61 real M4 submissions"
+    ],
+    "cross_check": "m4_submissions_leaderboard.csv: len(B)",
+    "producer": "m4_submissions_audit",
+    "spec": "number of M4 competition submissions successfully re-scored",
+    "value": 61
+  },
+  "m4sub.pareto_dominant": {
+    "cites": [
+      "S9: is dominated by none"
+    ],
+    "cross_check": "m4_submissions_leaderboard.csv: len({B[mt].idxmin() for mt in METRICS}) == 1",
+    "n_metrics": 4,
+    "producer": "m4_submissions_audit",
+    "spec": "the single submission that is the argmin on every one of the 4 metrics simultaneously cannot be dominated by any other submission on all metrics at once",
+    "value": true
+  },
+  "m4sub.rank_corr_smape_rmsse": {
+    "cites": [
+      "S9 body: board-wide rank correlation complement to Pareto dominance"
+    ],
+    "cross_check": "m4_submissions_leaderboard.csv: B['sMAPE'].rank().corr(B['RMSSE'].rank())",
+    "producer": "m4_submissions_audit",
+    "spec": "Spearman rank correlation of the full leaderboard under sMAPE vs RMSSE",
+    "value": 0.8885774722369116
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "_generated": "2026-09-20T11:41:53+00:00",
+  "_n": 14,
+  "_stage": "fred_md_sweep",
+  "fredmd.identified_complement": {
+    "cites": [
+      "S4.2: FRED-MD identified complement"
+    ],
+    "cross_check": "fred_md_sweep.csv: (MCS_abs == 1).sum()",
+    "of": 74,
+    "producer": "fred_md_sweep",
+    "spec": "total minus non-identified; recorded explicitly because it is a DERIVED quantity that the manuscript states separately",
+    "value": 18
+  },
+  "fredmd.law_max_abs_rho": {
+    "cites": [
+      "S4.3: population-scale companion check, largest of nine Spearman rho values"
+    ],
+    "cross_check": "fred_md_sweep.csv: max |spearman(pred, dv)| over abrupt/kurt/vol x gap_t/MCS_abs/MCS_sq",
+    "n": 74,
+    "producer": "fred_md_sweep",
+    "spec": "largest |Spearman rho| across the {abrupt,kurt,vol} x {gap_t,MCS_abs,MCS_sq} grid (9 pairs; the fourth candidate predictor, sci_CIRC, is excluded as circular -- it is computed from the model losses themselves, not from the data, so it cannot serve as a DATA-SIDE predictor of those same losses' identifiability) -- the population-scale companion to the n=12 curated-panel shock-proneness null of Section 4.3",
+    "value": 0.0696677306346929
+  },
+  "fredmd.law_r2_gap_t": {
+    "bonferroni_m": 3,
+    "bonferroni_p_value": 0.27508183133268865,
+    "bonferroni_permutation_p": 0.2712,
+    "cites": [
+      "S4.3: joint OLS regression on gap_t"
+    ],
+    "cross_check": "fred_md_sweep.csv: joint OLS R^2 (+ F-test and 5000-draw permutation p, Bonferroni-corrected x3 for the 3 DVs tested) on gap_t",
+    "n": 74,
+    "p_value": 0.09169394377756289,
+    "permutation_draws": 5000,
+    "permutation_p": 0.0904,
+    "producer": "fred_md_sweep",
+    "spec": "joint OLS R^2, standardized [abrupt,kurt,vol] -> gap_t, population panel",
+    "value": 0.0874245960167016
+  },
+  "fredmd.law_r2_mcs_abs": {
+    "bonferroni_m": 3,
+    "bonferroni_p_value": 0.0010443836149034696,
+    "bonferroni_permutation_p": 0.0018,
+    "cites": [
+      "S4.3: joint OLS regression on MCS_abs"
+    ],
+    "cross_check": "fred_md_sweep.csv: joint OLS R^2 (+ F-test and 5000-draw permutation p, Bonferroni-corrected x3 for the 3 DVs tested) on MCS_abs",
+    "n": 74,
+    "p_value": 0.0003481278716344899,
+    "permutation_draws": 5000,
+    "permutation_p": 0.0006,
+    "producer": "fred_md_sweep",
+    "spec": "joint OLS R^2, standardized [abrupt,kurt,vol] -> MCS_abs, population panel",
+    "value": 0.23075942255603332
+  },
+  "fredmd.law_r2_mcs_sq": {
+    "bonferroni_m": 3,
+    "bonferroni_p_value": 0.12013412357655939,
+    "bonferroni_permutation_p": 0.0738,
+    "cites": [
+      "S4.3: joint OLS regression on MCS_sq"
+    ],
+    "cross_check": "fred_md_sweep.csv: joint OLS R^2 (+ F-test and 5000-draw permutation p, Bonferroni-corrected x3 for the 3 DVs tested) on MCS_sq",
+    "n": 74,
+    "p_value": 0.04004470785885313,
+    "permutation_draws": 5000,
+    "permutation_p": 0.0246,
+    "producer": "fred_md_sweep",
+    "spec": "joint OLS R^2, standardized [abrupt,kurt,vol] -> MCS_sq, population panel",
+    "value": 0.1111856936419825
+  },
+  "fredmd.nonidentified": {
+    "cites": [
+      "Abstract: headline population non-identification count",
+      "Introduction: headline population non-identification count",
+      "S4.1 body: headline population count",
+      "Conclusion: headline population non-identification count"
+    ],
+    "cross_check": "fred_md_sweep.csv: (MCS_abs > 1).sum()",
+    "of": 74,
+    "producer": "fred_md_sweep",
+    "spec": "series with |MCS_abs|>1 at alpha=0.10; annual-refit walk-forward from 2000, models=['snaive', 'ar1', 'ets', 'theta']",
+    "value": 56
+  },
+  "fredmd.nonidentified_levels_subset": {
+    "cites": [
+      "S4.1 body: stationarity-transform sensitivity"
+    ],
+    "cross_check": "fred_md_sweep.csv: (MCS_abs > 1).sum() where MCS_abs_tcode.notna()",
+    "of": 63,
+    "producer": "fred_md_sweep",
+    "spec": "non-identified in LEVELS, restricted to the published-tcode subset; the same specification as the headline, on the comparable sample",
+    "value": 50
+  },
+  "fredmd.nonidentified_pct": {
+    "cites": [
+      "S4 body: headline population non-identification share"
+    ],
+    "cross_check": "round(100 * fredmd.nonidentified / fredmd.total)",
+    "producer": "fred_md_sweep",
+    "spec": "fredmd.nonidentified as a share of fredmd.total, rounded to the nearest percent",
+    "value": 76
+  },
+  "fredmd.nonidentified_tcode": {
+    "cites": [
+      "S4.1 body: stationarity-transform sensitivity"
+    ],
+    "cross_check": "fred_md_sweep.csv: (MCS_abs_tcode > 1).sum()",
+    "movement_from_levels_subset": 19,
+    "of": 63,
+    "producer": "fred_md_sweep",
+    "spec": "non-identified after applying each series' PUBLISHED McCracken-Ng transformation code; identical MCS protocol, alpha=0.10, only the stationarity transform differs. CAVEAT: part of the drop from fredmd.nonidentified_levels_subset is mechanical, not purely 'stationarity was an artifact' -- the tcode transform (e.g. log-difference) can turn a trending level series into a near-white-noise target, on which the `theta` model (in MODELS above) tends to degenerate toward a near-constant forecast; that alone can separate `theta` from the other three models on absolute loss and shrink |MCS|, independent of whether non-stationarity was inflating the levels-side count. Read this key beside fredmd.nonidentified_levels_subset as a bound, not a clean counterfactual",
+    "value": 31
+  },
+  "fredmd.spearman_gap_mcs": {
+    "cites": [],
+    "cross_check": "fred_md_sweep.csv: spearman(gap_t, MCS_abs)",
+    "n": 74,
+    "p_value": 2.422973882045655e-08,
+    "producer": "fred_md_sweep",
+    "spec": "Spearman rank correlation between the studentized best-vs-second-best gap and |MCS_abs| across the population panel",
+    "value": -0.5939987891463261
+  },
+  "fredmd.squared_nonidentified": {
+    "cites": [],
+    "cross_check": "fred_md_sweep.csv: (MCS_sq > 1).sum()",
+    "of": 74,
+    "producer": "fred_md_sweep",
+    "spec": "series with |MCS_sq|>1 at alpha=0.10; identical protocol to fredmd.nonidentified, squared rather than absolute loss. NOTE: despite its name, this file's MCS_sq is a rooted RMSSE (sqrt per year, then pooled) and so matches mcs_test.py's 'MCS_rmsse', NOT mcs_test.py's own 'MCS_sq' column, which is deliberately un-rooted; a reader cross-referencing the two CSVs by column name alone would be misled about which construction this one uses. Not quoted in the manuscript (cites=[]).",
+    "value": 56
+  },
+  "fredmd.tcode_subset": {
+    "cites": [],
+    "cross_check": "fred_md_sweep.csv: MCS_abs_tcode.notna().sum()",
+    "of": 74,
+    "producer": "fred_md_sweep",
+    "spec": "series carrying a PUBLISHED McCracken-Ng transformation code, on which the levels and transformed specifications are both defined and therefore comparable. Excludes any series whose transformed values are dominated by a near-zero-crossing arithmetic artifact (see tcode_outlier_ratio()) -- 1 series excluded this run on that basis",
+    "value": 63
+  },
+  "fredmd.total": {
+    "cites": [
+      "Abstract",
+      "Introduction",
+      "S4 body"
+    ],
+    "cross_check": "fred_md_sweep.csv: row count",
+    "producer": "fred_md_sweep",
+    "spec": "scorable monthly series surviving the length/finiteness filters",
+    "value": 74
+  },
+  "fredmd.total_candidates": {
+    "cites": [
+      "S3.2 body: FRED-MD candidate universe"
+    ],
+    "cross_check": "len(FREDMD_CODES)",
+    "producer": "fred_md_sweep",
+    "spec": "raw FRED-code candidate list pulled via the API before the length/finiteness filter drops the never-scorable-at-monthly-frequency quarterly series (fredmd.total is the post-filter count)",
+    "value": 76
+  }
+}

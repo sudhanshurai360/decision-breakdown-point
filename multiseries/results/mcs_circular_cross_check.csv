@@ -1,0 +1,4 @@
+series,ours_moving_block,ours_circular,arch,exact_match_mb,exact_match_circ
+BOPGEXP,3,3,4,False,False
+BOPGIMP,3,3,3,True,True
+BUSINV,5,5,2,False,False

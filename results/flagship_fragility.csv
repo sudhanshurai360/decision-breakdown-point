@@ -1,0 +1,2 @@
+window,pooled_winner,per_period_winner,k_star,k_over_T,responsible,winner_stability,fragile,winner_stability_seed0,winner_stability_sd,concentration,reversal,condorcet_winner,condorcet_status,reversal_condorcet,reversal_ambiguous,MCS_10,MCS_10_size,MCS_25,MCS_25_size
+1988-2025,nbeats,nbeats,3,0.079,1988;2009;2010,0.67,False,0.662,0.0105,0.388,False,nbeats,winner,False,False,nbeats|nhits|tft,3,nbeats|tft,2

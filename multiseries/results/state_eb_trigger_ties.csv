@@ -1,0 +1,7 @@
+state,tied_models,net_on
+GA,"['ar1', 'ets']","{'ar1': 1, 'ets': 1, 'theta': -1}"
+NV,"['ar1', 'ets']","{'ar1': 1, 'ets': 1, 'theta': -1}"
+NM,"['ar1', 'ets', 'theta']","{'ar1': 0, 'ets': 0, 'theta': 0}"
+RI,"['ar1', 'ets']","{'ar1': 1, 'ets': 1, 'theta': -1}"
+VT,"['ar1', 'ets']","{'ar1': 1, 'ets': 1, 'theta': -1}"
+VA,"['ar1', 'ets']","{'ar1': 1, 'ets': 1, 'theta': -1}"

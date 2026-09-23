@@ -1,0 +1,45 @@
+state,MCS_stat,dMCS_decision,MCS_stat_near,near_trigger_months,near_trigger_years,full_years,separates,separates_symmetric,stat_set,decision_set,stat_set_near
+AL,2,4,3,64,11,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'snaive', 'theta']","['ar1', 'ets', 'theta']"
+AK,2,3,2,205,21,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'theta']"
+AZ,2,3,3,79,11,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']"
+AR,2,3,3,44,9,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']"
+CA,2,3,1,94,13,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']",['ar1']
+CO,2,3,2,45,7,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets']"
+CT,2,3,2,51,8,36,False,False,"['ar1', 'ets']","['ar1', 'ets', 'theta']","['ar1', 'ets']"
+DE,2,3,3,45,7,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']"
+FL,3,3,3,46,8,36,False,False,"['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']"
+GA,3,4,3,33,7,36,False,False,"['ar1', 'ets', 'theta']","['ar1', 'ets', 'snaive', 'theta']","['ar1', 'ets', 'theta']"
+HI,3,3,3,55,7,36,False,False,"['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']"
+IL,2,3,3,99,14,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']"
+KS,2,3,3,43,6,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']"
+KY,2,4,3,46,9,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'snaive', 'theta']","['ar1', 'ets', 'theta']"
+LA,2,3,1,142,18,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']",['ar1']
+ME,2,3,3,59,9,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']"
+MD,2,3,1,66,7,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']",['ar1']
+MA,3,3,1,69,11,36,False,False,"['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']",['ar1']
+MI,2,3,1,100,12,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']",['ar1']
+MN,3,3,1,31,6,36,False,False,"['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']",['ar1']
+MS,2,3,2,160,18,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets']"
+MO,2,4,3,61,11,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'snaive', 'theta']","['ar1', 'ets', 'theta']"
+MT,2,3,2,56,8,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'theta']"
+NV,3,3,2,57,9,36,False,False,"['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets']"
+NH,3,3,3,33,6,36,False,False,"['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']"
+NJ,3,4,2,76,12,36,False,False,"['ar1', 'ets', 'theta']","['ar1', 'ets', 'snaive', 'theta']","['ar1', 'ets']"
+NM,3,3,3,147,18,36,False,False,"['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']"
+NY,3,3,3,109,14,36,False,False,"['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']"
+NC,2,3,3,53,10,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']"
+OH,2,3,1,80,9,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']",['ar1']
+OK,2,3,3,31,5,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']"
+OR,2,2,1,69,12,36,False,False,"['ar1', 'theta']","['ar1', 'ets']",['ar1']
+PA,3,4,3,70,10,36,False,False,"['ar1', 'ets', 'theta']","['ar1', 'ets', 'snaive', 'theta']","['ar1', 'ets', 'theta']"
+RI,3,3,2,51,7,36,False,False,"['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets']"
+SC,3,3,2,111,14,36,False,False,"['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets']"
+TN,2,3,1,38,6,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']",['ar1']
+TX,2,3,1,111,13,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']",['ar1']
+VT,3,3,3,30,5,36,False,False,"['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']"
+VA,3,3,3,48,6,36,False,False,"['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']"
+WA,2,3,3,105,15,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']"
+WV,2,3,2,122,14,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'theta']"
+WI,2,3,3,38,7,36,False,False,"['ar1', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']"
+WY,1,3,1,37,6,36,False,False,['ar1'],"['ar1', 'ets', 'theta']",['ar1']
+DC,3,3,3,133,18,36,False,False,"['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']","['ar1', 'ets', 'theta']"

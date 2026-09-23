@@ -1,0 +1,142 @@
+{
+  "pulled_at": "2026-08-28T08:40:18",
+  "universe": "distinct",
+  "criteria": {
+    "vintages_cover": "2007-06-01",
+    "rebase_tol": 0.15,
+    "probe_month": "2005-01-01"
+  },
+  "series": {
+    "PAYEMS": {
+      "label": "Labor: nonfarm payrolls",
+      "status": "PASS",
+      "reason": "already present, ok",
+      "n_rows": 13679,
+      "vintage_min": "1955-05-06",
+      "ratio_2005": 0.998,
+      "sha16": "4012697d2ef8ba8b"
+    },
+    "UNEMPLOY": {
+      "label": "Labor: unemployment level (household)",
+      "status": "PASS",
+      "reason": "already present, ok",
+      "n_rows": 5748,
+      "vintage_min": "1961-02-09",
+      "ratio_2005": 0.994,
+      "sha16": "b5358fe127fde7c6"
+    },
+    "HOUST": {
+      "label": "Housing: starts",
+      "status": "PASS",
+      "reason": "already present, ok",
+      "n_rows": 4593,
+      "vintage_min": "1960-07-21",
+      "ratio_2005": 1.007,
+      "sha16": "e33c3f0232187696"
+    },
+    "RSAFS": {
+      "label": "Consumption: retail & food sales",
+      "status": "PASS",
+      "reason": "already present, ok",
+      "n_rows": 5406,
+      "vintage_min": "2001-06-13",
+      "ratio_2005": 1.082,
+      "sha16": "61910c7643d0a3b5"
+    },
+    "DGORDER": {
+      "label": "Manufacturing: durable-goods orders",
+      "status": "PASS",
+      "reason": "already present, ok",
+      "n_rows": 7130,
+      "vintage_min": "1999-08-04",
+      "ratio_2005": 1.028,
+      "sha16": "faef6e5e4537bcbd"
+    },
+    "TCU": {
+      "label": "Industrial: capacity utilization (%)",
+      "status": "PASS",
+      "reason": "already present, ok",
+      "n_rows": 11520,
+      "vintage_min": "1996-11-15",
+      "ratio_2005": 0.986,
+      "sha16": "99dc5a9dfaab5cf6"
+    },
+    "PCE": {
+      "label": "Consumption: personal consumption ($)",
+      "status": "PASS",
+      "reason": "already present, ok",
+      "n_rows": 9817,
+      "vintage_min": "1979-11-19",
+      "ratio_2005": 0.997,
+      "sha16": "eb4cf8aeba7af3fb"
+    },
+    "PI": {
+      "label": "Income: personal income ($)",
+      "status": "PASS",
+      "reason": "already present, ok",
+      "n_rows": 13538,
+      "vintage_min": "1966-01-18",
+      "ratio_2005": 0.973,
+      "sha16": "ed034fc3b8a25e73"
+    },
+    "BOPGEXP": {
+      "label": "Trade: goods exports ($)",
+      "status": "PASS",
+      "reason": "already present, ok",
+      "n_rows": 3405,
+      "vintage_min": "1997-01-17",
+      "ratio_2005": 0.98,
+      "sha16": "82f9ab166868be5a"
+    },
+    "BOPGIMP": {
+      "label": "Trade: goods imports ($)",
+      "status": "PASS",
+      "reason": "already present, ok",
+      "n_rows": 3436,
+      "vintage_min": "1997-01-17",
+      "ratio_2005": 0.998,
+      "sha16": "1f6c355b318f7e92"
+    },
+    "M2SL": {
+      "label": "Money: M2 ($)",
+      "status": "PASS",
+      "reason": "already present, ok",
+      "n_rows": 27972,
+      "vintage_min": "1980-02-08",
+      "ratio_2005": 1.0,
+      "sha16": "e5688825be1972f9"
+    },
+    "BUSINV": {
+      "label": "Inventories: total business inv ($)",
+      "status": "PASS",
+      "reason": "already present, ok",
+      "n_rows": 12835,
+      "vintage_min": "1996-11-15",
+      "ratio_2005": 1.039,
+      "sha16": "f9a4dad2324c64ff"
+    },
+    "TTLCONS": {
+      "label": "Construction: total spending ($)",
+      "status": "DROP",
+      "reason": "vintages_from=2011-07-01 (>2007-06)",
+      "n_rows": 2044,
+      "vintage_min": "2011-07-01",
+      "ratio_2005": null
+    }
+  },
+  "passed": [
+    "PAYEMS",
+    "UNEMPLOY",
+    "HOUST",
+    "RSAFS",
+    "DGORDER",
+    "TCU",
+    "PCE",
+    "PI",
+    "BOPGEXP",
+    "BOPGIMP",
+    "M2SL",
+    "BUSINV"
+  ],
+  "n_passed": 12
+}

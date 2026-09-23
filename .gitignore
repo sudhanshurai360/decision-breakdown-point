@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+logs/
+.DS_Store
+/multiseries/data/m4_sub/
+*.selftest_backup
+*.tmp
+.env

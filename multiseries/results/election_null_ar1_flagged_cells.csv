@@ -1,0 +1,4 @@
+series,metric,winner_stability,own_ar1_median,own_ar1_below_pooled
+HOUST,mase,0.2208666666666666,-0.008924091873533343,True
+TCU,mase,0.1857,0.09591936624429975,True
+TCU,rmsse,0.1587,0.09591936624429975,True

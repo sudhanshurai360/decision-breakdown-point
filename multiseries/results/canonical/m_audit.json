@@ -1,0 +1,61 @@
+{
+  "_generated": "2026-09-20T06:47:22+00:00",
+  "_n": 6,
+  "_stage": "m_audit",
+  "maudit.any_flip_monthly": {
+    "cites": [
+      "S9 body: per-series winner-flip audit"
+    ],
+    "cross_check": "m_audit_Monthly.csv: nunique(win_* across 5 metrics) > 1, mean",
+    "n": 48000,
+    "producer": "m_audit",
+    "spec": "fraction of M4 Monthly series where the argmin winner is not the same model across all 5 scoring metrics (MASE/RMSSE/sMAPE/RMSE/MAE)",
+    "value": 0.14272916666666666
+  },
+  "maudit.any_flip_weekly": {
+    "cites": [
+      "S9 body: per-series winner-flip audit"
+    ],
+    "cross_check": "m_audit_Weekly.csv: nunique(win_* across 5 metrics) > 1, mean",
+    "n": 359,
+    "producer": "m_audit",
+    "spec": "fraction of M4 Weekly series where the argmin winner is not the same model across all 5 scoring metrics (MASE/RMSSE/sMAPE/RMSE/MAE)",
+    "value": 0.12813370473537605
+  },
+  "maudit.flip_mase_rmsse_monthly": {
+    "cites": [
+      "S9 body: per-series winner-flip audit"
+    ],
+    "cross_check": "m_audit_Monthly.csv: (win_MASE != win_RMSSE).mean()",
+    "n": 48000,
+    "producer": "m_audit",
+    "spec": "fraction of M4 Monthly series (5 standard forecasters: snaive/naive/ar1/ets/theta) whose argmin winner differs between MASE and RMSSE scoring",
+    "value": 0.12602083333333333
+  },
+  "maudit.flip_mase_rmsse_weekly": {
+    "cites": [
+      "S9 body: per-series winner-flip audit"
+    ],
+    "cross_check": "m_audit_Weekly.csv: (win_MASE != win_RMSSE).mean()",
+    "n": 359,
+    "producer": "m_audit",
+    "spec": "fraction of M4 Weekly series (5 standard forecasters: snaive/naive/ar1/ets/theta) whose argmin winner differs between MASE and RMSSE scoring",
+    "value": 0.116991643454039
+  },
+  "maudit.mean_distinct_monthly": {
+    "cites": [],
+    "cross_check": "m_audit_Monthly.csv: nunique(win_* across 5 metrics), mean",
+    "of": 5,
+    "producer": "m_audit",
+    "spec": "mean number of distinct argmin winners per M4 Monthly series across the 5 scoring metrics (MASE/RMSSE/sMAPE/RMSE/MAE), 5 standard forecasters (snaive/naive/ar1/ets/theta)",
+    "value": 1.1448333333333334
+  },
+  "maudit.mean_distinct_weekly": {
+    "cites": [],
+    "cross_check": "m_audit_Weekly.csv: nunique(win_* across 5 metrics), mean",
+    "of": 5,
+    "producer": "m_audit",
+    "spec": "mean number of distinct argmin winners per M4 Weekly series across the 5 scoring metrics (MASE/RMSSE/sMAPE/RMSE/MAE), 5 standard forecasters (snaive/naive/ar1/ets/theta)",
+    "value": 1.128133704735376
+  }
+}

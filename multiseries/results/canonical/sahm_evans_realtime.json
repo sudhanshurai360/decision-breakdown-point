@@ -1,0 +1,73 @@
+{
+  "_generated": "2026-09-20T07:21:17+00:00",
+  "_n": 7,
+  "_stage": "sahm_evans_realtime",
+  "data.unrate_alfred_vintages": {
+    "cites": [
+      "S3.4 body: national UNRATE vintage depth",
+      "S7 body: real-time-honest complement"
+    ],
+    "cross_check": "unrate_vintages.parquet: realtime_start.nunique()",
+    "producer": "sahm_evans_realtime",
+    "spec": "distinct ALFRED realtime_start dates in the raw UNRATE vintage cache, i.e. how many genuinely different point-in-time snapshots of the series exist over its history",
+    "value": 797
+  },
+  "realtime.evans_divergent": {
+    "cites": [
+      "S7 body: forward-guidance-threshold real-time divergence"
+    ],
+    "cross_check": "sahm_evans_summary.csv: n_divergent where rule=='EVANS' and protocol=='published'",
+    "each_leg_first_release": 0,
+    "each_leg_first_release_of": 5,
+    "of": 5,
+    "producer": "sahm_evans_realtime",
+    "spec": "the 2012-14 Federal Reserve forward-guidance threshold -- the FOMC's public commitment to hold its policy rate near zero at least as long as unemployment stayed above 6.5%, operationalised here as the 3mo-avg UNRATE rising to/above 6.5% (EVANS is this arm's internal code identifier only; the manuscript names the FOMC threshold, not a person) -- real-time onsets on which accuracy-tied models disagree, under the 'published' protocol (2 published + 1 forecast month). AS-OF basis: the realized signal at each decision month t is recomputed on the single ALFRED vintage current when month t was first published; the model path trains on the vintage current the day before (the origin vintage) and takes its two published months and, for the Sahm rule, its previous-12-month reference low from that same origin vintage -- only month t itself is model-produced. The companion field each_leg_first_release is the same figure under an alternative construct that splices each month's own first release into one series (a mixed-vintage series no determination ever saw), kept for disclosure.",
+    "value": 0
+  },
+  "realtime.evans_divergent_all_forecast": {
+    "cites": [],
+    "cross_check": "sahm_evans_summary.csv: n_divergent where rule=='EVANS' and protocol=='all_forecast'",
+    "of": 5,
+    "producer": "sahm_evans_realtime",
+    "spec": "SAME as realtime.evans_divergent but under the retired 'all_forecast' protocol (3 consecutive model nowcasts) -- the before/after contrast, never a result on its own",
+    "value": 1
+  },
+  "realtime.sahm_divergent": {
+    "cites": [
+      "S7 body: Sahm real-time divergence"
+    ],
+    "cross_check": "sahm_evans_summary.csv: n_divergent where rule=='SAHM' and protocol=='published'",
+    "each_leg_first_release": 2,
+    "each_leg_first_release_of": 13,
+    "of": 12,
+    "producer": "sahm_evans_realtime",
+    "spec": "Sahm-rule (3mo-avg UNRATE rises >=0.50pp above the minimum of the 3mo-avg over the previous 12 months, t-12..t-1, Sahm 2019) real-time onsets on which accuracy-tied models disagree, under the 'published' protocol (2 published + 1 forecast month). AS-OF basis: the realized signal at each decision month t is recomputed on the single ALFRED vintage current when month t was first published; the model path trains on the vintage current the day before (the origin vintage) and takes its two published months and, for the Sahm rule, its previous-12-month reference low from that same origin vintage -- only month t itself is model-produced. The companion field each_leg_first_release is the same figure under an alternative construct that splices each month's own first release into one series (a mixed-vintage series no determination ever saw), kept for disclosure.",
+    "value": 1
+  },
+  "realtime.sahm_divergent_all_forecast": {
+    "cites": [],
+    "cross_check": "sahm_evans_summary.csv: n_divergent where rule=='SAHM' and protocol=='all_forecast'",
+    "of": 12,
+    "producer": "sahm_evans_realtime",
+    "spec": "SAME as realtime.sahm_divergent but under the retired 'all_forecast' protocol (3 consecutive model nowcasts) -- the before/after contrast, never a result on its own",
+    "value": 1
+  },
+  "realtime.sahm_median_spread_mo": {
+    "cites": [
+      "S7 body: real-time-honest complement"
+    ],
+    "cross_check": "sahm_evans_summary.csv: median_spread_mo where rule=='SAHM' and protocol=='published'",
+    "producer": "sahm_evans_realtime",
+    "spec": "Sahm-rule real-time onset divergences (published protocol): median timing spread in months among the tied models' calls, across only the divergent onsets (excludes outright misses, defined as spread>12mo)",
+    "value": 1.0
+  },
+  "realtime.sahm_n_missed": {
+    "cites": [
+      "S7 body: real-time-honest complement"
+    ],
+    "cross_check": "sahm_evans_summary.csv: n_missed where rule=='SAHM' and protocol=='published'",
+    "producer": "sahm_evans_realtime",
+    "spec": "Sahm-rule real-time onset divergences (published protocol): of the n_divergent onsets, how many were an outright MISS by one tied model (timing spread >12mo) rather than a modest within-year timing shift",
+    "value": 0
+  }
+}

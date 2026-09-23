@@ -1,0 +1,13 @@
+series,sci,eff_hard_yrs,MCS_abs_10,MCS_abs_25,MCS_sq_10,MCS_sq_25,MCS_rmsse_10,MCS_rmsse_25,best_abs
+PI,0.224,9.51,1,1,1,1,1,1,ar1
+RSAFS,0.232,7.52,2,2,3,3,4,2,seasonal_naive
+BOPGEXP,0.206,9.85,3,3,3,3,3,3,ar1
+BOPGIMP,0.384,4.72,3,3,5,3,3,3,sarima
+PCE,0.169,9.97,4,4,4,4,4,4,ets
+UNEMPLOY,0.562,2.99,4,4,5,5,5,4,sarima
+BUSINV,0.265,7.8,5,2,6,5,5,2,ets
+DGORDER,0.187,7.59,5,5,5,4,5,4,ets
+HOUST,0.199,10.13,5,5,5,5,5,5,theta
+M2SL,0.148,12.19,5,5,5,5,5,5,ar1
+PAYEMS,0.337,6.49,5,5,5,5,5,5,ar1
+TCU,0.202,8.76,5,5,5,5,5,5,ar1

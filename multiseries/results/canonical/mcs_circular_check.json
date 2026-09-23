@@ -1,0 +1,94 @@
+{
+  "_generated": "2026-09-20T10:52:32+00:00",
+  "_n": 8,
+  "_stage": "mcs_circular_check",
+  "mcs.circular_three_series_exact_match": {
+    "cites": [],
+    "cross_check": "mcs_circular_cross_check.csv: exact_match_circ.sum()",
+    "moving_block": 1,
+    "of": 3,
+    "producer": "mcs_circular_check",
+    "spec": "of the same 3-series subset, how many now have an IDENTICAL surviving model set (not just equal cardinality) to arch's own, when OUR bootstrap uses a fixed-length circular resampling scheme instead of moving-block (moving-block: 1 of 3) -- the exact-set-identity check mcs_robustness.py::arch_cross_check_full() already applies to the full 12-series panel, extended here to this file's own block-structure comparison",
+    "value": 1
+  },
+  "mcs.circular_three_series_match": {
+    "cites": [
+      "S13.1: circular-bootstrap cross-check"
+    ],
+    "cross_check": "mcs_circular_cross_check.csv: (ours_circular == arch).sum()",
+    "of": 3,
+    "producer": "mcs_circular_check",
+    "spec": "cardinality-only match on a 3-series subset (NOT the same check as S4.1's own arch cross-check, which runs on all 12 curated series -- see mcsarch.curated_exact_match and mcs_robustness.py's arch_cross_check_full()): how many of 3 series match arch's |MCS| cardinality exactly under circular resampling (moving-block matches 1 of 3). See mcs.circular_three_series_exact_match for the stronger, surviving-set-identity version of this same comparison",
+    "value": 1
+  },
+  "mcs.curated_nonidentified_circular": {
+    "band": [
+      11,
+      11
+    ],
+    "cites": [
+      "S4.1 body: circular-bootstrap robustness check"
+    ],
+    "cross_check": "mcs_circular_check.csv: curated_mean_circular",
+    "of": 12,
+    "producer": "mcs_circular_check",
+    "spec": "mean non-identified count on the curated panel at the default configuration (block=3, B=2000, alpha=0.10) over a 10-seed band (this file's own seeds=range(10) default -- NOT the same band as S4.1's 50-seed Monte-Carlo band), with circular=True instead of moving-block resampling (moving-block mean over the identical seeds: 11.0)",
+    "value": 11
+  },
+  "mcssize.arch_gap_circular": {
+    "cites": [
+      "S4.2 body: circular-bootstrap size check"
+    ],
+    "cross_check": "mcs_circular_check.csv: gap_circular_canonical",
+    "producer": "mcs_circular_check",
+    "rate_arch": 0.335,
+    "reduction_pct": 22.1,
+    "spec": "the same gap to the published arch figure, with circular resampling instead of moving-block -- narrower but not closed. NOTE: both this gap and mcssize.arch_gap_moving_block compare our scheme against arch's STATIONARY-bootstrap default, and against an arch rate measured on a different panel draw; the like-for-like gaps are mcssize.arch_gap_matched_*",
+    "value": 0.0545
+  },
+  "mcssize.arch_gap_matched_circular": {
+    "cites": [
+      "S4.2 body: circular-bootstrap size check"
+    ],
+    "cross_check": "mcs_circular_check.csv: gap_matched_circular",
+    "n_panels": 2000,
+    "producer": "mcs_circular_check",
+    "rate_arch": 0.283,
+    "rate_ours": 0.2805,
+    "spec": "|our circular size - arch's size| when arch is ALSO run with a circular block bootstrap (bootstrap='circular'), on the identical null panels -- the like-for-like gap for the circular scheme",
+    "value": 0.0025
+  },
+  "mcssize.arch_gap_matched_moving_block": {
+    "cites": [
+      "S4.2 body: circular-bootstrap size check"
+    ],
+    "cross_check": "mcs_circular_check.csv: gap_matched_moving_block",
+    "n_panels": 2000,
+    "producer": "mcs_circular_check",
+    "rate_arch": 0.267,
+    "rate_ours": 0.265,
+    "spec": "|our moving-block size - arch's size| when arch is ALSO run with a moving-block bootstrap (bootstrap='moving block'), on the identical 2000 null panels, K=6, T=30, block=3, B=800, alpha=0.10: the like-for-like implementation gap with the resampling scheme held fixed",
+    "value": 0.002
+  },
+  "mcssize.arch_gap_moving_block": {
+    "cites": [
+      "S4.2 body: circular-bootstrap size check"
+    ],
+    "cross_check": "mcs_circular_check.csv: gap_moving_block_canonical",
+    "producer": "mcs_circular_check",
+    "rate_arch": 0.335,
+    "spec": "gap between the published arch figure (mcssize.size_arch) and our moving-block size (mcssize.size_at_nominal_10) -- the discrepancy S4.2's prose names before testing whether the bootstrap scheme explains it",
+    "value": 0.07
+  },
+  "mcssize.size_circular": {
+    "cites": [
+      "S4.2 body: circular-bootstrap size check"
+    ],
+    "cross_check": "mcs_circular_check.csv: rate_circular",
+    "n_rep": 2000,
+    "producer": "mcs_circular_check",
+    "se": 0.01,
+    "spec": "empirical rejection rate on exactly-null panels at K=6, T=30, block=3, alpha=0.10, with circular=True instead of the default moving-block scheme -- the same measurement mcssize.size_at_nominal_10 makes, with only the resampling scheme changed",
+    "value": 0.2805
+  }
+}

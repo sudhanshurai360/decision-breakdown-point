@@ -1,0 +1,189 @@
+{
+  "_generated": "2026-09-20T09:18:54+00:00",
+  "_n": 18,
+  "_stage": "combination_benchmark",
+  "comb.beats_best_single": {
+    "cites": [
+      "S4.4 body: combination benchmark"
+    ],
+    "cross_check": "combination_benchmark.csv: comb_wins.sum()",
+    "of": 12,
+    "producer": "combination_benchmark",
+    "spec": "curated series where the EQUAL-WEIGHT COMBINATION of the six models has lower pooled mean scaled absolute loss than the best-performing SINGLE model. The combination is built from the point forecasts (mean of y_pred) and then scored on the same series-year scale_abs as the singles -- NOT an average of the singles' losses. Note the comparison is an ORACLE one and favours the singles: 'best single' is chosen with hindsight, while a real forecaster must select in advance",
+    "value": 1
+  },
+  "comb.beats_median_single": {
+    "cites": [
+      "S4.4 body: combination benchmark"
+    ],
+    "cross_check": "combination_benchmark.csv: comb_beats_median.sum()",
+    "of": 12,
+    "producer": "combination_benchmark",
+    "spec": "curated series where the equal-weight combination has lower pooled loss than the MEDIAN single model. This is the decision-relevant comparison, not comb.beats_best_single: the paper's own thesis is that the best single cannot be identified in advance, so a forecaster who must choose blind faces a typical model, not the oracle best one",
+    "value": 1
+  },
+  "comb.in_mcs": {
+    "cites": [
+      "S4.4 body: combination benchmark"
+    ],
+    "cross_check": "combination_benchmark.csv: comb_in_mcs.sum()",
+    "of": 12,
+    "producer": "combination_benchmark",
+    "spec": "curated series where the combination survives a Model Confidence Set run that INCLUDES it as a seventh candidate (alpha=0.1). This is a SEPARATE run and does not alter the frozen six-model pool behind mcs.curated_nonidentified",
+    "value": 5
+  },
+  "comb.median_kstar_vs_best": {
+    "cites": [
+      "S4.4 body: combination benchmark"
+    ],
+    "cross_check": "combination_benchmark.csv: k_star.median()",
+    "n_series": 12,
+    "producer": "combination_benchmark",
+    "spec": "median across series of k* for the combination-vs-best-single contest (fewest years to delete to flip whichever of the two wins). Higher = the verdict between combining and selecting is harder to overturn",
+    "value": 12.0
+  },
+  "comb.median_rank_of_7": {
+    "cites": [
+      "S4.4 body: combination benchmark"
+    ],
+    "cross_check": "combination_benchmark.csv: comb_rank_of_7.median()",
+    "n_series": 12,
+    "of": 7,
+    "producer": "combination_benchmark",
+    "spec": "median across series of the combination's rank among the seven candidates (the six singles plus itself), 1 = better than every single model. A rank consistently near the top without ever needing a selection decision is the practical case for combining",
+    "value": 6.0
+  },
+  "comb.median_winner_stability": {
+    "cites": [],
+    "cross_check": "combination_benchmark.csv: winner_stability.median()",
+    "n_series": 12,
+    "producer": "combination_benchmark",
+    "spec": "median across series of winner_stability for the combination-vs-best-single contest. Read against comb.stability_null_median/p05 (this file's own K=2 exchangeable null, computed at each series' own T then medianed across series), NOT against a bare threshold or a null borrowed from a different panel",
+    "value": 0.998645
+  },
+  "comb.rank6_series": {
+    "cites": [
+      "S4.4 body: why the rank is what it is"
+    ],
+    "cross_check": "combination_benchmark.csv: (comb_rank_of_7 == 6).sum()",
+    "of": 12,
+    "producer": "combination_benchmark",
+    "spec": "curated series where the combination ranks EXACTLY 6th of 7. The median rank is a summary of a near-degenerate distribution, and this count is what makes that visible",
+    "value": 11
+  },
+  "comb.sn_worst_ratio_min": {
+    "aux_max": 7.4369670493616225,
+    "cites": [
+      "S4.4 body: why the rank is what it is"
+    ],
+    "cross_check": "combination_benchmark.csv: min/max of worst_best_ratio where worst_single == 'seasonal_naive'",
+    "producer": "combination_benchmark",
+    "spec": "across the series where seasonal_naive is worst, the smallest (and, as aux_max, the largest) ratio of its pooled loss to the best single model's -- how far the outlier member sits from the rest of the pool",
+    "value": 1.6821289218337883
+  },
+  "comb.sn_worst_series": {
+    "cites": [
+      "S4.4 body: why the rank is what it is"
+    ],
+    "cross_check": "combination_benchmark.csv: worst_single == 'seasonal_naive'",
+    "of": 12,
+    "producer": "combination_benchmark",
+    "spec": "curated series where seasonal_naive is the WORST of the six single models by pooled mean scaled absolute loss -- the pool member an equal-weight mean cannot down-weight",
+    "value": 11
+  },
+  "comb.stability_null_median": {
+    "cites": [],
+    "cross_check": "combination_benchmark.csv: null_median.median()",
+    "n_series": 12,
+    "producer": "combination_benchmark",
+    "spec": "median across series of the exchangeable-null median for winner_stability under K=2 identically-distributed models, computed AT EACH SERIES' OWN T (per_series_panels' T, not a fixed T~30 approximation), via null_budget.stable_benchmark: 20 independent seeds x 1000 panels/800 bootstrap draws per seed per series (20,000 effective replications) -- what comb.median_winner_stability must be read against, per the discipline established for flagship.stability_null_median (a null computed at different dimensions than the panel it calibrates is a real bug, not a convenience)",
+    "value": 0.7629999999999999
+  },
+  "comb.stability_null_p05": {
+    "cites": [],
+    "cross_check": "combination_benchmark.csv: null_p05.median()",
+    "n_series": 12,
+    "producer": "combination_benchmark",
+    "spec": "median across series of the exchangeable-null 5th percentile for winner_stability under K=2 identically-distributed models, same per-series-T computation as comb.stability_null_median; a series' own winner_stability below its own p05 is unusually fragile RELATIVE TO CHANCE at that series' T",
+    "value": 0.5266328125
+  },
+  "comb.winning_series": {
+    "cites": [
+      "S4.4 body: the one cell the median conceals"
+    ],
+    "cross_check": "combination_benchmark.csv: series where comb_wins",
+    "producer": "combination_benchmark",
+    "spec": "the single series where the equal-weight combination beats the best single model",
+    "value": "RSAFS"
+  },
+  "comb.winning_series_null_p05": {
+    "band": [
+      0.522,
+      0.537
+    ],
+    "cites": [
+      "S4.4 body: the one cell the median conceals"
+    ],
+    "cross_check": "combination_benchmark.csv: null_p05 where comb_wins",
+    "n_eff": 20000,
+    "producer": "combination_benchmark",
+    "sd": 0.0038,
+    "spec": "that same cell's OWN exchangeable-null 5th percentile, at its own K=2 and T, averaged over independent seeds. Its seed-to-seed spread is reported because it is comparable to the gap this threshold is used to adjudicate",
+    "value": 0.527
+  },
+  "comb.winning_series_stability": {
+    "band": [
+      0.51,
+      0.527
+    ],
+    "cites": [
+      "S4.4 body: the one cell the median conceals"
+    ],
+    "cross_check": "combination_benchmark.csv: winner_stability where comb_wins",
+    "n_seeds": 20,
+    "producer": "combination_benchmark",
+    "sd": 0.0047,
+    "spec": "winner_stability of the combination-vs-best-single contest ON the one series the combination wins, averaged over independent bootstrap seeds. Read against comb.winning_series_null_p05 THROUGH comb.winning_series_verdict -- never by comparing the two point estimates directly: this cell's classification is sensitive to seed-averaging discipline (a single seed=0 draw and a multi-seed average can disagree), which is exactly why an averaged, banded estimate with an explicit verdict field is reported here instead of a bare point estimate",
+    "value": 0.519
+  },
+  "comb.winning_series_verdict": {
+    "cites": [
+      "S4.4 body: the one cell the median conceals"
+    ],
+    "cross_check": "combination_benchmark.csv: fragility_verdict where comb_wins",
+    "producer": "combination_benchmark",
+    "spec": "'fragile' / 'not_fragile' / 'undetermined' for that cell, decided with BOTH Monte-Carlo intervals in hand. 'undetermined' means the gap between the observed value and its threshold is smaller than the noise in the two estimates -- a real answer, and the one a single-seed point comparison could never return",
+    "value": "fragile"
+  },
+  "comb5.beats_best_single": {
+    "cites": [
+      "S4.4 body: five-model combination, seasonal_naive excluded"
+    ],
+    "cross_check": "combination5_benchmark.csv: comb_wins.sum()",
+    "of": 12,
+    "producer": "combination_benchmark",
+    "spec": "curated series where the FIVE-model equal-weight combination (excludes seasonal_naive, the deliberately mis-specified reference S3.1 documents) has lower pooled mean scaled absolute loss than the best-performing single model, chosen from the same six-single pool comb.beats_best_single uses. Counterpart to comb.beats_best_single, whose six-model version cannot cleanly separate the combination's performance from seasonal_naive's own mis-specification",
+    "value": 1
+  },
+  "comb5.beats_median_single": {
+    "cites": [
+      "S4.4 body: five-model combination, seasonal_naive excluded"
+    ],
+    "cross_check": "combination5_benchmark.csv: comb_beats_median.sum()",
+    "of": 12,
+    "producer": "combination_benchmark",
+    "spec": "curated series where the five-model combination beats the MEDIAN single model (from the same six-single pool) -- the decision-relevant comparison, matching comb.beats_median_single's convention",
+    "value": 11
+  },
+  "comb5.median_rank_of_7": {
+    "cites": [
+      "S4.4 body: five-model combination, seasonal_naive excluded"
+    ],
+    "cross_check": "combination5_benchmark.csv: comb_rank_of_7.median()",
+    "n_series": 12,
+    "of": 7,
+    "producer": "combination_benchmark",
+    "spec": "median across series of the five-model combination's rank among the seven candidates (the six singles, including seasonal_naive as an option a forecaster could still pick, plus the combination itself), 1 = better than every single model",
+    "value": 3.0
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "_generated": "2026-09-20T06:07:59+00:00",
+  "_n": 13,
+  "_stage": "best_arm",
+  "bestarm.spearman_H_mcs": {
+    "cites": [
+      "S4.3: the complexity proxy H and |MCS| correlate at"
+    ],
+    "cross_check": "best_arm.csv: spearmanr(H, MCS)",
+    "n": 12,
+    "producer": "best_arm",
+    "spec": "Spearman rho between the fixed-confidence complexity proxy H and |MCS|, n=12 curated series",
+    "value": 0.3372561044766132
+  },
+  "bestarm.spearman_H_mcs_excl_pi": {
+    "cites": [
+      "S4.3: the H-|MCS| correlation from"
+    ],
+    "cross_check": "best_arm.csv: spearmanr(H, MCS) on series != 'PI'",
+    "n": 11,
+    "producer": "best_arm",
+    "spec": "bestarm.spearman_H_mcs recomputed excluding Personal Income (PI)",
+    "value": 0.11961189100979426
+  },
+  "bestarm.spearman_H_mcs_excl_pi_drop_pct": {
+    "cites": [
+      "S4.3: the excl-PI relative drop"
+    ],
+    "cross_check": "round(100 * (abs(H_rho) - abs(ex_H_rho)) / abs(H_rho))",
+    "producer": "best_arm",
+    "spec": "relative drop in |Spearman rho| from bestarm.spearman_H_mcs to its excl-PI counterpart",
+    "value": 65
+  },
+  "bestarm.spearman_H_mcs_excl_pi_p": {
+    "cites": [
+      "S4.3: the H-|MCS| correlation from"
+    ],
+    "cross_check": "best_arm.csv: spearmanr(H, MCS) p-value on series != 'PI'",
+    "n": 11,
+    "producer": "best_arm",
+    "spec": "p-value for bestarm.spearman_H_mcs_excl_pi",
+    "value": 0.7261171179530614
+  },
+  "bestarm.spearman_H_mcs_p": {
+    "cites": [
+      "S4.3: the complexity proxy H and |MCS| correlate at"
+    ],
+    "cross_check": "best_arm.csv: spearmanr(H, MCS) p-value",
+    "n": 12,
+    "producer": "best_arm",
+    "spec": "p-value for bestarm.spearman_H_mcs",
+    "value": 0.28370035440650376
+  },
+  "bestarm.spearman_gap_H": {
+    "cites": [
+      "S4.3: gap and H are near-identical quantities"
+    ],
+    "cross_check": "best_arm.csv: spearmanr(gap2_t, H)",
+    "n": 12,
+    "producer": "best_arm",
+    "spec": "Spearman rho between gap2_t and H -- near-identical quantities by construction, reported to show the two correlations above are one relationship, not two independent confirmations",
+    "value": -0.9860139860139862
+  },
+  "bestarm.spearman_gap_mcs": {
+    "cites": [
+      "S4.3: the gap and |MCS| correlate at Spearman"
+    ],
+    "cross_check": "best_arm.csv: spearmanr(gap2_t, MCS)",
+    "n": 12,
+    "producer": "best_arm",
+    "spec": "Spearman rho between the studentized best-vs-2nd gap (gap2_t) and |MCS|, n=12 curated series",
+    "value": -0.3634871348247943
+  },
+  "bestarm.spearman_gap_mcs_excl_pi": {
+    "cites": [
+      "S4.3: excluding it, the gap-|MCS| correlation collapses"
+    ],
+    "cross_check": "best_arm.csv: spearmanr(gap2_t, MCS) on series != 'PI'",
+    "n": 11,
+    "producer": "best_arm",
+    "spec": "bestarm.spearman_gap_mcs recomputed excluding Personal Income (PI), the single identified series that carries most of the correlation's leverage",
+    "value": -0.15449869255431758
+  },
+  "bestarm.spearman_gap_mcs_excl_pi_drop_pct": {
+    "cites": [
+      "S4.3: the excl-PI relative drop"
+    ],
+    "cross_check": "round(100 * (abs(gap_rho) - abs(ex_gap_rho)) / abs(gap_rho))",
+    "producer": "best_arm",
+    "spec": "relative drop in |Spearman rho| from bestarm.spearman_gap_mcs to its excl-PI counterpart",
+    "value": 57
+  },
+  "bestarm.spearman_gap_mcs_excl_pi_p": {
+    "cites": [
+      "S4.3: excluding it, the gap-|MCS| correlation collapses"
+    ],
+    "cross_check": "best_arm.csv: spearmanr(gap2_t, MCS) p-value on series != 'PI'",
+    "n": 11,
+    "producer": "best_arm",
+    "spec": "p-value for bestarm.spearman_gap_mcs_excl_pi",
+    "value": 0.6501340071469779
+  },
+  "bestarm.spearman_gap_mcs_p": {
+    "cites": [
+      "S4.3: the gap and |MCS| correlate at Spearman"
+    ],
+    "cross_check": "best_arm.csv: spearmanr(gap2_t, MCS) p-value",
+    "n": 12,
+    "producer": "best_arm",
+    "spec": "p-value for bestarm.spearman_gap_mcs",
+    "value": 0.2454732951323187
+  },
+  "bestarm.spearman_sci_mcs": {
+    "cites": [
+      "S4.3: compared to ... for shock-proneness, the well-powered null of Section 4.2"
+    ],
+    "cross_check": "best_arm.csv: spearmanr(sci, MCS)",
+    "n": 12,
+    "producer": "best_arm",
+    "spec": "Spearman rho between shock-proneness (sci) and |MCS| -- the well-powered null from S4.2, shown for contrast against the gap/H correlations",
+    "value": -0.3260142343273928
+  },
+  "bestarm.spearman_sci_mcs_p": {
+    "cites": [
+      "S4.3: compared to ... for shock-proneness, the well-powered null of Section 4.2"
+    ],
+    "cross_check": "best_arm.csv: spearmanr(sci, MCS) p-value",
+    "n": 12,
+    "producer": "best_arm",
+    "spec": "p-value for bestarm.spearman_sci_mcs",
+    "value": 0.3010595348345034
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "_generated": "2026-09-20T10:44:59+00:00",
+  "_n": 25,
+  "_stage": "social_choice_power",
+  "scpower.concentration_gt1_0p5": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_concentration_gt1 where delta==0.005",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'concentration_gt1' count, after a 0.5% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 2
+  },
+  "scpower.concentration_gt1_1": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_concentration_gt1 where delta==0.01",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'concentration_gt1' count, after a 1.0% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 3
+  },
+  "scpower.concentration_gt1_2": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_concentration_gt1 where delta==0.02",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'concentration_gt1' count, after a 2.0% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 5
+  },
+  "scpower.concentration_gt1_5": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_concentration_gt1 where delta==0.05",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'concentration_gt1' count, after a 5.0% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 5
+  },
+  "scpower.concentration_gt1_baseline_in_rejection_region": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_concentration_gt1 where model=='__baseline__'",
+    "obs": 14,
+    "p05": 12.0,
+    "producer": "social_choice_power",
+    "spec": "whether the UNPERTURBED (delta=0) curated panel's panel-wide 'concentration_gt1' count already sits below the permutation null's own fifth percentile (obs=14 vs p05=12). 1 means the detection rule used by the scpower.concentration_gt1_* power figures fires with NO edge planted, so those figures measure P(hit | no edge) = 1 rather than power and must not be read as a power result for this statistic; 0 means the statistic starts outside the rejection region and its hits reflect genuine movement",
+    "value": 0
+  },
+  "scpower.cycle_0p5": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_cycle where delta==0.005",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'cycle' count, after a 0.5% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 4
+  },
+  "scpower.cycle_1": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_cycle where delta==0.01",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'cycle' count, after a 1.0% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 5
+  },
+  "scpower.cycle_2": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_cycle where delta==0.02",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'cycle' count, after a 2.0% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 6
+  },
+  "scpower.cycle_5": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_cycle where delta==0.05",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'cycle' count, after a 5.0% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 6
+  },
+  "scpower.cycle_baseline_in_rejection_region": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_cycle where model=='__baseline__'",
+    "obs": 2,
+    "p05": 3.0,
+    "producer": "social_choice_power",
+    "spec": "whether the UNPERTURBED (delta=0) curated panel's panel-wide 'cycle' count already sits below the permutation null's own fifth percentile (obs=2 vs p05=3). 1 means the detection rule used by the scpower.cycle_* power figures fires with NO edge planted, so those figures measure P(hit | no edge) = 1 rather than power and must not be read as a power result for this statistic; 0 means the statistic starts outside the rejection region and its hits reflect genuine movement",
+    "value": 1
+  },
+  "scpower.kstar_is_1_0p5": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_kstar_is_1 where delta==0.005",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'kstar_is_1' count, after a 0.5% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 2
+  },
+  "scpower.kstar_is_1_1": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_kstar_is_1 where delta==0.01",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'kstar_is_1' count, after a 1.0% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 3
+  },
+  "scpower.kstar_is_1_2": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_kstar_is_1 where delta==0.02",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'kstar_is_1' count, after a 2.0% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 5
+  },
+  "scpower.kstar_is_1_5": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_kstar_is_1 where delta==0.05",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'kstar_is_1' count, after a 5.0% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 5
+  },
+  "scpower.kstar_is_1_baseline_in_rejection_region": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_kstar_is_1 where model=='__baseline__'",
+    "obs": 14,
+    "p05": 12.0,
+    "producer": "social_choice_power",
+    "spec": "whether the UNPERTURBED (delta=0) curated panel's panel-wide 'kstar_is_1' count already sits below the permutation null's own fifth percentile (obs=14 vs p05=12). 1 means the detection rule used by the scpower.kstar_is_1_* power figures fires with NO edge planted, so those figures measure P(hit | no edge) = 1 rather than power and must not be read as a power result for this statistic; 0 means the statistic starts outside the rejection region and its hits reflect genuine movement",
+    "value": 0
+  },
+  "scpower.no_condorcet_0p5": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_no_condorcet where delta==0.005",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'no_condorcet' count, after a 0.5% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 2
+  },
+  "scpower.no_condorcet_1": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_no_condorcet where delta==0.01",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'no_condorcet' count, after a 1.0% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 4
+  },
+  "scpower.no_condorcet_2": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_no_condorcet where delta==0.02",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'no_condorcet' count, after a 2.0% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 5
+  },
+  "scpower.no_condorcet_5": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_no_condorcet where delta==0.05",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'no_condorcet' count, after a 5.0% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 5
+  },
+  "scpower.no_condorcet_baseline_in_rejection_region": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_no_condorcet where model=='__baseline__'",
+    "obs": 8,
+    "p05": 8.0,
+    "producer": "social_choice_power",
+    "spec": "whether the UNPERTURBED (delta=0) curated panel's panel-wide 'no_condorcet' count already sits below the permutation null's own fifth percentile (obs=8 vs p05=8). 1 means the detection rule used by the scpower.no_condorcet_* power figures fires with NO edge planted, so those figures measure P(hit | no edge) = 1 rather than power and must not be read as a power result for this statistic; 0 means the statistic starts outside the rejection region and its hits reflect genuine movement",
+    "value": 0
+  },
+  "scpower.reversal_0p5": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_reversal where delta==0.005",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'reversal' count, after a 0.5% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 5
+  },
+  "scpower.reversal_1": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_reversal where delta==0.01",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'reversal' count, after a 1.0% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 5
+  },
+  "scpower.reversal_2": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_reversal where delta==0.02",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'reversal' count, after a 2.0% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 6
+  },
+  "scpower.reversal_5": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_reversal where delta==0.05",
+    "of": 6,
+    "producer": "social_choice_power",
+    "spec": "of the 6 curated models (one per trial), how many whose panel-wide 'reversal' count, after a 5.0% additive edge planted panel-wide for that model, falls below the permutation null's own fifth percentile -- the direction a real edge should push it, mirroring mcs_power.py's edge-injection design applied to the Section 5 statistics",
+    "value": 6
+  },
+  "scpower.reversal_baseline_in_rejection_region": {
+    "cites": [
+      "S5.0 body: permutation-null power check"
+    ],
+    "cross_check": "social_choice_power.csv: hit_reversal where model=='__baseline__'",
+    "obs": 10,
+    "p05": 14.0,
+    "producer": "social_choice_power",
+    "spec": "whether the UNPERTURBED (delta=0) curated panel's panel-wide 'reversal' count already sits below the permutation null's own fifth percentile (obs=10 vs p05=14). 1 means the detection rule used by the scpower.reversal_* power figures fires with NO edge planted, so those figures measure P(hit | no edge) = 1 rather than power and must not be read as a power result for this statistic; 0 means the statistic starts outside the rejection region and its hits reflect genuine movement",
+    "value": 1
+  }
+}

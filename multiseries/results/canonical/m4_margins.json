@@ -1,0 +1,49 @@
+{
+  "_generated": "2026-09-20T06:21:59+00:00",
+  "_n": 4,
+  "_stage": "m4_margins",
+  "m4sub.gap_mape_pct": {
+    "champion": "submission-118",
+    "cites": [
+      "S9 body: M4 margin table"
+    ],
+    "cross_check": "m4_margins.csv: gap_pct where metric=='MAPE'",
+    "producer": "m4_margins",
+    "runner_up": "submission-072",
+    "spec": "champion-vs-runner-up percentage gap on MAPE, (0.13878 - 0.13833) / 0.13833 * 100 -- read against S3.1's 0.93% median best-vs-runner-up gap on the home panel",
+    "value": 0.32
+  },
+  "m4sub.gap_mase_pct": {
+    "champion": "submission-118",
+    "cites": [
+      "S9 body: M4 margin table"
+    ],
+    "cross_check": "m4_margins.csv: gap_pct where metric=='MASE'",
+    "producer": "m4_margins",
+    "runner_up": "submission-237",
+    "spec": "champion-vs-runner-up percentage gap on MASE, (1.54745 - 1.53570) / 1.53570 * 100 -- read against S3.1's 0.93% median best-vs-runner-up gap on the home panel",
+    "value": 0.77
+  },
+  "m4sub.gap_rmsse_pct": {
+    "champion": "submission-118",
+    "cites": [
+      "S9 body: M4 margin table"
+    ],
+    "cross_check": "m4_margins.csv: gap_pct where metric=='RMSSE'",
+    "producer": "m4_margins",
+    "runner_up": "submission-245",
+    "spec": "champion-vs-runner-up percentage gap on RMSSE, (1.32554 - 1.31284) / 1.31284 * 100 -- read against S3.1's 0.93% median best-vs-runner-up gap on the home panel",
+    "value": 0.97
+  },
+  "m4sub.gap_smape_pct": {
+    "champion": "submission-118",
+    "cites": [
+      "S9 body: M4 margin table"
+    ],
+    "cross_check": "m4_margins.csv: gap_pct where metric=='sMAPE'",
+    "producer": "m4_margins",
+    "runner_up": "submission-072",
+    "spec": "champion-vs-runner-up percentage gap on sMAPE, (0.11695 - 0.11374) / 0.11374 * 100 -- read against S3.1's 0.93% median best-vs-runner-up gap on the home panel",
+    "value": 2.82
+  }
+}

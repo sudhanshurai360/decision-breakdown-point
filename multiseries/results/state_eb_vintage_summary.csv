@@ -1,0 +1,4 @@
+arm,states_divergent,states_total,episodes,flip_months,scored_months
+revised,22,50,24,24,11250
+initial_release,22,50,26,26,11250
+first_release_each_leg,17,50,23,23,11140

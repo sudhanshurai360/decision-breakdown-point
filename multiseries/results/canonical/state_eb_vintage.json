@@ -1,0 +1,128 @@
+{
+  "_generated": "2026-09-22T21:47:56+00:00",
+  "_n": 11,
+  "_stage": "state_eb_vintage",
+  "vintage.episodes_initial": {
+    "cites": [
+      "S7 body: vintage robustness"
+    ],
+    "cross_check": "state_eb_vintage.csv: episodes_initial.sum()",
+    "each_leg_first_release": 23,
+    "producer": "state_eb_vintage",
+    "spec": "distinct flip-episodes on INITIAL-RELEASE data over the sub-window 2007-06-01..2026-05-01, the months for which every state has a recoverable INITIAL RELEASE (the as-of arm reads its look-back legs from the vintage current at each month's first release, so it is determinable from the first all-state release; an earlier construction began 26 months later, at 2009-08-01, a look-back only the superseded each-leg construct needs -- that construct is disclosed on its own determined months). Forecasts and tie sets are held fixed at the revised-data versions, so only the realized series feeding the statutory legs differs between arms. NOT the paper's headline window and not a replacement for it. INITIAL-RELEASE here means the AS-OF vintage current at each month's own first release (20 CFR 615.12(e)(1)(i), 615.11(d); DOL UIPL 07-94, quoted verbatim as external_facts uipl_07_94): month t at its first release, t-1/t-2 at their then-current revisions, the prior-year comparison legs benchmark-revised as of that date. The companion field each_leg_first_release is the same figure under an alternative construct that used every leg-month's OWN first release (a mixed-vintage series no determination ever saw), kept for disclosure",
+    "value": 26
+  },
+  "vintage.episodes_revised": {
+    "cites": [
+      "S7 body: vintage robustness"
+    ],
+    "cross_check": "state_eb_vintage.csv: episodes_revised.sum()",
+    "producer": "state_eb_vintage",
+    "spec": "distinct flip-episodes on REVISED data over the sub-window 2007-06-01..2026-05-01, the months for which every state has a recoverable INITIAL RELEASE (the as-of arm reads its look-back legs from the vintage current at each month's first release, so it is determinable from the first all-state release; an earlier construction began 26 months later, at 2009-08-01, a look-back only the superseded each-leg construct needs -- that construct is disclosed on its own determined months). Forecasts and tie sets are held fixed at the revised-data versions, so only the realized series feeding the statutory legs differs between arms. NOT the paper's headline window and not a replacement for it",
+    "value": 24
+  },
+  "vintage.flip_months_initial": {
+    "cites": [
+      "S7 body: vintage robustness"
+    ],
+    "cross_check": "state_eb_vintage.csv: flip_months_initial.sum()",
+    "each_leg_first_release": 23,
+    "producer": "state_eb_vintage",
+    "spec": "flip months on INITIAL-RELEASE data (what the statute specifies) over the sub-window 2007-06-01..2026-05-01, the months for which every state has a recoverable INITIAL RELEASE (the as-of arm reads its look-back legs from the vintage current at each month's first release, so it is determinable from the first all-state release; an earlier construction began 26 months later, at 2009-08-01, a look-back only the superseded each-leg construct needs -- that construct is disclosed on its own determined months). Forecasts and tie sets are held fixed at the revised-data versions, so only the realized series feeding the statutory legs differs between arms. NOT the paper's headline window and not a replacement for it. INITIAL-RELEASE here means the AS-OF vintage current at each month's own first release (20 CFR 615.12(e)(1)(i), 615.11(d); DOL UIPL 07-94, quoted verbatim as external_facts uipl_07_94): month t at its first release, t-1/t-2 at their then-current revisions, the prior-year comparison legs benchmark-revised as of that date. The companion field each_leg_first_release is the same figure under an alternative construct that used every leg-month's OWN first release (a mixed-vintage series no determination ever saw), kept for disclosure",
+    "value": 26
+  },
+  "vintage.flip_months_revised": {
+    "cites": [
+      "S7 body: vintage robustness"
+    ],
+    "cross_check": "state_eb_vintage.csv: flip_months_revised.sum()",
+    "producer": "state_eb_vintage",
+    "spec": "flip months on REVISED data over the sub-window 2007-06-01..2026-05-01, the months for which every state has a recoverable INITIAL RELEASE (the as-of arm reads its look-back legs from the vintage current at each month's first release, so it is determinable from the first all-state release; an earlier construction began 26 months later, at 2009-08-01, a look-back only the superseded each-leg construct needs -- that construct is disclosed on its own determined months). Forecasts and tie sets are held fixed at the revised-data versions, so only the realized series feeding the statutory legs differs between arms. NOT the paper's headline window and not a replacement for it",
+    "value": 24
+  },
+  "vintage.realized_trigger_changed": {
+    "cites": [
+      "S7 body: vintage robustness"
+    ],
+    "cross_check": null,
+    "each_leg_first_release": 324,
+    "each_leg_first_release_of": 11137,
+    "of": 11250,
+    "producer": "state_eb_vintage",
+    "ratio_to_model_episodes_hi": 11,
+    "ratio_to_model_episodes_lo": 10,
+    "spec": "state-months where the REALIZED statutory trigger status itself differs between the initial release and the revised series -- no model choice involved. The nearest published counterpart is Chodorow-Reich & Karabarbounis's (2016) 618 CASES in which a state 'would have had a different duration of extensions using the revised data', but the units are not directly comparable: theirs counts episodes, which external_facts.json's important_context for that key records as averaging about four months each, while this key counts state-MONTHS. INITIAL-RELEASE here means the AS-OF vintage current at each month's own first release (20 CFR 615.12(e)(1)(i), 615.11(d); DOL UIPL 07-94, quoted verbatim as external_facts uipl_07_94): month t at its first release, t-1/t-2 at their then-current revisions, the prior-year comparison legs benchmark-revised as of that date. The companion field each_leg_first_release is the same figure under an alternative construct that used every leg-month's OWN first release (a mixed-vintage series no determination ever saw), kept for disclosure. This is the TOTAL revision channel (all nine legs of the determination as of month t's first release); vintage.realized_trigger_changed_one_leg is the like-for-like one-leg figure. Both REPORTED arms share the `of` denominator: the state-months on which the revised and as-of arms' status is both determined. The superseded each-leg companion does NOT: like every other vintage.* construct of its kind it is disclosed on its own determined months, carried here as each_leg_first_release_of, which is smaller than `of` because that mixed-vintage series needs a longer look-back.",
+    "value": 271
+  },
+  "vintage.realized_trigger_changed_one_leg": {
+    "cites": [
+      "S7 body: vintage robustness"
+    ],
+    "cross_check": null,
+    "of": 11250,
+    "producer": "state_eb_vintage",
+    "ratio_to_model_episodes_hi": 4,
+    "ratio_to_model_episodes_lo": 3,
+    "spec": "state-months where the REALIZED statutory trigger status differs between (a) the revised series and (b) the revised series with ONLY the current month t replaced by its first release (t-1, t-2 and the six prior-year comparison months revised) -- the single-leg revision channel, i.e. exactly the leg the model channel perturbs when a nowcast stands in for month t. The like-for-like numerator for the 'revision vs model choice' comparison; vintage.realized_trigger_changed is the total (nine-leg) revision channel. Same denominator as that key.",
+    "value": 84
+  },
+  "vintage.revision_sd": {
+    "cites": [
+      "S7 body: vintage robustness"
+    ],
+    "cross_check": null,
+    "mean": 0.048,
+    "n_state_months": 11350,
+    "producer": "state_eb_vintage",
+    "spec": "standard deviation of (initial release - revised) in the state unemployment rate, measured on this paper's own panel over every state-month where both exist, restricted to the sub-window 2007-06-01..2026-05-01, the months for which every state has a recoverable INITIAL RELEASE (the as-of arm reads its look-back legs from the vintage current at each month's first release, so it is determinable from the first all-state release; an earlier construction began 26 months later, at 2009-08-01, a look-back only the superseded each-leg construct needs -- that construct is disclosed on its own determined months). Forecasts and tie sets are held fixed at the revised-data versions, so only the realized series feeding the statutory legs differs between arms. NOT the paper's headline window and not a replacement for it. Reported alongside the 0.34pp of Chodorow-Reich & Karabarbounis (2016), but NOT as a like-for-like check: this figure is a monthly initial-release-minus-revised SD, while the quote recorded for theirs in external_facts.json (chodorow_reich_karabarbounis_2016.tur_realtime_error_sd_0_34pp) defines it only as the difference between the real-time and the revised unemployment rate and states no averaging or smoothing basis. The two are therefore not established to be on the same basis; the comparison is indicative of magnitude only",
+    "value": 0.451
+  },
+  "vintage.states_divergent_initial": {
+    "cites": [
+      "S7 body: vintage robustness"
+    ],
+    "cross_check": "state_eb_vintage_summary.csv: states_divergent where arm=='initial_release'",
+    "each_leg_first_release": 17,
+    "of": 50,
+    "producer": "state_eb_vintage",
+    "spec": "states with at least one flip month on INITIAL-RELEASE data over the sub-window 2007-06-01..2026-05-01, the months for which every state has a recoverable INITIAL RELEASE (the as-of arm reads its look-back legs from the vintage current at each month's first release, so it is determinable from the first all-state release; an earlier construction began 26 months later, at 2009-08-01, a look-back only the superseded each-leg construct needs -- that construct is disclosed on its own determined months). Forecasts and tie sets are held fixed at the revised-data versions, so only the realized series feeding the statutory legs differs between arms. NOT the paper's headline window and not a replacement for it. INITIAL-RELEASE here means the AS-OF vintage current at each month's own first release (20 CFR 615.12(e)(1)(i), 615.11(d); DOL UIPL 07-94, quoted verbatim as external_facts uipl_07_94): month t at its first release, t-1/t-2 at their then-current revisions, the prior-year comparison legs benchmark-revised as of that date. The companion field each_leg_first_release is the same figure under an alternative construct that used every leg-month's OWN first release (a mixed-vintage series no determination ever saw), kept for disclosure",
+    "value": 22
+  },
+  "vintage.states_divergent_revised": {
+    "cites": [
+      "S7 body: vintage robustness"
+    ],
+    "cross_check": "state_eb_vintage_summary.csv: states_divergent where arm=='revised'",
+    "of": 50,
+    "producer": "state_eb_vintage",
+    "spec": "states with at least one flip month on REVISED data over the sub-window 2007-06-01..2026-05-01, the months for which every state has a recoverable INITIAL RELEASE (the as-of arm reads its look-back legs from the vintage current at each month's first release, so it is determinable from the first all-state release; an earlier construction began 26 months later, at 2009-08-01, a look-back only the superseded each-leg construct needs -- that construct is disclosed on its own determined months). Forecasts and tie sets are held fixed at the revised-data versions, so only the realized series feeding the statutory legs differs between arms. NOT the paper's headline window and not a replacement for it",
+    "value": 22
+  },
+  "vintage.wave_realized_trigger_changed_one_leg": {
+    "cites": [
+      "S7 body: vintage robustness"
+    ],
+    "cross_check": null,
+    "model_episodes_initial": 17,
+    "model_episodes_revised": 17,
+    "nine_leg": 68,
+    "of": 1300,
+    "producer": "state_eb_vintage",
+    "ratio_to_model_episodes_hi": 1.4,
+    "ratio_to_model_episodes_lo": 1.4,
+    "spec": "the one-leg revision channel (vintage.realized_trigger_changed_one_leg) restricted to the 2008-09 trigger-on wave, 2007-06-01..2009-07-01 -- the 26 months an earlier version of this check excluded. Companions: the nine-leg revision count on the same months, the tied-model episodes on revised and as-of data inside the wave, and the like-for-like multiple's range (one-leg changes over the larger and the smaller model-episode count). Read with the full-record figures: the multiple is a full-record average, and inside the wave the two channels are closer in size",
+    "value": 23,
+    "window_end": "2009-07-01",
+    "window_start": "2007-06-01"
+  },
+  "vintage.window_start": {
+    "cites": [
+      "S7 body: vintage robustness window"
+    ],
+    "cross_check": "state_eb_vintage_summary.csv: implied by scored_months",
+    "panel_start": "2007-06-01",
+    "producer": "state_eb_vintage",
+    "spec": "first scored month of the vintage robustness check: the earliest month with all-state initial-release coverage (the each-leg construct additionally needs a 26-month look-back, i.e. 2009-08-01)",
+    "value": "2007-06-01"
+  }
+}
